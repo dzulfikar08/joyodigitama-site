@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Joyo Digitama Solusi | Industrial Digitalization Company</title>
+  <meta name="description" content="Learn about Joyo Digitama Solusi — a software company based in Malang, Indonesia specializing in industrial IoT, custom development, and SaaS products.">
+  <meta name="keywords" content="about Joyo Digitama Solusi, software company Malang, industrial IoT company, custom development Indonesia, SaaS Indonesia">
+  <meta name="author" content="Joyo Digitama Solusi">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://joyodigitama.com/about.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://joyodigitama.com/about.html">
+  <meta property="og:title" content="About Us - Joyo Digitama Solusi | Industrial Digitalization Company">
+  <meta property="og:description" content="Learn about Joyo Digitama Solusi — a software company based in Malang, Indonesia specializing in industrial IoT, custom development, and SaaS products.">
+  <meta property="og:image" content="https://joyodigitama.com/images/logo-joyodigitama-logo.png">
+  <meta property="og:site_name" content="Joyo Digitama Solusi">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Us - Joyo Digitama Solusi | Industrial Digitalization Company">
+  <meta name="twitter:description" content="Learn about Joyo Digitama Solusi — a software company based in Malang, Indonesia specializing in industrial IoT, custom development, and SaaS products.">
+  <meta name="twitter:image" content="https://joyodigitama.com/images/logo-joyodigitama-logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#16a34a">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Joyo Digitama Solusi",
+    "url": "https://joyodigitama.com",
+    "logo": "https://joyodigitama.com/images/logo-joyodigitama-logo.png",
+    "description": "Industrial digitalization and IoT solutions company based in Malang, Indonesia.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Malang",
+      "addressCountry": "ID"
+    },
+    "email": "dzulfikar.at@joyodigitama.com",
+    "telephone": "+6289680839591",
+    "foundingDate": "2025"
+  }
+  </script>
+
+  <style>
+    /* === Reset & Base === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #000000;
+      --bg-raised: #0a0a0a;
+      --bg-surface: #111111;
+      --text: #ffffff;
+      --text-secondary: #a1a1aa;
+      --text-muted: #71717a;
+      --accent: #16a34a;
+      --accent-hover: #15803d;
+      --accent-light: rgba(22, 163, 74, 0.15);
+      --blue: #2563eb;
+      --blue-light: rgba(37, 99, 235, 0.15);
+      --purple: #7c3aed;
+      --purple-light: rgba(124, 58, 237, 0.15);
+      --rose: #e11d48;
+      --rose-light: rgba(225, 29, 72, 0.15);
+      --orange: #ea580c;
+      --orange-light: rgba(234, 88, 12, 0.15);
+      --amber: #d97706;
+      --amber-light: rgba(217, 119, 6, 0.15);
+      --border: rgba(255, 255, 255, 0.1);
+      --border-hover: rgba(255, 255, 255, 0.2);
+      --radius: 12px;
+      --radius-lg: 16px;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* === Background Grid === */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 64px 64px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* === Navigation === */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      background: rgba(0, 0, 0, 0.8);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1.125rem;
+    }
+    .nav-logo img {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      font-family: var(--font);
+    }
+    .btn-primary { background: var(--accent); color: white; }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--border-hover); background: rgba(255,255,255,0.05); }
+    .btn-lg { padding: 14px 28px; font-size: 1rem; }
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text);
+      cursor: pointer;
+      padding: 8px;
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 24px;
+      z-index: 99;
+    }
+    .mobile-menu.active { display: block; }
+    .mobile-menu a {
+      display: block;
+      padding: 12px 0;
+      font-weight: 500;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-menu .btn { width: 100%; justify-content: center; margin-top: 16px; }
+
+    /* === Page Hero === */
+    .page-hero { padding: 140px 0 60px; text-align: center; }
+    .page-hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 16px; }
+    .page-hero p { color: var(--text-secondary); font-size: 1.125rem; max-width: 640px; margin: 0 auto; }
+
+    /* === Stats Row === */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 0 0;
+    }
+    .stats-row .stat { text-align: center; }
+    .stats-row .stat-value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .stats-row .stat-label {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* === Section === */
+    section { position: relative; z-index: 1; padding: 100px 0; }
+    .section-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .section-header p {
+      color: var(--text-secondary);
+      font-size: 1.125rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* === Cards Grid === */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      transition: border-color 0.3s, transform 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+    }
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    .card-icon.green { background: var(--accent-light); color: var(--accent); }
+    .card-icon.blue { background: var(--blue-light); color: var(--blue); }
+    .card-icon.purple { background: var(--purple-light); color: var(--purple); }
+    .card-icon.orange { background: var(--orange-light); color: var(--orange); }
+    .card-icon.amber { background: var(--amber-light); color: var(--amber); }
+    .card-icon.rose { background: var(--rose-light); color: var(--rose); }
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .card p {
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+
+    /* === Mission & Vision === */
+    .mv-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .mv-card {
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .mv-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+    }
+    .mv-card.mission::before { background: var(--accent); }
+    .mv-card.vision::before { background: var(--blue); }
+    .mv-card .mv-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .mv-card.mission .mv-label { color: #4ade80; }
+    .mv-card.vision .mv-label { color: #60a5fa; }
+    .mv-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .mv-card p {
+      color: var(--text-secondary);
+      font-size: 1.0625rem;
+      line-height: 1.7;
+    }
+
+    /* === Timeline === */
+    .timeline {
+      position: relative;
+      max-width: 700px;
+      margin: 0 auto;
+      padding-left: 40px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+    }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -33px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--bg);
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    .timeline-year {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #4ade80;
+      margin-bottom: 4px;
+    }
+    .timeline-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .timeline-desc {
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+    }
+
+    /* === Leadership === */
+    .leadership-card {
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .leadership-avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .leadership-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .leadership-role {
+      font-size: 0.9375rem;
+      color: #4ade80;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+    .leadership-card .bio {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* === CTA === */
+    .cta-section {
+      background: linear-gradient(135deg, rgba(22, 163, 74, 0.1), rgba(22, 163, 74, 0.05));
+      border: 1px solid rgba(22, 163, 74, 0.2);
+      border-radius: var(--radius-lg);
+      padding: 64px;
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .cta-section p {
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 32px;
+      font-size: 1.125rem;
+    }
+    .cta-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* === Footer === */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 64px 0 32px;
+      position: relative;
+      z-index: 1;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand p {
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      margin-top: 16px;
+      line-height: 1.6;
+    }
+    .footer-col h4 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--text); }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-bottom p { color: var(--text-muted); font-size: 0.875rem; }
+
+    /* === Scroll Reveal === */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* === Responsive === */
+    @media (max-width: 768px) {
+      .nav-links, .nav-actions { display: none; }
+      .mobile-toggle { display: block; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .mv-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .stats-row .stat-value { font-size: 1.75rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .cta-section { padding: 40px 24px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+
+    /* === SVG Icons (inline) === */
+    .icon { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .icon-lg { width: 32px; height: 32px; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="/images/logo-joyodigitama-logo.png" alt="Joyo Digitama Solusi Logo" width="36" height="36">
+        <span>Joyo Digitama Solusi</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/products.html">Products</a></li>
+        <li><a href="/solutions.html">Solutions</a></li>
+        <li><a href="/about.html" class="active">About</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="mailto:dzulfikar.at@joyodigitama.com" class="btn btn-outline">Contact Us</a>
+        <a href="https://wa.me/6289680839591" class="btn btn-primary" target="_blank" rel="noopener">Get Started</a>
+      </div>
+      <button class="mobile-toggle" onclick="document.querySelector('.mobile-menu').classList.toggle('active')" aria-label="Toggle menu">
+        <svg class="icon" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu">
+    <a href="/">Home</a>
+    <a href="/services.html">Services</a>
+    <a href="/products.html">Products</a>
+    <a href="/solutions.html">Solutions</a>
+    <a href="/about.html">About</a>
+    <a href="mailto:dzulfikar.at@joyodigitama.com" class="btn btn-outline">Contact Us</a>
+    <a href="https://wa.me/6289680839591" class="btn btn-primary" target="_blank" rel="noopener">Get Started</a>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>About Joyo Digitama Solusi</h1>
+      <p>Empowering businesses through innovative software solutions and industrial digitalization</p>
+      <div class="stats-row">
+        <div class="stat reveal">
+          <div class="stat-value">20+</div>
+          <div class="stat-label">Projects Delivered</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-value">5+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-value">10+</div>
+          <div class="stat-label">Industries Served</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Mission &amp; Vision</h2>
+        <p>What drives us forward every day</p>
+      </div>
+      <div class="mv-grid">
+        <div class="mv-card mission reveal">
+          <div class="mv-label">Our Mission</div>
+          <h3>Mission</h3>
+          <p>To empower businesses with innovative software solutions that drive efficiency, growth, and digital transformation across industries.</p>
+        </div>
+        <div class="mv-card vision reveal">
+          <div class="mv-label">Our Vision</div>
+          <h3>Vision</h3>
+          <p>To be the leading provider of industrial digitalization solutions in Southeast Asia, known for quality, innovation, and client success.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values -->
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Our Core Values</h2>
+        <p>The principles that guide everything we build</p>
+      </div>
+      <div class="cards-grid">
+        <div class="card reveal">
+          <div class="card-icon green">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          </div>
+          <h3>Innovation First</h3>
+          <p>We push boundaries and embrace new technologies to deliver cutting-edge solutions.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon blue">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>Client-Centric</h3>
+          <p>Your success is our priority. We build solutions tailored to your unique challenges.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon purple">
+            <svg class="icon" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3>Quality Excellence</h3>
+          <p>We maintain the highest standards in code quality, testing, and delivery.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon orange">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M2 20h20"/><path d="M5 20V8l7-5 7 5v12"/><rect x="9" y="12" width="6" height="8"/></svg>
+          </div>
+          <h3>Industry Expertise</h3>
+          <p>Deep domain knowledge in manufacturing, IoT, and industrial automation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Our Journey</h2>
+        <p>Key milestones since our founding</p>
+      </div>
+      <div class="timeline reveal">
+        <div class="timeline-item">
+          <div class="timeline-year">2025</div>
+          <div class="timeline-title">Founded</div>
+          <div class="timeline-desc">Joyo Digitama Solusi established in Malang, Indonesia</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2025</div>
+          <div class="timeline-title">Product Launch</div>
+          <div class="timeline-desc">Launched JoyDiz and Cowculator platforms</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership -->
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Leadership</h2>
+        <p>The people driving our vision</p>
+      </div>
+      <div class="leadership-card reveal">
+        <div class="leadership-avatar">DT</div>
+        <h3>Dzulfikar Ats Tsauri</h3>
+        <div class="leadership-role">CEO &amp; Founder</div>
+        <p class="bio">Industrial automation engineer turned software entrepreneur. Building digital solutions for real-world industrial challenges.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div class="cta-section reveal">
+        <h2>Ready to Digitalize Your Operations?</h2>
+        <p>Get in touch with us to discuss how we can help transform your business with custom software solutions.</p>
+        <div class="cta-actions">
+          <a href="mailto:dzulfikar.at@joyodigitama.com" class="btn btn-primary btn-lg">
+            Contact Us
+            <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+          <a href="https://wa.me/6289680839591" class="btn btn-outline btn-lg" target="_blank" rel="noopener">
+            WhatsApp Us
+            <svg class="icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+            <img src="/images/logo-joyodigitama-logo.png" alt="Joyo Digitama Solusi" width="32" height="32" style="border-radius:6px;">
+            <strong>Joyo Digitama Solusi</strong>
+          </div>
+          <p>Industrial digitalization and IoT solutions based in Malang, Indonesia.</p>
+          <p style="margin-top:12px;">
+            <a href="mailto:dzulfikar.at@joyodigitama.com" style="color:var(--accent);">dzulfikar.at@joyodigitama.com</a>
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="/services.html">Custom Development</a></li>
+            <li><a href="/services.html">Mobile Apps</a></li>
+            <li><a href="/services.html">Cloud Solutions</a></li>
+            <li><a href="/services.html">IoT Integration</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="https://andonfast.com" target="_blank" rel="noopener">AndonFAST</a></li>
+            <li><a href="https://cowculator.my.id" target="_blank" rel="noopener">Cowculator</a></li>
+            <li><a href="https://voltrus-lite.vercel.app" target="_blank" rel="noopener">Voltrus Lite</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="/terms.html">Terms of Service</a></li>
+            <li><a href="/cookies.html">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Joyo Digitama Solusi. All rights reserved.</p>
+        <p>Malang, Indonesia</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Intersection Observer for scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.mobile-menu a').forEach(a => {
+      a.addEventListener('click', () => {
+        document.querySelector('.mobile-menu').classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>

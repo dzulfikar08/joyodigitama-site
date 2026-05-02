@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service - Joyo Digitama Solusi</title>
+  <meta name="description" content="Terms of Service for Joyo Digitama Solusi. Read our terms and conditions for using our software development and IoT solutions.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://joyodigitama.com/terms.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://joyodigitama.com/terms.html">
+  <meta property="og:title" content="Terms of Service - Joyo Digitama Solusi">
+  <meta property="og:description" content="Terms of Service for Joyo Digitama Solusi. Read our terms and conditions for using our software development and IoT solutions.">
+  <meta property="og:image" content="https://joyodigitama.com/images/logo-joyodigitama-logo.png">
+  <meta property="og:site_name" content="Joyo Digitama Solusi">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#16a34a">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* === Reset & Base === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #000000;
+      --bg-raised: #0a0a0a;
+      --bg-surface: #111111;
+      --text: #ffffff;
+      --text-secondary: #a1a1aa;
+      --text-muted: #71717a;
+      --accent: #16a34a;
+      --accent-hover: #15803d;
+      --accent-light: rgba(22, 163, 74, 0.15);
+      --blue: #2563eb;
+      --blue-light: rgba(37, 99, 235, 0.15);
+      --purple: #7c3aed;
+      --purple-light: rgba(124, 58, 237, 0.15);
+      --rose: #e11d48;
+      --rose-light: rgba(225, 29, 72, 0.15);
+      --orange: #ea580c;
+      --orange-light: rgba(234, 88, 12, 0.15);
+      --amber: #d97706;
+      --amber-light: rgba(217, 119, 6, 0.15);
+      --border: rgba(255, 255, 255, 0.1);
+      --border-hover: rgba(255, 255, 255, 0.2);
+      --radius: 12px;
+      --radius-lg: 16px;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* === Background Grid === */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 64px 64px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* === Navigation === */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      background: rgba(0, 0, 0, 0.8);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1.125rem;
+    }
+    .nav-logo img {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      font-family: var(--font);
+    }
+    .btn-primary { background: var(--accent); color: white; }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--border-hover); background: rgba(255,255,255,0.05); }
+    .btn-lg { padding: 14px 28px; font-size: 1rem; }
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text);
+      cursor: pointer;
+      padding: 8px;
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 24px;
+      z-index: 99;
+    }
+    .mobile-menu.active { display: block; }
+    .mobile-menu a {
+      display: block;
+      padding: 12px 0;
+      font-weight: 500;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-menu .btn { width: 100%; justify-content: center; margin-top: 16px; }
+
+    /* === Legal Page Layout === */
+    .legal-page {
+      position: relative;
+      z-index: 1;
+      padding: 140px 0 100px;
+    }
+    .legal-article {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .legal-article h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .legal-updated {
+      color: var(--text-muted);
+      font-size: 0.9375rem;
+      margin-bottom: 48px;
+    }
+    .legal-article h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 40px;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+    .legal-article h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-top: 24px;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    .legal-article p {
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .legal-article ul {
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      line-height: 1.8;
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+    .legal-article li {
+      margin-bottom: 8px;
+    }
+    .legal-article a {
+      color: var(--accent);
+      transition: color 0.2s;
+    }
+    .legal-article a:hover {
+      color: var(--accent-hover);
+    }
+
+    /* === Footer === */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 64px 0 32px;
+      position: relative;
+      z-index: 1;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand p {
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      margin-top: 16px;
+      line-height: 1.6;
+    }
+    .footer-col h4 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--text); }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-bottom p { color: var(--text-muted); font-size: 0.875rem; }
+
+    /* === Scroll Reveal === */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* === Responsive === */
+    @media (max-width: 768px) {
+      .nav-links, .nav-actions { display: none; }
+      .mobile-toggle { display: block; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+      .legal-page { padding: 120px 0 80px; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+
+    /* === SVG Icons (inline) === */
+    .icon { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="/images/logo-joyodigitama-logo.png" alt="Joyo Digitama Solusi Logo" width="36" height="36">
+        <span>Joyo Digitama Solusi</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/products.html">Products</a></li>
+        <li><a href="/solutions.html">Solutions</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="mailto:dzulfikar.at@joyodigitama.com" class="btn btn-outline">Contact Us</a>
+        <a href="https://wa.me/6289680839591" class="btn btn-primary" target="_blank" rel="noopener">Get Started</a>
+      </div>
+      <button class="mobile-toggle" onclick="document.querySelector('.mobile-menu').classList.toggle('active')" aria-label="Toggle menu">
+        <svg class="icon" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu">
+    <a href="/">Home</a>
+    <a href="/services.html">Services</a>
+    <a href="/products.html">Products</a>
+    <a href="/solutions.html">Solutions</a>
+    <a href="/about.html">About</a>
+    <a href="mailto:dzulfikar.at@joyodigitama.com" class="btn btn-outline">Contact Us</a>
+    <a href="https://wa.me/6289680839591" class="btn btn-primary" target="_blank" rel="noopener">Get Started</a>
+  </div>
+
+  <!-- Legal Content -->
+  <section class="legal-page">
+    <div class="container">
+      <article class="legal-article reveal">
+        <h1>Terms of Service</h1>
+        <p class="legal-updated">Last updated: January 2025</p>
+
+        <h2>1. Acceptance of Terms</h2>
+        <p>By accessing or using any of our services, websites, or products, you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, you must not use our services.</p>
+
+        <h2>2. Services</h2>
+        <p>Joyo Digitama Solusi provides the following services:</p>
+        <ul>
+          <li>Custom software development tailored to client requirements.</li>
+          <li>SaaS (Software as a Service) products for various industries.</li>
+          <li>IoT (Internet of Things) solutions including sensor integration, monitoring, and automation.</li>
+          <li>Technical consulting and system integration services.</li>
+        </ul>
+
+        <h2>3. User Accounts</h2>
+        <p>Some of our services require you to create an account. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You must notify us immediately of any unauthorized use of your account.</p>
+
+        <h2>4. Acceptable Use</h2>
+        <p>You agree not to use our services for any illegal or unauthorized purpose. This includes, but is not limited to:</p>
+        <ul>
+          <li>Violating any applicable laws or regulations.</li>
+          <li>Infringing on the intellectual property rights of others.</li>
+          <li>Attempting to gain unauthorized access to our systems or networks.</li>
+          <li>Distributing malicious software or harmful content.</li>
+        </ul>
+
+        <h2>5. Payment Terms</h2>
+        <p>Payment schedules and terms are specified in individual project agreements or service contracts. General terms include:</p>
+        <ul>
+          <li>Invoicing according to agreed-upon milestones or billing cycles.</li>
+          <li>Refund policies as outlined in specific project agreements.</li>
+          <li>Late payments may be subject to additional fees as permitted by applicable law.</li>
+        </ul>
+
+        <h2>6. Service Availability</h2>
+        <p>We strive to maintain 99.9% uptime for our SaaS products and hosted services. However, we do not guarantee uninterrupted service and reserve the right to perform scheduled maintenance with reasonable prior notice. We are not liable for temporary interruptions due to factors beyond our control.</p>
+
+        <h2>7. Intellectual Property</h2>
+        <p>Ownership of custom code, designs, and other deliverables is specified in individual project agreements. Unless otherwise agreed:</p>
+        <ul>
+          <li>Custom code developed specifically for a client is transferred upon full payment.</li>
+          <li>Pre-existing frameworks, libraries, and tools remain the property of Joyo Digitama Solusi.</li>
+          <li>Client retains ownership of all content and data they provide.</li>
+        </ul>
+
+        <h2>8. Data Protection</h2>
+        <p>Our handling of personal data and user information is subject to our <a href="/privacy.html">Privacy Policy</a>. By using our services, you consent to the collection and use of information as described in that policy.</p>
+
+        <h2>9. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by applicable law, Joyo Digitama Solusi shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our services. Our total liability shall not exceed the amount paid by you for the specific service giving rise to the claim.</p>
+
+        <h2>10. Governing Law</h2>
+        <p>These Terms of Service are governed by and construed in accordance with the laws of the Republic of Indonesia. Any disputes arising from these terms shall be resolved in the courts of Malang, East Java, Indonesia.</p>
+
+        <h2>11. Contact</h2>
+        <p>If you have any questions about these Terms of Service, please contact us:</p>
+        <ul>
+          <li>Email: <a href="mailto:dzulfikar.at@joyodigitama.com">dzulfikar.at@joyodigitama.com</a></li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+            <img src="/images/logo-joyodigitama-logo.png" alt="Joyo Digitama Solusi" width="32" height="32" style="border-radius:6px;">
+            <strong>Joyo Digitama Solusi</strong>
+          </div>
+          <p>Industrial digitalization and IoT solutions based in Malang, Indonesia.</p>
+          <p style="margin-top:12px;">
+            <a href="mailto:dzulfikar.at@joyodigitama.com" style="color:var(--accent);">dzulfikar.at@joyodigitama.com</a>
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="/services.html">Custom Development</a></li>
+            <li><a href="/services.html">Mobile Apps</a></li>
+            <li><a href="/services.html">Cloud Solutions</a></li>
+            <li><a href="/services.html">IoT Integration</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="https://andonfast.com" target="_blank" rel="noopener">AndonFAST</a></li>
+            <li><a href="https://cowculator.my.id" target="_blank" rel="noopener">Cowculator</a></li>
+            <li><a href="https://voltrus-lite.vercel.app" target="_blank" rel="noopener">Voltrus Lite</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="/terms.html">Terms of Service</a></li>
+            <li><a href="/cookies.html">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Joyo Digitama Solusi. All rights reserved.</p>
+        <p>Malang, Indonesia</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Intersection Observer for scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.mobile-menu a').forEach(a => {
+      a.addEventListener('click', () => {
+        document.querySelector('.mobile-menu').classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
