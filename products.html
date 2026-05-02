@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Products - Joyo Digitama Solusi | SaaS &amp; Industrial Software Solutions</title>
-  <meta name="description" content="Explore our SaaS products: AndonFAST for manufacturing, Cowculator for dairy farms, Voltrus Lite for SCADA, and more industrial solutions.">
+  <meta name="description" content="Explore our SaaS products: AndonFAST for manufacturing, Cowculator for dairy farms, Voltrus Lite for SCADA, Waqtu for prayer times, and more.">
   <meta name="keywords" content="SaaS, manufacturing software, AndonFAST, SCADA, dairy farm management, industrial IoT, digitalization">
   <meta name="author" content="Joyo Digitama Solusi">
   <meta name="robots" content="index, follow">
@@ -14,14 +14,14 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://joyodigitama.com/products">
   <meta property="og:title" content="Products - Joyo Digitama Solusi | SaaS &amp; Industrial Software Solutions">
-  <meta property="og:description" content="Explore our SaaS products: AndonFAST for manufacturing, Cowculator for dairy farms, Voltrus Lite for SCADA, and more industrial solutions.">
+  <meta property="og:description" content="Explore our SaaS products: AndonFAST for manufacturing, Cowculator for dairy farms, Voltrus Lite for SCADA, Waqtu for prayer times, and more.">
   <meta property="og:image" content="https://joyodigitama.com/images/logo-joyodigitama-logo.png">
   <meta property="og:site_name" content="Joyo Digitama Solusi">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Products - Joyo Digitama Solusi | SaaS &amp; Industrial Software Solutions">
-  <meta name="twitter:description" content="Explore our SaaS products: AndonFAST for manufacturing, Cowculator for dairy farms, Voltrus Lite for SCADA, and more industrial solutions.">
+  <meta name="twitter:description" content="Explore our SaaS products: AndonFAST for manufacturing, Cowculator for dairy farms, Voltrus Lite for SCADA, Waqtu for prayer times, and more.">
   <meta name="twitter:image" content="https://joyodigitama.com/images/logo-joyodigitama-logo.png">
 
   <!-- Favicon -->
@@ -98,6 +98,18 @@
           "url": "https://voltrus-lite.vercel.app",
           "applicationCategory": "BusinessApplication",
           "operatingSystem": "Web"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "Waqtu",
+          "description": "Prayer times in your menu bar. Calendar blocks during prayers. Made for Muslim professionals on Mac.",
+          "url": "https://waqtu.com",
+          "applicationCategory": "LifestyleApplication",
+          "operatingSystem": "macOS"
         }
       }
     ]
@@ -394,7 +406,7 @@
     /* === Cards === */
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 2px;
     }
     .card {
@@ -816,12 +828,10 @@
         <h2>More Products</h2>
         <p>Explore our full range of industry-focused solutions</p>
       </div>
-      <div class="cards-grid" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="cards-grid" style="grid-template-columns: repeat(4, 1fr);">
         <!-- Cowculator -->
         <a href="https://cowculator.my.id" target="_blank" rel="noopener" class="product-card blue" style="text-decoration:none;color:inherit;">
-          <div class="card-icon blue" style="margin-bottom:20px;width:44px;height:44px;">
-            <svg viewBox="0 0 24 24"><path d="M8 2h8l4 10H4L8 2z"/><path d="M2 12h20v2a8 8 0 0 1-8 8h-4a8 8 0 0 1-8-8v-2z"/></svg>
-          </div>
+          <img src="/images/cowculator.png" alt="Cowculator" class="product-logo" width="44" height="44">
           <h3>Cowculator</h3>
           <p>Optimize milk production and efficiency. Food composition, breeding calendar, and notifications.</p>
           <div class="tags">
@@ -842,6 +852,18 @@
             <span class="tag orange">Modbus TCP</span>
             <span class="tag orange">White-label</span>
             <span class="tag orange">Single Binary</span>
+          </div>
+          <div class="product-arrow">VISIT &rarr;</div>
+        </a>
+        <!-- Waqtu -->
+        <a href="https://waqtu.com" target="_blank" rel="noopener" class="product-card rose" style="text-decoration:none;color:inherit;">
+          <img src="/images/waqtu.png" alt="Waqtu" class="product-logo" width="44" height="44">
+          <h3>Waqtu</h3>
+          <p>Prayer times in your menu bar. Calendar blocks during prayers. Made for Muslim professionals on Mac.</p>
+          <div class="tags">
+            <span class="tag rose">Prayer Times</span>
+            <span class="tag rose">Menu Bar</span>
+            <span class="tag rose">Calendar</span>
           </div>
           <div class="product-arrow">VISIT &rarr;</div>
         </a>
@@ -891,6 +913,7 @@
             <li><a href="https://andonfast.com" target="_blank" rel="noopener">AndonFAST</a></li>
             <li><a href="https://cowculator.my.id" target="_blank" rel="noopener">Cowculator</a></li>
             <li><a href="https://voltrus-lite.vercel.app" target="_blank" rel="noopener">Voltrus Lite</a></li>
+            <li><a href="https://waqtu.com" target="_blank" rel="noopener">Waqtu</a></li>
           </ul>
         </div>
         <div class="footer-col">
