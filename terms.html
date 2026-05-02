@@ -4,63 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms of Service - Joyo Digitama Solusi</title>
-  <meta name="description" content="Terms of Service for Joyo Digitama Solusi. Read our terms and conditions for using our software development and IoT solutions.">
+  <meta name="description" content="Terms of Service for Joyo Digitama Solusi. Read our terms and conditions governing the use of our services.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://joyodigitama.com/terms.html">
-
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://joyodigitama.com/terms.html">
   <meta property="og:title" content="Terms of Service - Joyo Digitama Solusi">
-  <meta property="og:description" content="Terms of Service for Joyo Digitama Solusi. Read our terms and conditions for using our software development and IoT solutions.">
+  <meta property="og:description" content="Terms of Service for Joyo Digitama Solusi. Read our terms and conditions governing the use of our services.">
   <meta property="og:image" content="https://joyodigitama.com/images/logo-joyodigitama-logo.png">
   <meta property="og:site_name" content="Joyo Digitama Solusi">
-
-  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#16a34a">
-
-  <!-- Font -->
+  <meta name="theme-color" content="#00ff88">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    /* === Reset & Base === */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #000000;
-      --bg-raised: #0a0a0a;
-      --bg-surface: #111111;
-      --text: #ffffff;
-      --text-secondary: #a1a1aa;
-      --text-muted: #71717a;
-      --accent: #16a34a;
-      --accent-hover: #15803d;
-      --accent-light: rgba(22, 163, 74, 0.15);
-      --blue: #2563eb;
-      --blue-light: rgba(37, 99, 235, 0.15);
-      --purple: #7c3aed;
-      --purple-light: rgba(124, 58, 237, 0.15);
-      --rose: #e11d48;
-      --rose-light: rgba(225, 29, 72, 0.15);
-      --orange: #ea580c;
-      --orange-light: rgba(234, 88, 12, 0.15);
-      --amber: #d97706;
-      --amber-light: rgba(217, 119, 6, 0.15);
-      --border: rgba(255, 255, 255, 0.1);
-      --border-hover: rgba(255, 255, 255, 0.2);
-      --radius: 12px;
-      --radius-lg: 16px;
-      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --bg: #030706;
+      --bg-raised: #060d0a;
+      --bg-surface: #0a1410;
+      --phosphor: #00ff88;
+      --phosphor-dim: #00cc6a;
+      --phosphor-15: rgba(0, 255, 136, 0.08);
+      --phosphor-30: rgba(0, 255, 136, 0.15);
+      --phosphor-50: rgba(0, 255, 136, 0.25);
+      --cyan: #00d4ff;
+      --cyan-15: rgba(0, 212, 255, 0.10);
+      --amber: #ffb800;
+      --amber-15: rgba(255, 184, 0, 0.10);
+      --rose: #ff3366;
+      --rose-15: rgba(255, 51, 102, 0.10);
+      --violet: #a855f7;
+      --violet-15: rgba(168, 85, 247, 0.10);
+      --orange: #ff6b2b;
+      --orange-15: rgba(255, 107, 43, 0.10);
+      --text: #e0f0e8;
+      --text-dim: #6b8f7d;
+      --text-muted: #3d5a4c;
+      --border: rgba(0, 255, 136, 0.08);
+      --border-hover: rgba(0, 255, 136, 0.25);
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'IBM Plex Mono', monospace;
     }
     html { scroll-behavior: smooth; }
     body {
-      font-family: var(--font);
+      font-family: var(--font-body);
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
@@ -71,17 +65,38 @@
     img { max-width: 100%; height: auto; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-    /* === Background Grid === */
+    /* === Noise Texture Overlay === */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 256px;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* === Animated Grid Background === */
     body::before {
       content: '';
       position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-      background-size: 64px 64px;
+        linear-gradient(rgba(0,255,136,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,136,0.025) 1px, transparent 1px);
+      background-size: 60px 60px;
       pointer-events: none;
       z-index: 0;
+    }
+
+    /* === Scanline Effect === */
+    .scanlines {
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
+      pointer-events: none;
+      z-index: 9998;
     }
 
     /* === Navigation === */
@@ -91,15 +106,15 @@
       left: 0;
       right: 0;
       z-index: 100;
-      backdrop-filter: blur(12px);
-      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(16px);
+      background: rgba(3, 7, 6, 0.85);
       border-bottom: 1px solid var(--border);
     }
     .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 72px;
+      height: 68px;
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 24px;
@@ -108,70 +123,72 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      font-family: var(--font-display);
       font-weight: 700;
-      font-size: 1.125rem;
+      font-size: 1rem;
+      letter-spacing: -0.01em;
     }
-    .nav-logo img {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      list-style: none;
-    }
+    .nav-logo img { width: 32px; height: 32px; border-radius: 6px; }
+    .nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
     .nav-links a {
-      font-size: 0.875rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
       font-weight: 500;
-      color: var(--text-secondary);
-      transition: color 0.2s;
+      color: var(--text-dim);
+      padding: 6px 14px;
+      border-radius: 4px;
+      transition: all 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
-    .nav-links a:hover, .nav-links a.active { color: var(--text); }
-    .nav-actions {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
+    .nav-links a:hover { color: var(--phosphor); background: var(--phosphor-15); }
+    .nav-actions { display: flex; gap: 10px; align-items: center; }
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-size: 0.875rem;
+      padding: 9px 20px;
+      border-radius: 4px;
+      font-size: 0.8125rem;
       font-weight: 600;
       cursor: pointer;
       border: none;
-      transition: all 0.2s;
-      font-family: var(--font);
+      transition: all 0.25s;
+      font-family: var(--font-body);
     }
-    .btn-primary { background: var(--accent); color: white; }
-    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-primary {
+      background: var(--phosphor);
+      color: #030706;
+      box-shadow: 0 0 20px rgba(0,255,136,0.2);
+    }
+    .btn-primary:hover {
+      background: #33ffaa;
+      box-shadow: 0 0 30px rgba(0,255,136,0.35);
+      transform: translateY(-1px);
+    }
     .btn-outline {
       background: transparent;
       color: var(--text);
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-hover);
     }
-    .btn-outline:hover { border-color: var(--border-hover); background: rgba(255,255,255,0.05); }
-    .btn-lg { padding: 14px 28px; font-size: 1rem; }
+    .btn-outline:hover { background: var(--phosphor-15); border-color: var(--phosphor); color: var(--phosphor); }
     .mobile-toggle {
       display: none;
       background: none;
-      border: none;
-      color: var(--text);
+      border: 1px solid var(--border);
+      color: var(--phosphor);
       cursor: pointer;
-      padding: 8px;
+      padding: 6px;
+      border-radius: 4px;
     }
     .mobile-menu {
       display: none;
       position: fixed;
-      top: 72px;
+      top: 68px;
       left: 0;
       right: 0;
-      background: rgba(0, 0, 0, 0.95);
-      backdrop-filter: blur(12px);
+      background: rgba(3, 7, 6, 0.97);
+      backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
       padding: 24px;
       z-index: 99;
@@ -179,76 +196,31 @@
     .mobile-menu.active { display: block; }
     .mobile-menu a {
       display: block;
-      padding: 12px 0;
+      padding: 14px 0;
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
       font-weight: 500;
-      color: var(--text-secondary);
+      color: var(--text-dim);
       border-bottom: 1px solid var(--border);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
     .mobile-menu .btn { width: 100%; justify-content: center; margin-top: 16px; }
 
-    /* === Legal Page Layout === */
-    .legal-page {
-      position: relative;
-      z-index: 1;
-      padding: 140px 0 100px;
-    }
-    .legal-article {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .legal-article h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      margin-bottom: 8px;
-      letter-spacing: -0.02em;
-    }
-    .legal-updated {
-      color: var(--text-muted);
-      font-size: 0.9375rem;
-      margin-bottom: 48px;
-    }
-    .legal-article h2 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-top: 40px;
-      margin-bottom: 16px;
-      color: var(--text);
-    }
-    .legal-article h3 {
-      font-size: 1.125rem;
-      font-weight: 600;
-      margin-top: 24px;
-      margin-bottom: 12px;
-      color: var(--text);
-    }
-    .legal-article p {
-      color: var(--text-secondary);
-      font-size: 0.9375rem;
-      line-height: 1.8;
-      margin-bottom: 16px;
-    }
-    .legal-article ul {
-      color: var(--text-secondary);
-      font-size: 0.9375rem;
-      line-height: 1.8;
-      margin-bottom: 16px;
-      padding-left: 24px;
-    }
-    .legal-article li {
-      margin-bottom: 8px;
-    }
-    .legal-article a {
-      color: var(--accent);
-      transition: color 0.2s;
-    }
-    .legal-article a:hover {
-      color: var(--accent-hover);
-    }
+    /* === Legal Content === */
+    .legal-content { max-width: 800px; margin: 0 auto; padding: 140px 24px 80px; position: relative; z-index: 1; }
+    .legal-content h1 { font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; margin-bottom: 8px; }
+    .legal-content .updated { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-bottom: 48px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .legal-content h2 { font-family: var(--font-display); font-size: 1.375rem; font-weight: 700; margin-top: 40px; margin-bottom: 16px; }
+    .legal-content p { color: var(--text-dim); line-height: 1.7; margin-bottom: 16px; }
+    .legal-content ul { color: var(--text-dim); padding-left: 24px; margin-bottom: 16px; line-height: 1.7; }
+    .legal-content li { margin-bottom: 8px; }
+    .legal-content a { color: var(--phosphor); }
 
     /* === Footer === */
     .footer {
       border-top: 1px solid var(--border);
-      padding: 64px 0 32px;
+      padding: 72px 0 32px;
       position: relative;
       z-index: 1;
     }
@@ -258,28 +230,24 @@
       gap: 48px;
       margin-bottom: 48px;
     }
-    .footer-brand p {
-      color: var(--text-secondary);
-      font-size: 0.9375rem;
-      margin-top: 16px;
-      line-height: 1.6;
-    }
+    .footer-brand p { color: var(--text-dim); font-size: 0.9375rem; margin-top: 16px; line-height: 1.6; }
     .footer-col h4 {
-      font-size: 0.875rem;
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.1em;
       color: var(--text-muted);
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
     .footer-col ul { list-style: none; }
-    .footer-col li { margin-bottom: 10px; }
+    .footer-col li { margin-bottom: 12px; }
     .footer-col a {
       font-size: 0.9375rem;
-      color: var(--text-secondary);
-      transition: color 0.2s;
+      color: var(--text-dim);
+      transition: all 0.2s;
     }
-    .footer-col a:hover { color: var(--text); }
+    .footer-col a:hover { color: var(--phosphor); }
     .footer-bottom {
       border-top: 1px solid var(--border);
       padding-top: 24px;
@@ -287,18 +255,15 @@
       justify-content: space-between;
       align-items: center;
     }
-    .footer-bottom p { color: var(--text-muted); font-size: 0.875rem; }
+    .footer-bottom p { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); }
 
     /* === Scroll Reveal === */
     .reveal {
       opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
     /* === Responsive === */
     @media (max-width: 768px) {
@@ -306,24 +271,23 @@
       .mobile-toggle { display: block; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
       .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
-      .legal-page { padding: 120px 0 80px; }
+      .legal-content h1 { font-size: 2rem; }
+      .legal-content { padding: 120px 20px 60px; }
     }
     @media (max-width: 480px) {
       .footer-grid { grid-template-columns: 1fr; }
     }
-
-    /* === SVG Icons (inline) === */
-    .icon { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
   </style>
 </head>
 <body>
+  <div class="scanlines"></div>
 
   <!-- Navigation -->
   <nav class="nav">
     <div class="nav-inner">
       <a href="/" class="nav-logo">
-        <img src="/images/logo-joyodigitama-logo.png" alt="Joyo Digitama Solusi Logo" width="36" height="36">
-        <span>Joyo Digitama Solusi</span>
+        <img src="/images/logo-joyodigitama-logo.png" alt="Joyo Digitama Solusi" width="32" height="32">
+        <span>Joyo Digitama</span>
       </a>
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
@@ -333,11 +297,11 @@
         <li><a href="/about.html">About</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="mailto:dzulfikar.at@joyodigitama.com" class="btn btn-outline">Contact Us</a>
+        <a href="mailto:dzulfikar.at@joyodigitama.com" class="btn btn-outline">Contact</a>
         <a href="https://wa.me/6289680839591" class="btn btn-primary" target="_blank" rel="noopener">Get Started</a>
       </div>
-      <button class="mobile-toggle" onclick="document.querySelector('.mobile-menu').classList.toggle('active')" aria-label="Toggle menu">
-        <svg class="icon" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <button class="mobile-toggle" onclick="document.querySelector('.mobile-menu').classList.toggle('active')" aria-label="Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
     </div>
   </nav>
@@ -347,77 +311,106 @@
     <a href="/products.html">Products</a>
     <a href="/solutions.html">Solutions</a>
     <a href="/about.html">About</a>
-    <a href="mailto:dzulfikar.at@joyodigitama.com" class="btn btn-outline">Contact Us</a>
+    <a href="mailto:dzulfikar.at@joyodigitama.com" class="btn btn-outline">Contact</a>
     <a href="https://wa.me/6289680839591" class="btn btn-primary" target="_blank" rel="noopener">Get Started</a>
   </div>
 
   <!-- Legal Content -->
-  <section class="legal-page">
-    <div class="container">
-      <article class="legal-article reveal">
-        <h1>Terms of Service</h1>
-        <p class="legal-updated">Last updated: January 2025</p>
+  <div class="legal-content reveal">
+    <h1>Terms of Service</h1>
+    <p class="updated">Last updated: January 1, 2025</p>
 
-        <h2>1. Acceptance of Terms</h2>
-        <p>By accessing or using any of our services, websites, or products, you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, you must not use our services.</p>
+    <p>Please read these Terms of Service carefully before using the services provided by Joyo Digitama Solusi. By accessing or using our services, you agree to be bound by these terms.</p>
 
-        <h2>2. Services</h2>
-        <p>Joyo Digitama Solusi provides the following services:</p>
-        <ul>
-          <li>Custom software development tailored to client requirements.</li>
-          <li>SaaS (Software as a Service) products for various industries.</li>
-          <li>IoT (Internet of Things) solutions including sensor integration, monitoring, and automation.</li>
-          <li>Technical consulting and system integration services.</li>
-        </ul>
+    <h2>1. Acceptance of Terms</h2>
+    <p>By accessing our website, using our software products, or engaging our consulting services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service, along with our <a href="/privacy.html">Privacy Policy</a> and <a href="/cookies.html">Cookie Policy</a>. If you do not agree to these terms, you must not use our services.</p>
 
-        <h2>3. User Accounts</h2>
-        <p>Some of our services require you to create an account. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You must notify us immediately of any unauthorized use of your account.</p>
+    <h2>2. Services</h2>
+    <p>Joyo Digitama Solusi provides the following services:</p>
+    <ul>
+      <li><strong>Custom Software Development:</strong> Tailored software solutions including web applications, desktop software, APIs, and system integrations</li>
+      <li><strong>SaaS Products:</strong> Subscription-based software products including AndonFAST, Cowculator, Voltrus Lite, and other platforms</li>
+      <li><strong>IoT Solutions:</strong> Industrial IoT integration, sensor deployment, real-time monitoring, and SCADA systems</li>
+      <li><strong>Consulting Services:</strong> Technical consulting, system architecture design, and digital transformation advisory</li>
+    </ul>
+    <p>We reserve the right to modify, suspend, or discontinue any service at any time with reasonable notice.</p>
 
-        <h2>4. Acceptable Use</h2>
-        <p>You agree not to use our services for any illegal or unauthorized purpose. This includes, but is not limited to:</p>
-        <ul>
-          <li>Violating any applicable laws or regulations.</li>
-          <li>Infringing on the intellectual property rights of others.</li>
-          <li>Attempting to gain unauthorized access to our systems or networks.</li>
-          <li>Distributing malicious software or harmful content.</li>
-        </ul>
+    <h2>3. User Accounts</h2>
+    <p>Some of our services may require you to create a user account. You are responsible for:</p>
+    <ul>
+      <li>Providing accurate and complete registration information</li>
+      <li>Maintaining the confidentiality of your account credentials</li>
+      <li>All activities that occur under your account</li>
+      <li>Notifying us immediately of any unauthorized use of your account</li>
+    </ul>
+    <p>We reserve the right to suspend or terminate accounts that violate these terms.</p>
 
-        <h2>5. Payment Terms</h2>
-        <p>Payment schedules and terms are specified in individual project agreements or service contracts. General terms include:</p>
-        <ul>
-          <li>Invoicing according to agreed-upon milestones or billing cycles.</li>
-          <li>Refund policies as outlined in specific project agreements.</li>
-          <li>Late payments may be subject to additional fees as permitted by applicable law.</li>
-        </ul>
+    <h2>4. Acceptable Use</h2>
+    <p>You agree not to use our services to:</p>
+    <ul>
+      <li>Violate any applicable laws or regulations</li>
+      <li>Infringe upon the intellectual property rights of others</li>
+      <li>Distribute malware, spam, or malicious content</li>
+      <li>Attempt to gain unauthorized access to our systems or other users' accounts</li>
+      <li>Interfere with or disrupt the integrity or performance of our services</li>
+      <li>Use our services for any purpose that is unlawful or prohibited by these terms</li>
+    </ul>
 
-        <h2>6. Service Availability</h2>
-        <p>We strive to maintain 99.9% uptime for our SaaS products and hosted services. However, we do not guarantee uninterrupted service and reserve the right to perform scheduled maintenance with reasonable prior notice. We are not liable for temporary interruptions due to factors beyond our control.</p>
+    <h2>5. Payment Terms</h2>
+    <p>For paid services and subscriptions:</p>
+    <ul>
+      <li>Prices are listed in the applicable currency and may be changed with 30 days' notice</li>
+      <li>Payments are due according to the agreed schedule, whether one-time, monthly, or annual</li>
+      <li>Late payments may result in service suspension after a grace period</li>
+      <li>Refunds are handled on a case-by-case basis as outlined in the specific service agreement</li>
+      <li>All fees are non-refundable unless otherwise stated in your service contract</li>
+    </ul>
 
-        <h2>7. Intellectual Property</h2>
-        <p>Ownership of custom code, designs, and other deliverables is specified in individual project agreements. Unless otherwise agreed:</p>
-        <ul>
-          <li>Custom code developed specifically for a client is transferred upon full payment.</li>
-          <li>Pre-existing frameworks, libraries, and tools remain the property of Joyo Digitama Solusi.</li>
-          <li>Client retains ownership of all content and data they provide.</li>
-        </ul>
+    <h2>6. Service Availability</h2>
+    <p>We strive to provide continuous and reliable service but do not guarantee uninterrupted access. We may experience downtime due to:</p>
+    <ul>
+      <li>Scheduled maintenance (we will provide advance notice when possible)</li>
+      <li>Unforeseen technical issues or infrastructure failures</li>
+      <li>Force majeure events beyond our control</li>
+      <li>Third-party service provider outages</li>
+    </ul>
 
-        <h2>8. Data Protection</h2>
-        <p>Our handling of personal data and user information is subject to our <a href="/privacy.html">Privacy Policy</a>. By using our services, you consent to the collection and use of information as described in that policy.</p>
+    <h2>7. Intellectual Property</h2>
+    <p>All content, software, designs, and materials associated with our services are the intellectual property of Joyo Digitama Solusi or its licensors. This includes:</p>
+    <ul>
+      <li>Source code, designs, and documentation for our products</li>
+      <li>Website content, logos, and branding materials</li>
+      <li>Proprietary algorithms and technical implementations</li>
+    </ul>
+    <p>Custom software developed specifically for a client is governed by the terms of the individual service agreement, which will specify ownership and licensing rights.</p>
 
-        <h2>9. Limitation of Liability</h2>
-        <p>To the maximum extent permitted by applicable law, Joyo Digitama Solusi shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our services. Our total liability shall not exceed the amount paid by you for the specific service giving rise to the claim.</p>
+    <h2>8. Data Protection</h2>
+    <p>We are committed to protecting your data in accordance with our <a href="/privacy.html">Privacy Policy</a>. Key commitments include:</p>
+    <ul>
+      <li>Compliance with Indonesian data protection laws (UU PDP)</li>
+      <li>Industry-standard encryption for data in transit and at rest</li>
+      <li>Regular security assessments and vulnerability testing</li>
+      <li>Transparent data handling practices</li>
+    </ul>
 
-        <h2>10. Governing Law</h2>
-        <p>These Terms of Service are governed by and construed in accordance with the laws of the Republic of Indonesia. Any disputes arising from these terms shall be resolved in the courts of Malang, East Java, Indonesia.</p>
+    <h2>9. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by law:</p>
+    <ul>
+      <li>Joyo Digitama Solusi shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our services</li>
+      <li>Our total liability for any claim shall not exceed the amount you paid for the specific service giving rise to the claim in the 12 months preceding the event</li>
+      <li>We are not liable for any loss of data, revenue, or business opportunities resulting from service interruptions</li>
+    </ul>
 
-        <h2>11. Contact</h2>
-        <p>If you have any questions about these Terms of Service, please contact us:</p>
-        <ul>
-          <li>Email: <a href="mailto:dzulfikar.at@joyodigitama.com">dzulfikar.at@joyodigitama.com</a></li>
-        </ul>
-      </article>
-    </div>
-  </section>
+    <h2>10. Governing Law</h2>
+    <p>These Terms of Service are governed by and construed in accordance with the laws of the Republic of Indonesia. Any disputes arising from these terms shall be resolved through good-faith negotiation first, and if unresolved, submitted to the competent courts in Malang, East Java, Indonesia.</p>
+
+    <h2>11. Contact Us</h2>
+    <p>If you have any questions about these Terms of Service, please contact us:</p>
+    <ul>
+      <li>Email: <a href="mailto:dzulfikar.at@joyodigitama.com">dzulfikar.at@joyodigitama.com</a></li>
+      <li>Location: Malang, Indonesia</li>
+    </ul>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">
@@ -425,13 +418,11 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-            <img src="/images/logo-joyodigitama-logo.png" alt="Joyo Digitama Solusi" width="32" height="32" style="border-radius:6px;">
-            <strong>Joyo Digitama Solusi</strong>
+            <img src="/images/logo-joyodigitama-logo.png" alt="Joyo Digitama" width="28" height="28" style="border-radius:4px;">
+            <strong style="font-family:var(--font-display);">Joyo Digitama Solusi</strong>
           </div>
           <p>Industrial digitalization and IoT solutions based in Malang, Indonesia.</p>
-          <p style="margin-top:12px;">
-            <a href="mailto:dzulfikar.at@joyodigitama.com" style="color:var(--accent);">dzulfikar.at@joyodigitama.com</a>
-          </p>
+          <p style="margin-top:12px;"><a href="mailto:dzulfikar.at@joyodigitama.com" style="color:var(--phosphor);">dzulfikar.at@joyodigitama.com</a></p>
         </div>
         <div class="footer-col">
           <h4>Services</h4>
@@ -467,21 +458,14 @@
   </footer>
 
   <script>
-    // Intersection Observer for scroll reveal
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // Close mobile menu on link click
     document.querySelectorAll('.mobile-menu a').forEach(a => {
-      a.addEventListener('click', () => {
-        document.querySelector('.mobile-menu').classList.remove('active');
-      });
+      a.addEventListener('click', () => document.querySelector('.mobile-menu').classList.remove('active'));
     });
   </script>
 </body>
