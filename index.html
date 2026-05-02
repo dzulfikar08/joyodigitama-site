@@ -395,6 +395,11 @@
     /* === Cards === */
     .cards-grid {
       display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .products-grid {
+      display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 2px;
     }
@@ -585,6 +590,7 @@
     /* === Responsive === */
     @media (max-width: 1024px) {
       .cards-grid { grid-template-columns: repeat(2, 1fr); }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 768px) {
       .nav-links, .nav-actions { display: none; }
@@ -593,7 +599,7 @@
       .hero .subtitle { font-size: 0.875rem; }
       .hero-stats { grid-template-columns: repeat(3, 1fr); }
       .hero-stats .stat-value { font-size: 2rem; }
-      .cards-grid { grid-template-columns: 1fr; }
+      .cards-grid, .products-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
       .cta-section { padding: 48px 24px; }
       .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
@@ -741,7 +747,7 @@
         <h2>Our Products</h2>
         <p>Purpose-built SaaS solutions designed for specific industry challenges</p>
       </div>
-      <div class="cards-grid">
+      <div class="products-grid">
         <a href="/products.html" class="product-card green" style="text-decoration:none;color:inherit;">
           <img src="/images/andonfast.png" alt="AndonFAST" class="product-logo" width="44" height="44">
           <h3>AndonFAST</h3>
