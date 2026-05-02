@@ -1,0 +1,13 @@
+{
+  "name": "joyodigitama-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static HTML site for joyodigitama.com",
+  "scripts": {
+    "dev": "npx wrangler pages dev .",
+    "deploy": "npx wrangler pages deploy . --project-name=joyodigitama-site"
+  },
+  "devDependencies": {
+    "wrangler": "^4.87.0"
+  }
+}
