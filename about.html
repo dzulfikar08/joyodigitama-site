@@ -28,6 +28,7 @@
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/svg+xml" href="/images/logo-joyodigitama.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#00ff88">
@@ -35,7 +36,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900&family=Libre+Franklin:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"Joyo Digitama Solusi","url":"https://joyodigitama.com","logo":"https://joyodigitama.com/images/logo-joyodigitama-logo.png","description":"Industrial digitalization and IoT solutions company based in Malang, Indonesia.","address":{"@type":"PostalAddress","addressLocality":"Malang","addressCountry":"ID"},"email":"dzulfikar.at@joyodigitama.com","telephone":"+6289680839591","foundingDate":"2025"}
+  {"@context":"https://schema.org","@type":"Organization","name":"Joyo Digitama Solusi","url":"https://joyodigitama.com","logo":"https://joyodigitama.com/images/logo-joyodigitama.svg","description":"Industrial digitalization and IoT solutions company based in Malang, Indonesia.","address":{"@type":"PostalAddress","addressLocality":"Malang","addressCountry":"ID"},"email":"dzulfikar.at@joyodigitama.com","telephone":"+6289680839591","foundingDate":"2025"}
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://joyodigitama.com/"},{"@type":"ListItem","position":2,"name":"About","item":"https://joyodigitama.com/about.html"}]}
@@ -463,6 +464,113 @@
       line-height: 1.7;
     }
 
+    /* === Logo Meaning === */
+    .logo-meaning-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .logo-display {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 32px;
+    }
+    .logo-display img { max-width: 320px; height: auto; }
+    .logo-card {
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 24px;
+      transition: all 0.35s;
+      position: relative;
+      overflow: hidden;
+    }
+    .logo-card:hover { border-color: var(--border-hover); background: var(--bg-surface); }
+    .logo-card .card-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .logo-card .card-num {
+      width: 40px;
+      height: 40px;
+      background: var(--phosphor);
+      color: var(--bg);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.125rem;
+      flex-shrink: 0;
+    }
+    .logo-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.1875rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .logo-card p {
+      color: var(--text-dim);
+      font-size: 0.9375rem;
+      line-height: 1.65;
+    }
+    .logo-card p strong { color: var(--phosphor); font-weight: 600; }
+    .logo-card p em { font-style: italic; color: var(--text-dim); }
+    .color-card {
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 24px;
+    }
+    .color-card .color-swatch {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .color-card .color-swatch .swatch {
+      width: 32px;
+      height: 32px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+    .color-card .color-swatch h3 {
+      font-family: var(--font-display);
+      font-size: 1.1875rem;
+      font-weight: 700;
+    }
+    .color-card p {
+      color: var(--text-dim);
+      font-size: 0.9375rem;
+      line-height: 1.65;
+    }
+    .interpretation-card {
+      background: linear-gradient(135deg, var(--phosphor-15), var(--phosphor-30));
+      border: 1px solid var(--phosphor-30);
+      border-radius: 2px;
+      padding: 32px;
+      margin-top: 32px;
+    }
+    .interpretation-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.1875rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .interpretation-card p {
+      color: var(--text-dim);
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      font-style: italic;
+    }
+    @media (max-width: 768px) {
+      .logo-meaning-grid { grid-template-columns: 1fr; }
+      .logo-display img { max-width: 240px; }
+    }
+
     /* === Timeline === */
     .timeline {
       position: relative;
@@ -689,7 +797,7 @@
   <nav class="nav">
     <div class="nav-inner">
       <a href="/" class="nav-logo">
-        <img src="/images/logo-joyodigitama-logo.png" alt="Joyo Digitama Solusi" width="32" height="32">
+        <img src="/images/logo-joyodigitama.svg" alt="Joyo Digitama Solusi" width="32" height="32">
         <span>Joyo Digitama</span>
       </a>
       <ul class="nav-links">
@@ -797,6 +905,73 @@
     </div>
   </section>
 
+  <!-- Logo Meaning -->
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// symbolism</span>
+        <h2>Our Logo</h2>
+        <p>The Joyo Digitama logo combines J and D (Joyo + Digitama) into a single mark, representing the fusion of business identity and digital transformation.</p>
+      </div>
+      <div class="reveal">
+        <div class="logo-meaning-grid">
+          <div class="logo-display">
+            <img src="/images/logo-joyodigitama.svg" alt="Joyo Digitama Logo">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:24px;">
+            <div class="logo-card">
+              <div class="card-head">
+                <div class="card-num">1</div>
+                <div>
+                  <h3>The &ldquo;J&rdquo; Core</h3>
+                  <p>Represents <strong>Joyo</strong> as the company&rsquo;s identity. Positioned at the center, symbolizing that technology should serve business goals&mdash;not the other way around. The solid vertical structure conveys <strong>stability</strong> and <strong>reliability</strong>.</p>
+                </div>
+              </div>
+            </div>
+            <div class="logo-card">
+              <div class="card-head">
+                <div class="card-num">2</div>
+                <div>
+                  <h3>The &ldquo;D&rdquo; Outer Curve</h3>
+                  <p>Represents <strong>Digitama</strong> / Digital Transformation. The expanding arc symbolizes growth, scalability, business transformation, and continuous improvement. It creates a feeling of <strong>movement forward</strong> rather than a static emblem.</p>
+                </div>
+              </div>
+            </div>
+            <div class="logo-card">
+              <div class="card-head">
+                <div class="card-num">3</div>
+                <div>
+                  <h3>Pixel Blocks</h3>
+                  <p>The small squares at the upper-left represent data points, IoT devices, digital signals, and system integration. The transition from <strong>pixels into a smooth curve</strong> communicates: <em>&ldquo;Turning raw data into business value.&rdquo;</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px;" class="reveal">
+        <div class="color-card">
+          <div class="color-swatch">
+            <div class="swatch" style="background:#00ff88;"></div>
+            <h3>Bright Green</h3>
+          </div>
+          <p>Represents innovation, technology, growth, efficiency, and sustainability. Maintains continuity with existing brand recognition while signaling a modern, forward-thinking approach.</p>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch">
+            <div class="swatch" style="background:#0f1e23;border-color:rgba(0,255,136,0.15);"></div>
+            <h3>Dark Background</h3>
+          </div>
+          <p>Represents enterprise software, industrial environments, professionalism, and high-tech positioning. This combination is common among modern SaaS and industrial software because it feels premium without being overly corporate.</p>
+        </div>
+      </div>
+      <div class="reveal interpretation-card">
+        <h3>Strategic Brand Interpretation</h3>
+        <p>&ldquo;We transform operational data into digital intelligence. The pixels represent raw industrial data, the flowing curves represent digital transformation, and the integrated J-D mark symbolizes the connection between business operations and technology.&rdquo;</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Timeline -->
   <section>
     <div class="container">
@@ -813,8 +988,18 @@
         </div>
         <div class="timeline-item">
           <div class="timeline-year">2025</div>
-          <div class="timeline-title">Product Launch</div>
-          <div class="timeline-desc">Launched Cowculator for dairy farm management</div>
+          <div class="timeline-title">Cowculator Launch</div>
+          <div class="timeline-desc">Dairy farm management and feed composition optimization</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2026</div>
+          <div class="timeline-title">Revklik Launch</div>
+          <div class="timeline-desc">Digital marketing platform for modern businesses</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2026</div>
+          <div class="timeline-title">E-Pondok Launch</div>
+          <div class="timeline-desc">Islamic boarding school management system</div>
         </div>
         <div class="timeline-item">
           <div class="timeline-year">2026</div>
@@ -823,7 +1008,7 @@
         </div>
         <div class="timeline-item">
           <div class="timeline-year">2026</div>
-          <div class="timeline-title">Voltrus Lite Launch</div>
+          <div class="timeline-title">Voltrus Launch</div>
           <div class="timeline-desc">Lightweight SCADA & industrial monitoring platform for system integrators</div>
         </div>
         <div class="timeline-item">
@@ -898,7 +1083,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-            <img src="/images/logo-joyodigitama-logo.png" alt="Joyo Digitama" width="28" height="28" style="border-radius:4px;">
+            <img src="/images/logo-joyodigitama.svg" alt="Joyo Digitama" width="28" height="28" style="border-radius:4px;">
             <strong style="font-family:var(--font-display);">Joyo Digitama Solusi</strong>
           </div>
           <p>Industrial digitalization and IoT solutions based in Malang, Indonesia.</p>
@@ -918,7 +1103,9 @@
           <ul>
             <li><a href="https://andonfast.com" target="_blank" rel="noopener">AndonFAST</a></li>
             <li><a href="https://cowculator.id" target="_blank" rel="noopener">Cowculator</a></li>
-            <li><a href="https://voltrus.id" target="_blank" rel="noopener">Voltrus Lite</a></li>
+            <li><a href="https://voltrus.id" target="_blank" rel="noopener">Voltrus</a></li>
+            <li><a href="https://revklik.com" target="_blank" rel="noopener">RevKlik</a></li>
+            <li><a href="https://e-pondok.my.id" target="_blank" rel="noopener">E-Pondok</a></li>
             <li><a href="https://getwaqtu.com" target="_blank" rel="noopener">Waqtu</a></li>
           </ul>
         </div>
