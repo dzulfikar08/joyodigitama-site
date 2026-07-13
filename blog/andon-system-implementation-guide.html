@@ -3,16 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms of Service - Joyo Digitama Solusi</title>
-  <meta name="description" content="Terms of Service for Joyo Digitama Solusi. Read our terms and conditions governing the use of our services.">
+  <title>How to Implement an Andon System in Your Manufacturing Plant - Joyo Digitama Solusi</title>
+  <meta name="description" content="A practical step-by-step guide to implementing an Andon system in your manufacturing plant. Learn what Andon is, why it matters, and how to deploy it for real-time production visibility.">
+  <meta name="keywords" content="andon system, manufacturing, lean manufacturing, IoT, factory digitalization, AndonFAST, production monitoring, Andon implementation guide">
+  <meta name="author" content="Joyo Digitama Solusi">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://joyodigitama.com/terms.html">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://joyodigitama.com/terms.html">
-  <meta property="og:title" content="Terms of Service - Joyo Digitama Solusi">
-  <meta property="og:description" content="Terms of Service for Joyo Digitama Solusi. Read our terms and conditions governing the use of our services.">
+  <meta name="geo.region" content="ID-JI">
+  <meta name="geo.placename" content="Malang">
+  <link rel="canonical" href="https://joyodigitama.com/blog/andon-system-implementation-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://joyodigitama.com/blog/andon-system-implementation-guide.html">
+  <meta property="og:title" content="How to Implement an Andon System in Your Manufacturing Plant">
+  <meta property="og:description" content="A practical step-by-step guide to implementing an Andon system in your manufacturing plant. Learn what Andon is, why it matters, and how to deploy it.">
   <meta property="og:image" content="https://joyodigitama.com/images/logo-joyodigitama-logo.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
   <meta property="og:site_name" content="Joyo Digitama Solusi">
+  <meta property="article:published_time" content="2026-06-15T00:00:00+07:00">
+  <meta property="article:author" content="Dzulfikar Ats Tsauri">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Implement an Andon System in Your Manufacturing Plant">
+  <meta name="twitter:description" content="A practical step-by-step guide to implementing an Andon system in your manufacturing plant. Learn what Andon is, why it matters, and how to deploy it.">
+  <meta name="twitter:image" content="https://joyodigitama.com/images/logo-joyodigitama-logo.png">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -23,6 +35,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900&family=Libre+Franklin:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BlogPosting","headline":"How to Implement an Andon System in Your Manufacturing Plant","description":"A practical step-by-step guide to implementing an Andon system in your manufacturing plant. Learn what Andon is, why it matters, and how to deploy it for real-time production visibility.","author":{"@type":"Person","name":"Dzulfikar Ats Tsauri"},"datePublished":"2026-06-15T00:00:00+07:00","publisher":{"@type":"Organization","name":"Joyo Digitama Solusi","logo":{"@type":"ImageObject","url":"https://joyodigitama.com/images/logo-joyodigitama-logo.png"}}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://joyodigitama.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://joyodigitama.com/blog.html"},{"@type":"ListItem","position":3,"name":"How to Implement an Andon System in Your Manufacturing Plant","item":"https://joyodigitama.com/blog/andon-system-implementation-guide.html"}]}
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -66,7 +84,6 @@
     img { max-width: 100%; height: auto; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-    /* === Noise Texture Overlay === */
     body::after {
       content: '';
       position: fixed;
@@ -77,8 +94,6 @@
       pointer-events: none;
       z-index: 9999;
     }
-
-    /* === Animated Grid Background === */
     body::before {
       content: '';
       position: fixed;
@@ -91,7 +106,6 @@
       z-index: 0;
     }
 
-    /* === Scanline Effect === */
     .scanlines {
       position: fixed;
       inset: 0;
@@ -100,7 +114,6 @@
       z-index: 9998;
     }
 
-    /* === Navigation === */
     .nav {
       position: fixed;
       top: 0;
@@ -143,6 +156,7 @@
       letter-spacing: 0.05em;
     }
     .nav-links a:hover { color: var(--phosphor); background: var(--phosphor-15); }
+    .nav-links a.active { color: var(--phosphor); background: var(--phosphor-15); }
     .nav-actions { display: flex; gap: 10px; align-items: center; }
     .btn {
       display: inline-flex;
@@ -173,6 +187,7 @@
       border: 1px solid var(--border-hover);
     }
     .btn-outline:hover { background: var(--phosphor-15); border-color: var(--phosphor); color: var(--phosphor); }
+    .btn-lg { padding: 14px 32px; font-size: 0.9375rem; }
     .mobile-toggle {
       display: none;
       background: none;
@@ -208,17 +223,37 @@
     }
     .mobile-menu .btn { width: 100%; justify-content: center; margin-top: 16px; }
 
-    /* === Legal Content === */
-    .legal-content { max-width: 800px; margin: 0 auto; padding: 140px 24px 80px; position: relative; z-index: 1; }
-    .legal-content h1 { font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; margin-bottom: 8px; }
-    .legal-content .updated { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-bottom: 48px; text-transform: uppercase; letter-spacing: 0.05em; }
-    .legal-content h2 { font-family: var(--font-display); font-size: 1.375rem; font-weight: 700; margin-top: 40px; margin-bottom: 16px; }
-    .legal-content p { color: var(--text-dim); line-height: 1.7; margin-bottom: 16px; }
-    .legal-content ul { color: var(--text-dim); padding-left: 24px; margin-bottom: 16px; line-height: 1.7; }
-    .legal-content li { margin-bottom: 8px; }
-    .legal-content a { color: var(--phosphor); }
+    .article { max-width: 800px; margin: 0 auto; padding: 140px 24px 80px; position: relative; z-index: 1; }
+    .article-header { margin-bottom: 48px; }
+    .article-header .back-link { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; transition: color 0.2s; }
+    .article-header .back-link:hover { color: var(--phosphor); }
+    .article-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+    .article-category { font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 500; color: var(--phosphor); background: var(--phosphor-15); padding: 3px 10px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .article-date { font-family: var(--font-mono); font-size: 0.6875rem; color: var(--text-muted); }
+    .article-read-time { font-family: var(--font-mono); font-size: 0.6875rem; color: var(--text-muted); }
+    .article-header h1 { font-family: var(--font-display); font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.02em; }
+    .article-author { font-family: var(--font-mono); font-size: 0.8125rem; color: var(--text-dim); }
+    .article-content { font-size: 1.0625rem; line-height: 1.85; color: var(--text-dim); }
+    .article-content h2 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--text); margin-top: 48px; margin-bottom: 16px; letter-spacing: -0.01em; }
+    .article-content h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--text); margin-top: 36px; margin-bottom: 12px; }
+    .article-content p { margin-bottom: 20px; }
+    .article-content strong { color: var(--phosphor); font-weight: 600; }
+    .article-content ul, .article-content ol { margin-bottom: 20px; padding-left: 24px; }
+    .article-content li { margin-bottom: 8px; }
+    .article-content a { color: var(--phosphor); text-decoration: underline; }
 
-    /* === Footer === */
+    .related-section { border-top: 1px solid var(--border); margin-top: 64px; padding-top: 48px; }
+    .related-section h2 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 24px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .related-card { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 2px; padding: 24px; transition: all 0.35s; }
+    .related-card:hover { border-color: var(--border-hover); background: var(--bg-surface); }
+    .related-card .related-category { font-family: var(--font-mono); font-size: 0.625rem; font-weight: 500; color: var(--phosphor); background: var(--phosphor-15); padding: 2px 8px; border-radius: 2px; display: inline-block; margin-bottom: 8px; }
+    .related-card h3 { font-family: var(--font-display); font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .related-card .related-link { font-family: var(--font-mono); font-size: 0.75rem; color: var(--phosphor); display: flex; align-items: center; gap: 6px; transition: gap 0.2s; }
+    .related-card:hover .related-link { gap: 12px; }
+    @media (max-width: 768px) { .related-grid { grid-template-columns: 1fr; } }
+
+    /* Footer */
     .footer {
       border-top: 1px solid var(--border);
       padding: 72px 0 32px;
@@ -258,22 +293,11 @@
     }
     .footer-bottom p { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); }
 
-    /* === Scroll Reveal === */
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    /* === Responsive === */
     @media (max-width: 768px) {
       .nav-links, .nav-actions { display: none; }
       .mobile-toggle { display: block; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
       .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
-      .legal-content h1 { font-size: 2rem; }
-      .legal-content { padding: 120px 20px 60px; }
     }
     @media (max-width: 480px) {
       .footer-grid { grid-template-columns: 1fr; }
@@ -283,7 +307,6 @@
 <body>
   <div class="scanlines"></div>
 
-  <!-- Navigation -->
   <nav class="nav">
     <div class="nav-inner">
       <a href="/" class="nav-logo">
@@ -295,7 +318,7 @@
         <li><a href="/services.html">Services</a></li>
         <li><a href="/products.html">Products</a></li>
         <li><a href="/solutions.html">Solutions</a></li>
-        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/blog.html" class="active">Blog</a></li>
         <li><a href="/about.html">About</a></li>
       </ul>
       <div class="nav-actions">
@@ -318,104 +341,80 @@
     <a href="https://wa.me/6289680839591" class="btn btn-primary" target="_blank" rel="noopener">Get Started</a>
   </div>
 
-  <!-- Legal Content -->
-  <div class="legal-content reveal">
-    <h1>Terms of Service</h1>
-    <p class="updated">Last updated: January 1, 2025</p>
+  <article class="article">
+    <div class="article-header">
+      <a href="/blog.html" class="back-link">&larr; Back to Blog</a>
+      <div class="article-meta">
+        <span class="article-category">Manufacturing</span>
+        <span class="article-date">June 15, 2026</span>
+        <span class="article-read-time">6 min read</span>
+      </div>
+      <h1>How to Implement an Andon System in Your Manufacturing Plant</h1>
+      <div class="article-author">By Dzulfikar Ats Tsauri</div>
+    </div>
 
-    <p>Please read these Terms of Service carefully before using the services provided by Joyo Digitama Solusi. By accessing or using our services, you agree to be bound by these terms.</p>
+    <div class="article-content">
+      <p>An Andon system is one of the most powerful tools in lean manufacturing. Originating from Toyota's production system, "Andon" (Japanese for "lamp" or "signal") enables real-time visibility into production status, allowing teams to respond to issues the moment they arise.</p>
 
-    <h2>1. Acceptance of Terms</h2>
-    <p>By accessing our website, using our software products, or engaging our consulting services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service, along with our <a href="/privacy.html">Privacy Policy</a> and <a href="/cookies.html">Cookie Policy</a>. If you do not agree to these terms, you must not use our services.</p>
+      <h2>What Is an Andon System?</h2>
+      <p>An Andon system provides visual and audible signals that indicate the current status of a production line. When a machine stops, a quality issue emerges, or a worker needs assistance, the system triggers an alert — a light, a dashboard update, or a notification — so supervisors can respond immediately.</p>
+      <p>Modern Andon systems go far beyond simple signal lights. With IoT sensors and cloud connectivity, today's solutions offer real-time dashboards, automatic downtime logging, root cause analysis, and integration with ERP and MES platforms.</p>
 
-    <h2>2. Services</h2>
-    <p>Joyo Digitama Solusi provides the following services:</p>
-    <ul>
-      <li><strong>Custom Software Development:</strong> Tailored software solutions including web applications, desktop software, APIs, and system integrations</li>
-      <li><strong>SaaS Products:</strong> Subscription-based software products including AndonFAST, Cowculator, Voltrus, Waqtu, and other platforms</li>
-      <li><strong>IoT Solutions:</strong> Industrial IoT integration, sensor deployment, real-time monitoring, and SCADA systems</li>
-      <li><strong>Consulting Services:</strong> Technical consulting, system architecture design, and digital transformation advisory</li>
-    </ul>
-    <p>We reserve the right to modify, suspend, or discontinue any service at any time with reasonable notice.</p>
+      <h2>Why Your Factory Needs an Andon System</h2>
+      <p>Manufacturers without an Andon system face three common problems:</p>
+      <ol>
+        <li><strong>Blind Spots</strong> — Management can't see what's happening on the floor in real time.</li>
+        <li><strong>Slow Response</strong> — Issues go unreported for minutes or hours, compounding downtime.</li>
+        <li><strong>No Data</strong> — Without automatic logging, there's no way to analyze patterns and prevent recurrence.</li>
+      </ol>
+      <p>A proper Andon system gives you real-time production line status, automatic downtime detection, instant alerts via multiple channels, and historical data for root cause analysis and continuous improvement.</p>
 
-    <h2>3. User Accounts</h2>
-    <p>Some of our services may require you to create a user account. You are responsible for:</p>
-    <ul>
-      <li>Providing accurate and complete registration information</li>
-      <li>Maintaining the confidentiality of your account credentials</li>
-      <li>All activities that occur under your account</li>
-      <li>Notifying us immediately of any unauthorized use of your account</li>
-    </ul>
-    <p>We reserve the right to suspend or terminate accounts that violate these terms.</p>
+      <h2>Step-by-Step Implementation Guide</h2>
 
-    <h2>4. Acceptable Use</h2>
-    <p>You agree not to use our services to:</p>
-    <ul>
-      <li>Violate any applicable laws or regulations</li>
-      <li>Infringe upon the intellectual property rights of others</li>
-      <li>Distribute malware, spam, or malicious content</li>
-      <li>Attempt to gain unauthorized access to our systems or other users' accounts</li>
-      <li>Interfere with or disrupt the integrity or performance of our services</li>
-      <li>Use our services for any purpose that is unlawful or prohibited by these terms</li>
-    </ul>
+      <h3>Step 1: Assess Your Current State</h3>
+      <p>Before buying any technology, map your existing production flow. Identify how many lines need monitoring, what types of stops occur, current response time to issues, and existing systems that need integration.</p>
 
-    <h2>5. Payment Terms</h2>
-    <p>For paid services and subscriptions:</p>
-    <ul>
-      <li>Prices are listed in the applicable currency and may be changed with 30 days' notice</li>
-      <li>Payments are due according to the agreed schedule, whether one-time, monthly, or annual</li>
-      <li>Late payments may result in service suspension after a grace period</li>
-      <li>Refunds are handled on a case-by-case basis as outlined in the specific service agreement</li>
-      <li>All fees are non-refundable unless otherwise stated in your service contract</li>
-    </ul>
+      <h3>Step 2: Define Your Alert Categories</h3>
+      <p>Create standardized alert types: Machine Stop (equipment failure), Quality Issue (defect detected), Material Call (operator needs supplies), Maintenance Call (preventive or corrective), and Safety Issue (emergency).</p>
 
-    <h2>6. Service Availability</h2>
-    <p>We strive to provide continuous and reliable service but do not guarantee uninterrupted access. We may experience downtime due to:</p>
-    <ul>
-      <li>Scheduled maintenance (we will provide advance notice when possible)</li>
-      <li>Unforeseen technical issues or infrastructure failures</li>
-      <li>Force majeure events beyond our control</li>
-      <li>Third-party service provider outages</li>
-    </ul>
+      <h3>Step 3: Choose Your Technology Stack</h3>
+      <p>For most small to medium manufacturers, a software-first approach running on existing tablets or monitors is the most cost-effective and flexible option. Hardware-based button boxes work for simpler needs, while hybrid approaches combine physical triggers with software dashboards.</p>
 
-    <h2>7. Intellectual Property</h2>
-    <p>All content, software, designs, and materials associated with our services are the intellectual property of Joyo Digitama Solusi or its licensors. This includes:</p>
-    <ul>
-      <li>Source code, designs, and documentation for our products</li>
-      <li>Website content, logos, and branding materials</li>
-      <li>Proprietary algorithms and technical implementations</li>
-    </ul>
-    <p>Custom software developed specifically for a client is governed by the terms of the individual service agreement, which will specify ownership and licensing rights.</p>
+      <h3>Step 4: Deploy in Phases</h3>
+      <p>Start with your highest-impact line. Install displays and sensors on one pilot line in weeks 1-2, train operators in weeks 3-4, review data and adjust in weeks 5-6, then roll out to remaining lines over months 2-3.</p>
 
-    <h2>8. Data Protection</h2>
-    <p>We are committed to protecting your data in accordance with our <a href="/privacy.html">Privacy Policy</a>. Key commitments include:</p>
-    <ul>
-      <li>Compliance with Indonesian data protection laws (UU PDP)</li>
-      <li>Industry-standard encryption for data in transit and at rest</li>
-      <li>Regular security assessments and vulnerability testing</li>
-      <li>Transparent data handling practices</li>
-    </ul>
+      <h3>Step 5: Build a Response Culture</h3>
+      <p>Technology is only half the solution. Set clear response time targets for each alert type, designate escalation paths, hold daily review meetings using Andon data, and celebrate improvements in downtime and response time.</p>
 
-    <h2>9. Limitation of Liability</h2>
-    <p>To the maximum extent permitted by law:</p>
-    <ul>
-      <li>Joyo Digitama Solusi shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our services</li>
-      <li>Our total liability for any claim shall not exceed the amount you paid for the specific service giving rise to the claim in the 12 months preceding the event</li>
-      <li>We are not liable for any loss of data, revenue, or business opportunities resulting from service interruptions</li>
-    </ul>
+      <h2>Real Results</h2>
+      <p>One automotive parts manufacturer using a modern Andon system increased their OEE by 23% within six months of deployment. The key wasn't just the technology — it was the combination of real-time visibility, faster response times, and data-driven continuous improvement.</p>
 
-    <h2>10. Governing Law</h2>
-    <p>These Terms of Service are governed by and construed in accordance with the laws of the Republic of Indonesia. Any disputes arising from these terms shall be resolved through good-faith negotiation first, and if unresolved, submitted to the competent courts in Malang, East Java, Indonesia.</p>
+      <h2>Getting Started</h2>
+      <p>Implementing an Andon system doesn't have to be complex or expensive. Start small with a pilot line, prove the value, then scale. The most important step is the first one: commit to making your production visible.</p>
+    </div>
 
-    <h2>11. Contact Us</h2>
-    <p>If you have any questions about these Terms of Service, please contact us:</p>
-    <ul>
-      <li>Email: <a href="mailto:dzulfikar.at@joyodigitama.com">dzulfikar.at@joyodigitama.com</a></li>
-      <li>Location: Malang, Indonesia</li>
-    </ul>
-  </div>
+    <section class="related-section">
+      <h2>Related Posts</h2>
+      <div class="related-grid">
+        <a href="/blog/reducing-manufacturing-downtime-iot.html" class="related-card">
+          <span class="related-category">IoT</span>
+          <h3>Reducing Manufacturing Downtime with IoT: A Practical Approach</h3>
+          <span class="related-link">Read &rarr;</span>
+        </a>
+        <a href="/blog/digital-transformation-small-manufacturers.html" class="related-card">
+          <span class="related-category">Digitalization</span>
+          <h3>Digital Transformation for Small Manufacturers</h3>
+          <span class="related-link">Read &rarr;</span>
+        </a>
+        <a href="/blog/optimizing-dairy-farm-operations.html" class="related-card">
+          <span class="related-category">Agriculture</span>
+          <h3>Optimizing Dairy Farm Operations with Technology</h3>
+          <span class="related-link">Read &rarr;</span>
+        </a>
+      </div>
+    </section>
+  </article>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
@@ -457,19 +456,13 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 Joyo Digitama Solusi. All rights reserved.</p>
+        <p>&copy; 2025-2026 Joyo Digitama Solusi. All rights reserved.</p>
         <p>Malang, Indonesia</p>
       </div>
     </div>
   </footer>
 
   <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     document.querySelectorAll('.mobile-menu a').forEach(a => {
       a.addEventListener('click', () => document.querySelector('.mobile-menu').classList.remove('active'));
     });
