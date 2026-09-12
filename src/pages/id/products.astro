@@ -1,0 +1,53 @@
+---
+import Base from "../../layouts/Base.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import { products } from "../../data/products";
+---
+
+<Base
+  lang="id"
+  title="Produk Kami — Joyo Digitama Solusi"
+  description="Jelajahi produk SaaS kami: AndonFAST untuk manufaktur, Cowculator untuk peternakan sapi perah, Voltrus untuk SCADA, RevKlik untuk analitik, E-Pondok untuk manajemen pengunjung, Waqtu untuk jadwal salat, dan masih banyak lagi."
+  path="products"
+>
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-tag" style="margin-bottom:24px;display:block;">// produk kami</span>
+      <h1>Produk <span class="phosphor">Kami</span></h1>
+    </div>
+  </section>
+
+  <!-- Semua Produk -->
+  <section style="padding-top:0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// semua produk</span>
+        <h2>Semua Produk</h2>
+        <p>Solusi SaaS berfokus pada industri yang dirancang untuk mendigitalisasi dan mengoptimalkan operasional Anda</p>
+      </div>
+      <div class="products-grid">
+        {products.map((product) => <ProductCard product={product} lang="id" />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div class="cta-section bracket-box reveal">
+        <h2>Butuh Solusi Kustom?</h2>
+        <p>
+          Kami berspesialisasi membangun produk SaaS yang dirancang untuk kebutuhan industri tertentu. Mari
+          diskusikan bagaimana kami dapat menciptakan solusi terbaik untuk bisnis Anda.
+        </p>
+        <a href="/id/contact/" class="btn btn-primary btn-lg">
+          Diskusikan Proyek Anda
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            ><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg
+          >
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

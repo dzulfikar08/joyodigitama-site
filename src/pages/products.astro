@@ -1,0 +1,52 @@
+---
+import Base from "../layouts/Base.astro";
+import ProductCard from "../components/ProductCard.astro";
+import { products } from "../data/products";
+---
+
+<Base
+  title="Our Products — Joyo Digitama Solusi"
+  description="Explore our SaaS products: AndonFAST for manufacturing, Cowculator for dairy farms, Voltrus for SCADA, RevKlik for analytics, E-Pondok for visitor management, Waqtu for prayer times, and more."
+  path="products"
+>
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-tag" style="margin-bottom:24px;display:block;">// our products</span>
+      <h1>Our <span class="phosphor">Products</span></h1>
+    </div>
+  </section>
+
+  <!-- All Products -->
+  <section style="padding-top:0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// all products</span>
+        <h2>All Products</h2>
+        <p>Industry-focused SaaS solutions designed to digitalize and optimize your operations</p>
+      </div>
+      <div class="products-grid">
+        {products.map((product) => <ProductCard product={product} lang="en" />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div class="cta-section bracket-box reveal">
+        <h2>Need a Custom Solution?</h2>
+        <p>
+          We specialize in building tailored SaaS products for specific industry requirements. Let's discuss how
+          we can create the perfect solution for your business.
+        </p>
+        <a href="/contact/" class="btn btn-primary btn-lg">
+          Discuss Your Project
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            ><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg
+          >
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

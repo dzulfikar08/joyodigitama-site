@@ -1,0 +1,64 @@
+---
+import type { Product, Accent } from "../data/products";
+import type { Lang } from "../data/site";
+
+interface Props {
+  product: Product;
+  lang: Lang;
+}
+
+const { product, lang } = Astro.props;
+
+const accentHex: Record<Accent, string> = {
+  green: "#00ff88",
+  blue: "#00d4ff",
+  purple: "#a855f7",
+  rose: "#ff3366",
+  orange: "#ff6b2b",
+  amber: "#ffb800",
+};
+
+const arrowLabel = product.url
+  ? lang === "id"
+    ? "KUNJUNGI"
+    : "VISIT"
+  : lang === "id"
+    ? "SEGERA HADIR"
+    : "COMING SOON";
+
+const Card = product.url ? "a" : "div";
+
+const cardAttrs = product.url
+  ? { href: product.url, target: "_blank", rel: "noopener" }
+  : {};
+---
+<Card {...cardAttrs} class:list={["product-card reveal", product.accent, { "coming-soon": !product.url }]}>
+  {product.logo ? (
+    <img src={product.logo} alt={product.name} class="product-logo" width="44" height="44" loading="lazy" />
+  ) : (
+    <div class="product-logo product-logo-mono" style={`background:${accentHex[product.accent]}`}>
+      {product.name[0]}
+    </div>
+  )}
+  <h3>{product.name}</h3>
+  <p>{product.desc[lang]}</p>
+  <div class="tags">
+    {product.tags[lang].map((tag) => (
+      <span class={`tag ${product.accent}`}>{tag}</span>
+    ))}
+  </div>
+  <div class="product-arrow">{arrowLabel} &rarr;</div>
+</Card>
+
+<style>
+  .product-logo-mono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 800;
+    color: #03110a;
+  }
+</style>

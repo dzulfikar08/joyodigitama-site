@@ -1,11 +1,19 @@
 {
   "name": "joyodigitama-site",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "Static HTML site for joyodigitama.com",
+  "type": "module",
+  "description": "joyodigitama.com — Astro static site with EN/ID i18n, deployed to Cloudflare Pages",
   "scripts": {
-    "dev": "npx wrangler pages dev .",
-    "deploy": "npx wrangler pages deploy . --project-name=joyodigitama-site"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "preview:cf": "astro build && wrangler pages dev dist",
+    "deploy": "astro build && wrangler pages deploy dist --project-name=joyodigitama-site"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.4.0",
+    "astro": "^5.12.0"
   },
   "devDependencies": {
     "wrangler": "^4.87.0"
