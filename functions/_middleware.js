@@ -33,7 +33,10 @@ export async function onRequest(context) {
   // Explicit language choice: persist cookie and land on the right tree.
   const lang = url.searchParams.get("lang");
   if (lang === "id" || lang === "en") {
-    const target = lang === "id" ? idPath(enPath(path)) : enPath(path);
+    const params = new URLSearchParams(url.search);
+    params.delete("lang");
+    const qs = params.toString();
+    const target = (lang === "id" ? idPath(enPath(path)) : enPath(path)) + (qs ? `?${qs}` : "");
     return new Response(null, {
       status: 302,
       headers: {
@@ -56,7 +59,7 @@ export async function onRequest(context) {
   if (wantsID) {
     return new Response(null, {
       status: 302,
-      headers: { Location: url.origin + idPath(path), "Cache-Control": "no-store" },
+      headers: { Location: url.origin + idPath(path) + url.search, "Cache-Control": "no-store" },
     });
   }
 

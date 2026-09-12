@@ -75,14 +75,14 @@ import Base from "../../layouts/Base.astro";
               <label for="cf-service">Minat Layanan</label>
               <select id="cf-service" name="service">
                 <option value="" disabled selected>Pilih layanan</option>
-                <option>Perangkat Lunak Kustom</option>
-                <option>Aplikasi Mobile</option>
-                <option>Solusi Cloud</option>
-                <option>Solusi Database</option>
-                <option>Integrasi IoT</option>
-                <option>Integrasi Sistem</option>
-                <option>CMS</option>
-                <option>Lainnya</option>
+                <option value="custom-software">Perangkat Lunak Kustom</option>
+                <option value="mobile-app">Aplikasi Mobile</option>
+                <option value="cloud-solutions">Solusi Cloud</option>
+                <option value="database-solutions">Solusi Database</option>
+                <option value="iot-integration">Integrasi IoT</option>
+                <option value="system-integration">Integrasi Sistem</option>
+                <option value="cms">CMS</option>
+                <option value="other">Lainnya</option>
               </select>
             </div>
             <div class="form-field">
@@ -112,6 +112,12 @@ import Base from "../../layouts/Base.astro";
 
 <script>
   const form = document.getElementById("contact-form") as HTMLFormElement | null;
+  const serviceSelect = document.getElementById("cf-service") as HTMLSelectElement | null;
+
+  const preselect = new URLSearchParams(location.search).get("service");
+  if (preselect && serviceSelect) {
+    serviceSelect.value = preselect;
+  }
 
   form?.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -119,7 +125,10 @@ import Base from "../../layouts/Base.astro";
     const name = String(data.get("name") || "").trim();
     const email = String(data.get("email") || "").trim();
     const company = String(data.get("company") || "").trim();
-    const service = String(data.get("service") || "").trim();
+    const service =
+      serviceSelect && serviceSelect.selectedIndex > 0
+        ? serviceSelect.options[serviceSelect.selectedIndex].text.trim()
+        : "";
     const message = String(data.get("message") || "").trim();
 
     const subject = `Permintaan Proyek: ${service || "Umum"} — ${name}`;

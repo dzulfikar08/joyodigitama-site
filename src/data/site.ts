@@ -66,16 +66,16 @@ export const ui = {
 /** Footer service links (label keys map per language). */
 export const footerServices: Record<Lang, { label: string; href: string }[]> = {
   en: [
-    { label: "Custom Development", href: "/services/" },
-    { label: "Mobile Apps", href: "/services/" },
-    { label: "Cloud Solutions", href: "/services/" },
-    { label: "IoT Integration", href: "/services/" },
+    { label: "Custom Development", href: "/contact/?service=custom-software" },
+    { label: "Mobile Apps", href: "/contact/?service=mobile-app" },
+    { label: "Cloud Solutions", href: "/contact/?service=cloud-solutions" },
+    { label: "IoT Integration", href: "/contact/?service=iot-integration" },
   ],
   id: [
-    { label: "Pengembangan Kustom", href: "/id/services/" },
-    { label: "Aplikasi Mobile", href: "/id/services/" },
-    { label: "Solusi Cloud", href: "/id/services/" },
-    { label: "Integrasi IoT", href: "/id/services/" },
+    { label: "Pengembangan Kustom", href: "/id/contact/?service=custom-software" },
+    { label: "Aplikasi Mobile", href: "/id/contact/?service=mobile-app" },
+    { label: "Solusi Cloud", href: "/id/contact/?service=cloud-solutions" },
+    { label: "Integrasi IoT", href: "/id/contact/?service=iot-integration" },
   ],
 };
 
