@@ -24,13 +24,13 @@
       --orange: #ff6b2b;
       --orange-15: rgba(255, 107, 43, 0.10);
       --text: #e0f0e8;
-      --text-dim: #6b8f7d;
-      --text-muted: #3d5a4c;
+      --text-dim: #8fb39c;
+      --text-muted: #7fa28f;
       --border: rgba(0, 255, 136, 0.08);
       --border-hover: rgba(0, 255, 136, 0.25);
-      --font-display: 'Fraunces', serif;
-      --font-body: 'Libre Franklin', sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
+      --font-display: 'Fraunces Variable', serif;
+      --font-body: 'Libre Franklin Variable', sans-serif;
+      --font-mono: 'JetBrains Mono Variable', monospace;
     }
 
     html { scroll-behavior: smooth; }
@@ -63,8 +63,6 @@
       pointer-events: none;
       z-index: 9999;
     }
-
-
     /* === Animated Grid Background === */
 
     body::before {
@@ -492,7 +490,7 @@
 
     .card-icon.rose { color: var(--rose); background: var(--rose-15); border-color: rgba(255,51,102,0.15); }
 
-    .card h3 { font-family: var(--font-display); font-size: 1.1875rem; font-weight: 700; margin-bottom: 10px; }
+    .card h3, .card h2 { font-family: var(--font-display); font-size: 1.1875rem; font-weight: 700; margin-bottom: 10px; }
 
     .card p { color: var(--text-dim); font-size: 0.9375rem; line-height: 1.65; }
 

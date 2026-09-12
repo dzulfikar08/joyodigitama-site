@@ -21,7 +21,7 @@ export const products: Product[] = [
     name: "AndonFAST",
     url: "https://andonfast.com",
     accent: "green",
-    logo: "/images/andonfast.png",
+    logo: "/images/andonfast.webp",
     status: "live",
     tags: { en: ["Andon", "Alerts", "Maintenance"], id: ["Andon", "Alert", "Perawatan"] },
     desc: {
@@ -34,7 +34,7 @@ export const products: Product[] = [
     name: "Voltrus",
     url: "https://voltrus.id",
     accent: "orange",
-    logo: "/images/voltrus-lite.webp",
+    logo: "/images/voltrus.webp",
     status: "live",
     tags: { en: ["SCADA", "Modbus TCP", "White-label"], id: ["SCADA", "Modbus TCP", "White-label"] },
     desc: {
@@ -47,7 +47,7 @@ export const products: Product[] = [
     name: "Cowculator",
     url: "https://cowculator.id",
     accent: "blue",
-    logo: "/images/cowculator.png",
+    logo: "/images/cowculator.webp",
     status: "live",
     tags: { en: ["Feed Composition", "Breeding Calendar"], id: ["Komposisi Pakan", "Kalender Breeding"] },
     desc: {
@@ -60,7 +60,7 @@ export const products: Product[] = [
     name: "Waqtu",
     url: "https://getwaqtu.com",
     accent: "rose",
-    logo: "/images/waqtu.png",
+    logo: "/images/waqtu.webp",
     status: "live",
     tags: { en: ["Prayer Times", "Menu Bar", "Calendar"], id: ["Waktu Salat", "Menu Bar", "Kalender"] },
     desc: {
