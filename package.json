@@ -8,8 +8,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "preview:cf": "astro build && wrangler pages dev dist",
-    "deploy": "astro build && wrangler pages deploy dist --project-name=joyodigitama-site"
+    "deploy": "astro build && CLOUDFLARE_ACCOUNT_ID=b7e6f8457bd39fa37a7eea5249799754 wrangler pages deploy dist --project-name=joyodigitama-site"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.4.0",

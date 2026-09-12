@@ -99,7 +99,7 @@ export const products: Product[] = [
     name: "Atur",
     url: "https://diatur.com",
     accent: "purple",
-    logo: null,
+    logo: "/images/logo-atur.png",
     status: "live",
     tags: { en: ["Projects", "Sprints", "MCP"], id: ["Proyek", "Sprint", "MCP"] },
     desc: {
@@ -112,8 +112,7 @@ export const products: Product[] = [
     name: "BriefOK",
     url: null,
     accent: "blue",
-    logo: null,
-    status: "wip",
+    logo: "/images/logo-briefok.svg",
     tags: { en: ["AI", "Presentations"], id: ["AI", "Presentasi"] },
     desc: {
       en: "AI presentation studio — turn a brief into a finished deck in minutes.",
@@ -125,7 +124,7 @@ export const products: Product[] = [
     name: "AturPDF",
     url: null,
     accent: "amber",
-    logo: null,
+    logo: "/images/logo-aturpdf.svg",
     status: "wip",
     tags: { en: ["PDF", "Documents"], id: ["PDF", "Dokumen"] },
     desc: {
