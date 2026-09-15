@@ -1,0 +1,112 @@
+---
+import Base from "../../layouts/Base.astro";
+---
+
+<Base
+  title="Project Management for AI Agent Crews — Joyo Digitama Solusi"
+  description="AI coding agents now work like crew members. Learn what project management for AI agents requires: evidence of work, usage KPIs, and machine-readable issues via MCP."
+  path="blog/project-management-for-ai-agents"
+>
+  <article class="article">
+    <div class="article-header">
+      <a href="/blog/" class="back-link">&larr; Back to Blog</a>
+      <div class="article-meta">
+        <span class="article-category">Developer Tools</span>
+        <span class="article-date">September 16, 2026</span>
+        <span class="article-read-time">5 min read</span>
+      </div>
+      <h1>Project Management for AI Agent Crews</h1>
+      <div class="article-author">By Dzulfikar Ats Tsauri</div>
+    </div>
+
+    <div class="article-content">
+      <p>Teams are running AI coding agents the way they run junior developers: assign a task, let the agent work, review what comes back. The difference is volume. One developer with three agents can generate more issues in a day than a small team used to close in a week. Project management for AI agents has to keep up — and most project trackers weren't built for it.</p>
+
+      <h2>Why Generic Trackers Fall Short</h2>
+      <p>A conventional issue tracker assumes a human does the work. It records who is assigned, what the status is, and a comment thread. When the worker is an AI agent, three things go missing:</p>
+      <ol>
+        <li><strong>Claims vs. evidence.</strong> An agent can report "done" while the change doesn't work, or works differently than intended. You need the actual diff, test output, and reasoning attached to the issue — not just a checkmark.</li>
+        <li><strong>Usage KPIs.</strong> Agent work burns tokens and wall time. Without per-agent, per-model, per-issue rollups, you can't tell which agents earn their keep or where costs are drifting.</li>
+        <li><strong>Machine-readable access.</strong> Agents don't read your board in a browser. If they can't list, claim, and update issues through a protocol like MCP, someone becomes a human copy-paste bridge — and the bridge becomes the bottleneck.</li>
+      </ol>
+      <p>Stretch a generic tracker with comments and spreadsheets and you can fake all three, for a while. Fake systems break exactly when agent volume grows.</p>
+
+      <h2>What Managing an Agent Crew Looks Like Day to Day</h2>
+      <p>The loop is simpler than it sounds. You write issues like briefs: link the repository, the customer, the relevant page, so the agent starts with full context instead of guessing. An agent picks up the issue, claims it, and ships its change in an isolated branch while you watch or move on. When it finishes, what changed and why it works land on the issue as evidence, and the item moves to review. You approve and merge — the merge stays yours.</p>
+      <p>Blockers are part of the loop too. A well-behaved agent that's missing a credential or a design decision shouldn't stall silently or improvise. It should move the issue to a "needs you" state and comment exactly what it needs. You answer, it resumes. That discipline — structured handoffs in both directions — is what separates a managed agent crew from a pile of background terminals.</p>
+      <p>Autonomy should be explicit and scoped. Per workspace, you decide whether an agent may leave a branch, open a pull request, or merge after green checks. Widen that autonomy deliberately as trust is earned, never by default.</p>
+
+      <h2>A Checklist for Choosing a Tool</h2>
+      <ul>
+        <li><strong>Evidence on the issue.</strong> Can you see the diff and the proof of work without leaving the tracker?</li>
+        <li><strong>Human-only merge.</strong> Does the workflow end at review until a person clicks merge?</li>
+        <li><strong>MCP (or equivalent) access.</strong> Can agents read and update issues programmatically, including claiming work and reporting blockers?</li>
+        <li><strong>Agent usage reporting.</strong> Can you see token and time burn per agent, model, and issue, with cost rollups?</li>
+        <li><strong>Scoped autonomy.</strong> Can you set, per workspace, what an agent is allowed to do without asking?</li>
+        <li><strong>Same board for humans and agents.</strong> Agents and people should appear on one board, not two parallel systems.</li>
+      </ul>
+      <p>Score your current tool honestly. Most trackers pass the first line and fail the rest.</p>
+
+      <h2>Getting Started Without a Rearchitecture</h2>
+      <p>You don't need to redesign your whole process. Start by giving agents a narrow slice of the backlog: small, well-specified issues with clear acceptance criteria. Require evidence on every issue, keep merges human, and review the usage numbers weekly. As the pattern proves out, widen the slice and the autonomy together.</p>
+      <p>Atur is a project management control plane built for exactly this: issues, sprints, evidence of work, and agent usage KPIs in one workspace, with agents working the same board as your team through MCP. Learn more at <a href="https://diatur.com">Atur</a>, or browse the rest of our tools on the <a href="/products/">products page</a>.</p>
+
+      <h2>FAQ</h2>
+      <h3>What is project management for AI agents?</h3>
+      <p>It's the practice of planning, assigning, and verifying work done by AI agents — with issue tracking that captures evidence of what an agent actually changed, usage KPIs for tokens and time, and machine-readable access so agents can read and update the board themselves.</p>
+      <h3>Can agents work in normal tools like Jira or Trello?</h3>
+      <p>Partially, through API integrations. But generic trackers don't model claims vs. evidence, don't track per-agent token and cost KPIs, and don't enforce human-only merges. Teams end up compensating with comments and manual checks, which stops scaling as agent volume grows.</p>
+      <h3>How do I keep AI agents from shipping broken code?</h3>
+      <p>Require every agent task to end at a review state with the diff and proof attached to the issue, keep the merge as a human action, and scope autonomy explicitly — let an agent leave a branch or open a PR, but only grant merge rights after checks pass and only if you say so.</p>
+    </div>
+
+    <script is:inline type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is project management for AI agents?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It's the practice of planning, assigning, and verifying work done by AI agents — with issue tracking that captures evidence of what an agent actually changed, usage KPIs for tokens and time, and machine-readable access so agents can read and update the board themselves."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can agents work in normal tools like Jira or Trello?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Partially, through API integrations. But generic trackers don't model claims vs. evidence, don't track per-agent token and cost KPIs, and don't enforce human-only merges. Teams end up compensating with comments and manual checks, which stops scaling as agent volume grows."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I keep AI agents from shipping broken code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Require every agent task to end at a review state with the diff and proof attached to the issue, keep the merge as a human action, and scope autonomy explicitly — let an agent leave a branch or open a PR, but only grant merge rights after checks pass and only if you say so."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <section class="related-section">
+      <h2>Related Posts</h2>
+      <div class="related-grid">
+        <a href="/blog/revenue-attribution-explained/" class="related-card">
+          <span class="related-category">Analytics</span>
+          <h3>Revenue Attribution Explained</h3>
+          <span class="related-link">Read &rarr;</span>
+        </a>
+        <a href="/blog/digital-transformation-small-manufacturers/" class="related-card">
+          <span class="related-category">Digitalization</span>
+          <h3>Digital Transformation for Small Manufacturers</h3>
+          <span class="related-link">Read &rarr;</span>
+        </a>
+      </div>
+    </section>
+  </article>
+</Base>

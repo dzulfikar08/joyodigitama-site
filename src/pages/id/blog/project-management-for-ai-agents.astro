@@ -1,0 +1,113 @@
+---
+import Base from "../../../layouts/Base.astro";
+---
+
+<Base
+  lang="id"
+  title="Manajemen Proyek untuk Agen AI: Mengelola Tim Agen yang Bekerja Seperti Rekan Satu Tim — Joyo Digitama Solusi"
+  description="Tim kini menjalankan agen AI seperti anggota tim. Pelajari apa yang dibutuhkan manajemen proyek untuk agen AI: bukti kerja, KPI pemakaian, dan akses issue via MCP."
+  path="blog/project-management-for-ai-agents"
+>
+  <article class="article">
+    <div class="article-header">
+      <a href="/id/blog/" class="back-link">&larr; Kembali ke Blog</a>
+      <div class="article-meta">
+        <span class="article-category">Alat Pengembang</span>
+        <span class="article-date">16 September 2026</span>
+        <span class="article-read-time">5 menit baca</span>
+      </div>
+      <h1>Manajemen Proyek untuk Agen AI: Mengelola Tim Agen yang Bekerja Seperti Rekan Satu Tim</h1>
+      <div class="article-author">Oleh Dzulfikar Ats Tsauri</div>
+    </div>
+
+    <div class="article-content">
+      <p>Tim pengembang kini menjalankan agen AI coding seperti menjalankan developer junior: beri tugas, biarkan agen bekerja, lalu tinjau hasilnya. Bedanya ada pada volume. Satu developer dengan tiga agen bisa menghasilkan lebih banyak issue dalam sehari daripada tim kecil yang dulu menyelesaikannya dalam seminggu. Manajemen proyek untuk agen AI harus sanggup mengikuti laju itu — dan kebanyakan tools tracking proyek tidak dirancang untuk itu.</p>
+
+      <h2>Mengapa Tracker Generik Tidak Cukup</h2>
+      <p>Issue tracker konvensional mengasumsikan manusia yang mengerjakan. Ia mencatat siapa yang ditugaskan, apa statusnya, dan rangkaian komentar. Ketika yang bekerja adalah agen AI, tiga hal hilang:</p>
+      <ol>
+        <li><strong>Klaim vs. bukti.</strong> Agen bisa melaporkan "selesai" padahal perubahannya tidak berfungsi, atau berfungsi berbeda dari yang dimaksud. Anda butuh diff, output tes, dan alasannya menempel di issue — bukan sekadar centang.</li>
+        <li><strong>KPI pemakaian.</strong> Kerja agen membakar token dan waktu. Tanpa rekap per agen, per model, dan per issue, Anda tidak bisa menilai agen mana yang sepadan dengan biayanya atau di mana biaya mulai melebar.</li>
+        <li><strong>Akses yang terbaca mesin.</strong> Agen tidak membaca papan kerja Anda lewat browser. Kalau mereka tidak bisa melihat, mengklaim, dan memperbarui issue lewat protokol seperti MCP, seseorang harus menjadi jembatan copy-paste — dan jembatan itu jadi hambatan.</li>
+      </ol>
+      <p>Memaksakan tracker generik dengan komentar dan spreadsheet bisa menambal ketiganya, sementara. Sistem tambal sulam seperti ini runtuh tepat ketika volume kerja agen bertambah.</p>
+
+      <h2>Seperti Apa Mengelola Tim Agen Sehari-hari</h2>
+      <p>Siklusnya lebih sederhana dari kedengarannya. Anda menulis issue seperti brief: cantumkan tautan repositori, pelanggan, dan halaman terkait, supaya agen memulai dengan konteks lengkap alih-alih menebak. Agen mengambil issue, mengklaimnya, dan mengerjakan perubahan di branch terisolasi sementara Anda mengawasi atau beralih ke pekerjaan lain. Setelah selesai, apa yang berubah dan mengapa itu berfungsi tercatat di issue sebagai bukti, lalu item pindah ke status review. Anda setujui dan merge — keputusan merge tetap di tangan manusia.</p>
+      <p>Kendala juga bagian dari siklus. Agen yang baik yang kekurangan kredensial atau keputusan desain tidak boleh diam membeku atau mengarang sendiri. Ia seharusnya memindahkan issue ke status "butuh Anda" dan berkomentar persis apa yang ia butuhkan. Anda jawab, ia lanjut. Disiplin serah terima terstruktur ke dua arah inilah yang membedakan tim agen yang dikelola dengan baik dari tumpukan terminal background.</p>
+      <p>Otonomi harus eksplisit dan terbatas. Per workspace, Anda tentukan bolehkah agen meninggalkan branch, membuka pull request, atau merge setelah checks hijau. Perluas otonomi itu secara sengaja seiring tumbuhnya kepercayaan — jangan pernah secara bawaan.</p>
+
+      <h2>Checklist Memilih Tools</h2>
+      <ul>
+        <li><strong>Bukti di issue.</strong> Bisakah Anda melihat diff dan bukti kerja tanpa keluar dari tracker?</li>
+        <li><strong>Merge hanya oleh manusia.</strong> Apakah alur kerja selalu berhenti di review sampai seseorang menekan merge?</li>
+        <li><strong>Akses MCP (atau setara).</strong> Bisakah agen membaca dan memperbarui issue secara programatik, termasuk mengklaim pekerjaan dan melaporkan kendala?</li>
+        <li><strong>Laporan pemakaian agen.</strong> Bisakah Anda melihat pembakaran token dan waktu per agen, model, dan issue, lengkap dengan rekap biaya?</li>
+        <li><strong>Otonomi terbatas.</strong> Bisakah Anda mengatur, per workspace, apa yang boleh dilakukan agen tanpa bertanya?</li>
+        <li><strong>Satu papan untuk manusia dan agen.</strong> Agen dan orang harus tampil di satu papan yang sama, bukan dua sistem terpisah.</li>
+      </ul>
+      <p>Nilai tools Anda saat ini dengan jujur. Kebanyakan tracker lolos di poin pertama dan gagal di sisanya.</p>
+
+      <h2>Memulai Tanpa Merombak Semua Proses</h2>
+      <p>Anda tidak perlu mendesain ulang seluruh alur kerja. Mulailah dengan memberi agen irisan kecil dari backlog: issue kecil dengan spesifikasi jelas dan kriteria penerimaan yang tegas. Wajibkan bukti di setiap issue, pertahankan merge sebagai tindakan manusia, dan tinjau angka pemakaiannya setiap minggu. Setelah polanya terbukti, perluas irisan dan otonominya bersamaan.</p>
+      <p>Atur adalah control plane manajemen proyek yang dibangun tepat untuk kebutuhan ini: issue, sprint, bukti kerja, dan KPI pemakaian agen dalam satu workspace, dengan agen mengerjakan papan yang sama seperti tim Anda melalui MCP. Pelajari lebih lanjut di <a href="https://diatur.com">Atur</a>, atau lihat produk kami yang lain di <a href="/id/products/">halaman produk</a>.</p>
+
+      <h2>FAQ</h2>
+      <h3>Apa itu manajemen proyek untuk agen AI?</h3>
+      <p>Ini praktik merencanakan, menugaskan, dan memverifikasi pekerjaan yang dilakukan agen AI — dengan issue tracking yang merekam bukti perubahan yang benar-benar dilakukan agen, KPI pemakaian token dan waktu, serta akses terbaca mesin agar agen bisa membaca dan memperbarui papan kerja sendiri.</p>
+      <h3>Bisakah agen bekerja di tools biasa seperti Jira atau Trello?</h3>
+      <p>Sebagian, lewat integrasi API. Tapi tracker generik tidak memodelkan klaim vs. bukti, tidak melacak KPI token dan biaya per agen, dan tidak memaksa merge hanya oleh manusia. Tim akhirnya berkompensasi dengan komentar dan pemeriksaan manual, yang tidak akan menopang saat volume kerja agen bertambah.</p>
+      <h3>Bagaimana mencegah agen AI mengirim kode yang rusak?</h3>
+      <p>Wajibkan setiap tugas agen berakhir di status review dengan diff dan bukti menempel di issue, jadikan merge sebagai tindakan manusia, dan batasi otonomi secara eksplisit — izinkan agen meninggalkan branch atau membuka PR, tapi beri hak merge hanya setelah checks lulus dan hanya jika Anda mengizinkan.</p>
+    </div>
+
+    <script is:inline type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa itu manajemen proyek untuk agen AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ini praktik merencanakan, menugaskan, dan memverifikasi pekerjaan yang dilakukan agen AI — dengan issue tracking yang merekam bukti perubahan yang benar-benar dilakukan agen, KPI pemakaian token dan waktu, serta akses terbaca mesin agar agen bisa membaca dan memperbarui papan kerja sendiri."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bisakah agen bekerja di tools biasa seperti Jira atau Trello?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sebagian, lewat integrasi API. Tapi tracker generik tidak memodelkan klaim vs. bukti, tidak melacak KPI token dan biaya per agen, dan tidak memaksa merge hanya oleh manusia. Tim akhirnya berkompensasi dengan komentar dan pemeriksaan manual, yang tidak akan menopang saat volume kerja agen bertambah."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana mencegah agen AI mengirim kode yang rusak?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wajibkan setiap tugas agen berakhir di status review dengan diff dan bukti menempel di issue, jadikan merge sebagai tindakan manusia, dan batasi otonomi secara eksplisit — izinkan agen meninggalkan branch atau membuka PR, tapi beri hak merge hanya setelah checks lulus dan hanya jika Anda mengizinkan."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <aside class="related-section">
+      <h2>Artikel Terkait</h2>
+      <div class="related-grid">
+        <a href="/id/blog/revenue-attribution-explained/" class="related-card">
+          <span class="related-category">Analitik</span>
+          <h3>Revenue Attribution Dijelaskan</h3>
+          <span class="related-link">Baca &rarr;</span>
+        </a>
+        <a href="/id/blog/digital-transformation-small-manufacturers/" class="related-card">
+          <span class="related-category">Digitalisasi</span>
+          <h3>Transformasi Digital untuk Manufaktur Skala Kecil</h3>
+          <span class="related-link">Baca &rarr;</span>
+        </a>
+      </div>
+    </aside>
+  </article>
+</Base>

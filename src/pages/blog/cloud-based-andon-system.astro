@@ -1,0 +1,116 @@
+---
+import Base from "../../layouts/Base.astro";
+---
+
+<Base
+  title="Cloud-Based Andon Systems: What They Are and When to Choose One — Joyo Digitama Solusi"
+  description="What a cloud-based Andon system is, how it compares to traditional andon lights, and when it makes sense for small and medium factories."
+  path="blog/cloud-based-andon-system"
+>
+  <article class="article">
+    <div class="article-header">
+      <a href="/blog/" class="back-link">&larr; Back to Blog</a>
+      <div class="article-meta">
+        <span class="article-category">Manufacturing</span>
+        <span class="article-date">September 2, 2026</span>
+        <span class="article-read-time">6 min read</span>
+      </div>
+      <h1>Cloud-Based Andon Systems: What They Are and When to Choose One</h1>
+      <div class="article-author">By Dzulfikar Ats Tsauri</div>
+    </div>
+
+    <div class="article-content">
+      <p>A machine stops on line two. The tower light flips to red, the operator handles it, the shift moves on. What nobody has is a record: how long the stop lasted, why, and whether the same fault hit line four yesterday. Traditional andon — the stack of lights Toyota made famous — tells the people at the machine something is wrong; it says nothing to anyone else and remembers nothing. A cloud-based Andon system is the same idea extended until it does both.</p>
+
+      <h2>What Is a Cloud-Based Andon System?</h2>
+      <p>An Andon system is a lean manufacturing tool that surfaces production problems the moment they occur, while they are still small. In its classic form the signal is a stack light on the machine: green for running, yellow for a call, red for a stop.</p>
+      <p>A cloud-based Andon system keeps the concept and replaces the wiring. Machines connect to small devices that push every status change over the internet to a hosted dashboard. The stop still gets signaled, but it is also timestamped, tagged with a reason code, and pushed as an alert to whoever can act, on a phone, tablet, or browser. Over a week, those stops become analyzable downtime history.</p>
+
+      <h2>How It Differs from Traditional Andon Lights</h2>
+      <p>Traditional towers are still good at the one thing they were designed for: being seen. A light at the machine is visible to everyone on the line, works without a network, and never needs a login. Its weakness is everything past the line of sight: nobody records how long each stop lasted, a maintenance lead across the plant hears nothing, and there is no analytics layer — improving anything means observing stops by hand and hoping the sample was representative.</p>
+      <p>Cloud systems invert the trade: they log every stop automatically, reach people away from the machine, and turn accumulated data into availability trends, MTBF and MTTR, and a ranked list of your worst machines. What they give up is the tower's bluntness: a dashboard has to be looked at, a red lamp doesn't. In practice the two are complements — lamps for line-side signaling, cloud reporting for records, alerts, and analysis.</p>
+
+      <h2>When a Cloud-Based System Makes Sense</h2>
+      <p>Small and medium factories gain the most. With no MES and no automation team, a hosted system is the only realistic route to real-time visibility — there is no server project attached. If your lines sit in more than one building or site, cloud dashboards show them side by side, which wired towers cannot. And if you lease the building or rearrange the floor often, skipping fixed cabling has real value.</p>
+      <p>The strongest argument is data. Most small factories cannot say which machine or failure reason costs them the most time; the stops blur together. A system that tags every stop with a reason code turns that fog into a short list of fixable problems.</p>
+      <p>The old way still wins in a few cases. A single line with rare, obvious stops may need no software at all. A plant with unreliable internet should fix connectivity first. And if wired towers are installed and used well, keep them — add cloud reporting on top if you need the records.</p>
+
+      <h2>What to Look For</h2>
+      <p>Cloud Andon products differ mostly in deployment speed and depth of data. Before choosing one, check:</p>
+      <ul>
+        <li><strong>Deployment speed</strong> — hardware should arrive pre-configured and go live in hours; AndonFAST ships monitoring hardware with the subscription, designed to run within an hour.</li>
+        <li><strong>Reason codes at the machine</strong> — operators must be able to tag a stop with a cause in a couple of taps, or your downtime data stays anonymous.</li>
+        <li><strong>Alerts that reach the right people</strong> — push notifications with acknowledge and resolve steps, so a stop is visibly handled rather than merely seen.</li>
+        <li><strong>Analytics worth using</strong> — a live shopfloor view, top downtime machines, availability trends, and MTBF/MTTR are what separate monitoring from improvement.</li>
+        <li><strong>A pricing model that fits a small plant</strong> — per-machine pricing with unlimited users and hardware included keeps cost proportional to the floor; per-user fees do the opposite.</li>
+      </ul>
+
+      <h2>Deploying One in a Small or Medium Factory</h2>
+      <p>Start with the line that gets the most complaints. Agree on short stop reasons in operator language ("no material", "jam", "changeover"), not maintenance jargon. Plug in the devices, put the dashboard on a screen by the line and the supervisor's phone, and agree who gets alerted for which machine. For the first few weeks the only goal is a complete record: every stop tagged, every alert acknowledged. Once the data is trustworthy, a weekly look at the top downtime machines says what to fix next — and the loop extends to the remaining lines.</p>
+
+      <h2>FAQ</h2>
+      <h3>How is a cloud-based Andon system different from andon lights?</h3>
+      <p>Andon lights signal a stop to people at the machine; a cloud-based Andon system also records it, alerts people anywhere, and accumulates history into downtime analytics. They cover different halves of the problem, which is why factories often run both.</p>
+      <h3>What does a cloud-based Andon system cost?</h3>
+      <p>It depends on the model. Conventional wired implementations are sold as projects — AndonFAST's own comparison puts them at $5,000 to $50,000+ in setup and 3–6 months. Cloud systems price per machine: AndonFAST is $30 per machine per month with hardware included, unlimited users, no setup fees, and a 14-day free trial.</p>
+      <h3>Do I need to rewire my plant or hire an IT team?</h3>
+      <p>No. The devices ship pre-configured: plug them in next to the machines and the dashboard goes live — with AndonFAST, within the hour. No server to install, no dedicated IT staff required; that is the point of the cloud model for small and medium factories.</p>
+
+      <p>Considering a cloud-based Andon system for your floor? <a href="https://andonfast.com">AndonFAST</a> is a real-time factory monitoring platform built for small and medium manufacturers: a live monitor on every machine, automatic downtime logging with reason codes, and alerts that reach your team — one price per machine, hardware included. See the rest of the catalog on our <a href="/products/">products page</a>.</p>
+    </div>
+
+    <script is:inline type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How is a cloud-based Andon system different from andon lights?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Andon lights signal a stop to people at the machine; a cloud-based Andon system also records it, alerts people anywhere, and accumulates history into downtime analytics. They cover different halves of the problem, which is why factories often run both."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does a cloud-based Andon system cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It depends on the model. Conventional wired implementations are sold as projects — AndonFAST's own comparison puts them at $5,000 to $50,000+ in setup and 3–6 months. Cloud systems price per machine: AndonFAST is $30 per machine per month with hardware included, unlimited users, no setup fees, and a 14-day free trial."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to rewire my plant or hire an IT team?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The devices ship pre-configured: plug them in next to the machines and the dashboard goes live — with AndonFAST, within the hour. No server to install, no dedicated IT staff required; that is the point of the cloud model for small and medium factories."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <section class="related-section">
+      <h2>Related Posts</h2>
+      <div class="related-grid">
+        <a href="/blog/andon-system-implementation-guide/" class="related-card">
+          <span class="related-category">Manufacturing</span>
+          <h3>How to Implement an Andon System in Your Manufacturing Plant</h3>
+          <span class="related-link">Read &rarr;</span>
+        </a>
+        <a href="/blog/reducing-manufacturing-downtime-iot/" class="related-card">
+          <span class="related-category">IoT</span>
+          <h3>Reducing Manufacturing Downtime with IoT: A Practical Approach</h3>
+          <span class="related-link">Read &rarr;</span>
+        </a>
+        <a href="/blog/digital-transformation-small-manufacturers/" class="related-card">
+          <span class="related-category">Digitalization</span>
+          <h3>Digital Transformation for Small Manufacturers</h3>
+          <span class="related-link">Read &rarr;</span>
+        </a>
+      </div>
+    </section>
+  </article>
+</Base>
