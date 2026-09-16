@@ -20,16 +20,16 @@ import Base from "../../layouts/Base.astro";
     </div>
 
     <div class="article-content">
-      <p>You check your analytics every morning. Sessions, pageviews, bounce rate — the numbers move, and some weeks they look great. Then you sit down to plan next month's budget and the dashboard goes quiet. It counted the traffic. It can't tell you which channel earned the money.</p>
+      <p>You check your analytics every morning. Sessions, pageviews, bounce rate: the numbers move, and some weeks they look great. Then you sit down to plan next month's budget and the dashboard goes quiet. It counted the traffic. It can't tell you which channel earned the money.</p>
 
       <h2>What Is Revenue Attribution?</h2>
       <p>Revenue attribution connects each sale back to the marketing touchpoints that produced it. Instead of asking how many people visited, it asks which visits turned into revenue, and where they came from.</p>
-      <p>Picture a typical path. A founder searches Google, lands on one of your blog posts, reads it, and leaves. Two weeks later she clicks a link in your newsletter, reads a comparison page, and starts a trial. A week after that she upgrades to a paid plan. Who made the sale — Google, the newsletter, or both of them working together? Attribution exists to answer that question, and the answer decides where your next marketing budget goes.</p>
+      <p>Picture a typical path. A founder searches Google, lands on one of your blog posts, reads it, and leaves. Two weeks later she clicks a link in your newsletter, reads a comparison page, and starts a trial. A week after that she upgrades to a paid plan. Who made the sale: Google, the newsletter, or both of them working together? Attribution exists to answer that question, and the answer decides where your next marketing budget goes.</p>
 
       <h2>Why Sessions and Bounce Rate Don't Answer "Which Channel Makes Money"</h2>
       <p>Standard web analytics were built to count traffic, and they do that well: sessions, pageviews, referrers, devices, locations. What they don't do by default is follow a visitor across visits until money changes hands.</p>
       <p>Sessions are disconnected from each other. Without a way to link visits, the person who discovers you through a blog post and buys through a newsletter link counts as two unrelated visitors. The blog collects a view; the newsletter collects a conversion. The channel that started the journey gets nothing.</p>
-      <p>Attention metrics reward the wrong things. Bounce rate treats a reader who finds her full answer in one post and leaves as a failure — yet that post may be the reason she comes back and buys later.</p>
+      <p>Attention metrics reward the wrong things. Bounce rate treats a reader who finds her full answer in one post and leaves as a failure, yet that post may be the reason she comes back and buys later.</p>
       <p>Direct traffic hides the story. When most of your conversions land under "direct", that usually means someone typed your URL from memory or opened a saved link after discovering you somewhere else. The dashboard credits the last step and calls it the whole journey.</p>
 
       <h2>Last-Touch vs Multi-Touch, in Plain Words</h2>
@@ -41,12 +41,12 @@ import Base from "../../layouts/Base.astro";
       <h2>Building a Revenue-First Analytics Stack</h2>
       <p>You don't need a data warehouse team to attribute revenue. A small SaaS or online business needs four building blocks:</p>
       <ol>
-        <li><strong>A journey that survives across visits.</strong> Pages, campaigns, and referrers need to connect into one path per visitor, so the journey — not the isolated session — becomes the thing you analyze.</li>
+        <li><strong>A journey that survives across visits.</strong> Pages, campaigns, and referrers need to connect into one path per visitor, so the journey, not the isolated session, becomes the thing you analyze.</li>
         <li><strong>Conversion events tied to money.</strong> Define the moments that matter: trial signup, demo request, purchase. Track each as an event so every journey ends in a conversion or a visible drop-off.</li>
         <li><strong>Clean traffic sources.</strong> UTM parameters on your own campaigns, referrer data on everything else. Mislabel a source and every model downstream inherits the error.</li>
         <li><strong>A funnel view.</strong> See where journeys stall between first visit and purchase, because a funnel that leaks at step two needs a different fix than one that leaks at the finish.</li>
       </ol>
-      <p>This is where RevKlik fits. It is a revenue-first analytics platform: user journey, conversion funnel, and revenue attribution in one dashboard. Installation is a single line of script under 1KB placed before your closing head tag. It runs without cookies and stores no personal data, so there is no consent banner to manage, and tracking a conversion takes one line of code — <code>klikapa.track('signup')</code>.</p>
+      <p>This is where RevKlik fits. It is a revenue-first analytics platform: user journey, conversion funnel, and revenue attribution in one dashboard. Installation is a single line of script under 1KB placed before your closing head tag. It runs without cookies and stores no personal data, so there is no consent banner to manage, and tracking a conversion takes one line of code: <code>klikapa.track('signup')</code>.</p>
 
       <h2>FAQ</h2>
       <h3>What is revenue attribution in simple terms?</h3>
