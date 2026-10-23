@@ -1,7 +1,12 @@
 ---
 import Base from "../../layouts/Base.astro";
 import ProductCard from "../../components/ProductCard.astro";
-import { products } from "../../data/products";
+import { products, categoryOrder, categoryLabels, categoryDesc } from "../../data/products";
+
+const grouped = categoryOrder.map((id) => ({
+  id,
+  items: products.filter((p) => p.category === id),
+}));
 ---
 
 <Base
@@ -18,19 +23,21 @@ import { products } from "../../data/products";
     </div>
   </section>
 
-  <!-- Semua Produk -->
-  <section style="padding-top:0;">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">// semua produk</span>
-        <h2>Semua Produk</h2>
-        <p>Solusi SaaS berfokus pada industri yang dirancang untuk mendigitalisasi dan mengoptimalkan operasional Anda</p>
+  <!-- Produk per Kategori -->
+  {grouped.map(({ id, items }) => items.length > 0 && (
+    <section style="padding-top:0;">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// {id}</span>
+          <h2>{categoryLabels[id].id}</h2>
+          <p>{categoryDesc[id].id}</p>
+        </div>
+        <div class="products-grid">
+          {items.map((product) => <ProductCard product={product} lang="id" />)}
+        </div>
       </div>
-      <div class="products-grid">
-        {products.map((product) => <ProductCard product={product} lang="id" />)}
-      </div>
-    </div>
-  </section>
+    </section>
+  ))}
 
   <!-- CTA -->
   <section>

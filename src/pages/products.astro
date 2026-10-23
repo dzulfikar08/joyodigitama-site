@@ -1,7 +1,12 @@
 ---
 import Base from "../layouts/Base.astro";
 import ProductCard from "../components/ProductCard.astro";
-import { products } from "../data/products";
+import { products, categoryOrder, categoryLabels, categoryDesc } from "../data/products";
+
+const grouped = categoryOrder.map((id) => ({
+  id,
+  items: products.filter((p) => p.category === id),
+}));
 ---
 
 <Base
@@ -17,19 +22,21 @@ import { products } from "../data/products";
     </div>
   </section>
 
-  <!-- All Products -->
-  <section style="padding-top:0;">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">// all products</span>
-        <h2>All Products</h2>
-        <p>Industry-focused SaaS solutions designed to digitalize and optimize your operations</p>
+  <!-- Products by Category -->
+  {grouped.map(({ id, items }) => items.length > 0 && (
+    <section style="padding-top:0;">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// {id}</span>
+          <h2>{categoryLabels[id].en}</h2>
+          <p>{categoryDesc[id].en}</p>
+        </div>
+        <div class="products-grid">
+          {items.map((product) => <ProductCard product={product} lang="en" />)}
+        </div>
       </div>
-      <div class="products-grid">
-        {products.map((product) => <ProductCard product={product} lang="en" />)}
-      </div>
-    </div>
-  </section>
+    </section>
+  ))}
 
   <!-- CTA -->
   <section>
