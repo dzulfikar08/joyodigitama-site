@@ -1,0 +1,416 @@
+---
+import Base from "../layouts/Base.astro";
+import { products } from "../data/products";
+import { SITE, pageUrl, type Lang } from "../data/site";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const liveCount = products.filter((p) => p.status === "live").length;
+
+const icons = {
+  eye: '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" />',
+  steps: '<polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" />',
+  server: '<rect x="2" y="3" width="20" height="8" rx="2" /><rect x="2" y="13" width="20" height="8" rx="2" /><line x1="6" y1="7" x2="6.01" y2="7" /><line x1="6" y1="17" x2="6.01" y2="17" />',
+  doc: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="9" y1="13" x2="15" y2="13" /><line x1="9" y1="17" x2="13" y2="17" />',
+  file: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="9" y1="13" x2="15" y2="13" /><line x1="9" y1="17" x2="13" y2="17" />',
+  cloud: '<path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" /><line x1="12" y1="8" x2="12" y2="16" /><line x1="8" y1="12" x2="16" y2="12" />',
+};
+
+type Accent = "green" | "blue" | "purple" | "orange";
+
+const copy = {
+  en: {
+    title: "About Us — Joyo Digitama Solusi",
+    description:
+      "Joyo Digitama Solusi is a software studio in Malang, Indonesia, founded in 2025. Meet the founder, see the products we run, and the client sites we built.",
+    h1: "About Joyo Digitama Solusi",
+    heroP:
+      "A software studio in Malang, East Java. We build and run our own products for factories, farms, pesantren, and small businesses, and take on custom projects for clients.",
+    facts: [
+      { value: SITE.founded, label: "founded" },
+      { value: "Malang", label: "East Java, Indonesia" },
+      { value: String(liveCount), label: "products live today" },
+    ],
+    mvH2: "Mission & vision",
+    missionTitle: "Mission",
+    visionTitle: "Vision",
+    mission:
+      "Build software that people on the line, in the barn, and in the school office actually use, and keep it running long after launch day.",
+    vision:
+      "Be the Indonesian studio that operations teams trust with their daily work: products that run shifts, herds, and admissions, supported by the people who wrote them.",
+    valuesH2: "What we hold ourselves to",
+    values: [
+      { icon: icons.eye, accent: "green", title: "Go see the work", body: "We start where the work happens: the line, the barn, the front desk. Requirements come from watching, not guessing." },
+      { icon: icons.steps, accent: "blue", title: "Ship in small steps", body: "You get working software early and in pieces you can test, not one big reveal at the end." },
+      { icon: icons.server, accent: "purple", title: "Run what we build", body: "We operate our own products in production, so we plan for backups, outages, and support from the first sprint." },
+      { icon: icons.doc, accent: "orange", title: "Say it plainly", body: "Scope and price in writing, estimates we stand behind, and documentation your team can actually follow." },
+    ] as { icon: string; accent: Accent; title: string; body: string }[],
+    logoH2: "What the mark means",
+    logoP: "The logo joins J and D, for Joyo and Digitama, into a single shape.",
+    logoAlt: "Joyo Digitama logo",
+    logoParts: [
+      { title: "The J core", body: "Stands for <strong>Joyo</strong>, the company. It sits at the center because the business comes first and technology serves it. The solid vertical stroke reads as <strong>stability</strong>." },
+      { title: "The D curve", body: "Stands for <strong>Digitama</strong>, the digital side. The arc opens outward to suggest growth and steady improvement, so the mark looks like it is <strong>moving forward</strong>." },
+      { title: "Pixel blocks", body: "The small squares at the top left are data points: sensors, devices, signals. They resolve into a smooth curve, which is the idea in one picture: <em>raw data turned into something useful</em>." },
+    ],
+    colors: [
+      { swatch: "green", title: "Bright green", body: "Our brand green, kept from our first identity. It stands for technology, growth, and work that runs efficiently." },
+      { swatch: "dark", title: "Dark base", body: "A near-black background that fits control rooms and business software. Serious without feeling corporate." },
+    ],
+    interpTitle: "In one line",
+    interp:
+      "We turn operational data into decisions. The pixels are raw data from the floor, the curve is the software that shapes it, and the joined J and D are the business and the technology working as one.",
+    timelineH2: "How we got here",
+    timelineP:
+      "Products appear in the order they were added to this site, with the year they were added. Some were in use before they were listed here.",
+    timeline: [
+      { year: SITE.founded, title: "Founded in Malang", desc: "PT Joyo Digitama Solusi is set up in Malang, East Java." },
+      { year: "2026", title: "AndonFAST, Voltrus, Cowculator", desc: "Andon for factory lines, lightweight SCADA for system integrators, and dairy herd management. The first products listed on this site." },
+      { year: "2026", title: "Waqtu", desc: "Prayer times in the Mac menu bar, with calendar blocks during prayer, for Muslim professionals." },
+      { year: "2026", title: "RevKlik and E-Pondok", desc: "RevKlik, revenue-first analytics with user journeys and revenue attribution. E-Pondok, face-based attendance and visitor management for pesantren." },
+      { year: "2026", title: "Client sites", desc: "dwitriyono.com, a custom CMS for a dakwah publisher, and mx.opexcg.com, the landing site for the OpexMX maintenance platform." },
+      { year: "2026", title: "Atur and AturPDF", desc: "Mission control for AI coding agents, and free PDF tools that run entirely in the browser." },
+      { year: "2026", title: "PakUstadz, Paparan AI, Nyaur, CloudAgni", desc: "Websites for study groups, an AI presentation studio, a Merchant of Record for selling software in Indonesia, and Cloudflare hosting paid in Rupiah." },
+      { year: "2026", title: "JoyoRogo, JoyoFit", desc: "A calorie tracker that reads Indonesian food from a photo, and an open-source companion app for compatible smartwatches." },
+    ],
+    workH2: "Sites we built for clients",
+    workP: "Two recent projects you can visit today: a content platform and a product landing site.",
+    work: [
+      {
+        name: "dwitriyono.com",
+        url: "https://dwitriyono.com",
+        icon: icons.file,
+        accent: "green",
+        body: "Custom CMS for an Islamic dakwah and kajian publisher. Structured articles, reader analytics, a video library, and an activity feed. The author runs it all without touching code.",
+        tags: ["Custom CMS", "Editorial", "SEO", "TanStack Start"],
+      },
+      {
+        name: "mx.opexcg.com",
+        url: "https://mx.opexcg.com",
+        icon: icons.cloud,
+        accent: "blue",
+        body: "Landing and product site for OpexMX, a CMMS for maintenance teams. Clear feature pages, pricing tiers, and a section on its AI and MCP integration, written for B2B buyers.",
+        tags: ["Landing page", "B2B SaaS", "Conversion", "Next.js"],
+      },
+    ] as { name: string; url: string; icon: string; accent: Accent; body: string; tags: string[] }[],
+    viewLive: "View live",
+    teamH2: "Who runs the studio",
+    founderName: "Dzulfikar Ats Tsauri",
+    founderRole: "Founder & CEO",
+    founderAlt: "Dzulfikar Ats Tsauri, Founder & CEO of Joyo Digitama Solusi",
+    founderBio:
+      "An industrial automation engineer turned software builder. Joyo Digitama is founder-led: the person you talk to on the first call is the one designing your system.",
+    personalSite: "Personal site",
+    ctaH2: "Have work that should run on software?",
+    ctaP: "Tell us how it runs today. We will tell you plainly what software can change and what it would cost.",
+    ctaPrimary: "Contact us",
+    ctaWa: "Chat on WhatsApp",
+    waText: "Hi Joyo Digitama, I'd like to discuss a project.",
+  },
+  id: {
+    title: "Tentang Kami — Joyo Digitama Solusi",
+    description:
+      "Joyo Digitama Solusi, studio software di Malang sejak 2025. Kenali founder kami, produk yang kami jalankan, dan situs yang kami bangun untuk klien.",
+    h1: "Tentang Joyo Digitama Solusi",
+    heroP:
+      "Studio software di Malang, Jawa Timur. Kami membangun dan menjalankan produk sendiri untuk pabrik, peternakan, pesantren, dan UMKM, serta mengerjakan proyek kustom untuk klien.",
+    facts: [
+      { value: SITE.founded, label: "tahun berdiri" },
+      { value: "Malang", label: "Jawa Timur, Indonesia" },
+      { value: String(liveCount), label: "produk sudah live" },
+    ],
+    mvH2: "Misi & visi",
+    missionTitle: "Misi",
+    visionTitle: "Visi",
+    mission:
+      "Membangun software yang benar-benar dipakai orang di lini produksi, di kandang, dan di kantor sekolah, lalu menjaganya tetap berjalan jauh setelah hari peluncuran.",
+    vision:
+      "Menjadi studio Indonesia yang dipercaya tim operasional untuk pekerjaan harian mereka: produk yang menjalankan shift, ternak, dan penerimaan santri, didukung langsung oleh orang yang menulisnya.",
+    valuesH2: "Prinsip yang kami pegang",
+    values: [
+      { icon: icons.eye, accent: "green", title: "Lihat langsung pekerjaannya", body: "Kami mulai dari tempat pekerjaan berlangsung: lini produksi, kandang, meja depan. Kebutuhan lahir dari pengamatan, bukan tebakan." },
+      { icon: icons.steps, accent: "blue", title: "Kirim bertahap", body: "Anda menerima software yang sudah bisa dipakai sejak awal, dalam bagian kecil yang bisa diuji, bukan kejutan besar di akhir." },
+      { icon: icons.server, accent: "purple", title: "Jalankan yang kami bangun", body: "Kami mengoperasikan produk sendiri di production, jadi backup, gangguan, dan dukungan sudah kami pikirkan sejak sprint pertama." },
+      { icon: icons.doc, accent: "orange", title: "Bicara apa adanya", body: "Ruang lingkup dan harga tertulis, estimasi yang bisa kami pertanggungjawabkan, dan dokumentasi yang mudah diikuti tim Anda." },
+    ] as { icon: string; accent: Accent; title: string; body: string }[],
+    logoH2: "Makna di balik logo",
+    logoP: "Logo kami menyatukan huruf J dan D, dari Joyo dan Digitama, dalam satu bentuk.",
+    logoAlt: "Logo Joyo Digitama",
+    logoParts: [
+      { title: "Inti huruf J", body: "Mewakili <strong>Joyo</strong>, identitas perusahaan. Letaknya di tengah karena bisnis yang utama, teknologi yang melayaninya. Garis vertikal yang kokoh melambangkan <strong>stabilitas</strong>." },
+      { title: "Lengkung huruf D", body: "Mewakili <strong>Digitama</strong>, sisi digital. Lengkungnya terbuka ke luar sebagai tanda pertumbuhan dan perbaikan terus-menerus, sehingga logo terasa <strong>bergerak maju</strong>." },
+      { title: "Blok piksel", body: "Kotak-kotak kecil di kiri atas adalah titik data: sensor, perangkat, sinyal. Semuanya berubah menjadi lengkung halus, gambaran dari apa yang kami kerjakan: <em>data mentah menjadi sesuatu yang berguna</em>." },
+    ],
+    colors: [
+      { swatch: "green", title: "Hijau terang", body: "Warna hijau khas kami, dipertahankan dari identitas pertama. Melambangkan teknologi, pertumbuhan, dan kerja yang efisien." },
+      { swatch: "dark", title: "Latar gelap", body: "Latar hampir hitam yang cocok untuk ruang kontrol dan software bisnis. Serius tanpa terasa kaku." },
+    ],
+    interpTitle: "Dalam satu kalimat",
+    interp:
+      "Kami mengubah data operasional menjadi keputusan. Piksel adalah data mentah dari lapangan, lengkungnya adalah software yang mengolahnya, dan J serta D yang menyatu adalah bisnis dan teknologi yang bekerja bersama.",
+    timelineH2: "Perjalanan kami",
+    timelineP:
+      "Produk disusun sesuai urutan saat ditambahkan ke situs ini, beserta tahunnya. Sebagian sudah dipakai sebelum tercantum di sini.",
+    timeline: [
+      { year: SITE.founded, title: "Berdiri di Malang", desc: "PT Joyo Digitama Solusi didirikan di Malang, Jawa Timur." },
+      { year: "2026", title: "AndonFAST, Voltrus, Cowculator", desc: "Andon untuk lini produksi, SCADA ringan untuk system integrator, dan manajemen ternak perah. Produk pertama yang tercantum di situs ini." },
+      { year: "2026", title: "Waqtu", desc: "Jadwal salat di menu bar Mac, lengkap dengan blokir kalender saat waktu salat, untuk profesional Muslim." },
+      { year: "2026", title: "RevKlik dan E-Pondok", desc: "RevKlik, analitik berorientasi pendapatan dengan user journey dan atribusi pendapatan. E-Pondok, absensi wajah dan manajemen tamu untuk pesantren." },
+      { year: "2026", title: "Situs klien", desc: "dwitriyono.com, CMS kustom untuk penerbit dakwah, dan mx.opexcg.com, situs landing untuk platform perawatan OpexMX." },
+      { year: "2026", title: "Atur dan AturPDF", desc: "Mission control untuk agen AI coding, dan alat PDF gratis yang berjalan sepenuhnya di browser." },
+      { year: "2026", title: "PakUstadz, Paparan AI, Nyaur, CloudAgni", desc: "Situs untuk kelompok kajian, studio presentasi AI, Merchant of Record untuk jualan software di Indonesia, dan hosting Cloudflare yang dibayar dalam rupiah." },
+      { year: "2026", title: "JoyoRogo, JoyoFit", desc: "Penghitung kalori yang membaca makanan Indonesia dari foto, dan aplikasi pendamping open source untuk jam pintar yang kompatibel." },
+    ],
+    workH2: "Situs yang kami bangun untuk klien",
+    workP: "Dua proyek terbaru yang bisa Anda kunjungi hari ini: platform konten dan situs landing produk.",
+    work: [
+      {
+        name: "dwitriyono.com",
+        url: "https://dwitriyono.com",
+        icon: icons.file,
+        accent: "green",
+        body: "CMS kustom untuk penerbit dakwah dan kajian Islam. Artikel terstruktur, analitik pembaca, pustaka video, dan feed aktivitas. Penulis mengelola semuanya tanpa menyentuh kode.",
+        tags: ["CMS Kustom", "Editorial", "SEO", "TanStack Start"],
+      },
+      {
+        name: "mx.opexcg.com",
+        url: "https://mx.opexcg.com",
+        icon: icons.cloud,
+        accent: "blue",
+        body: "Situs landing dan produk untuk OpexMX, CMMS untuk tim perawatan. Halaman fitur yang jelas, paket harga, dan bagian khusus integrasi AI dan MCP, ditulis untuk pembeli B2B.",
+        tags: ["Landing Page", "SaaS B2B", "Konversi", "Next.js"],
+      },
+    ] as { name: string; url: string; icon: string; accent: Accent; body: string; tags: string[] }[],
+    viewLive: "Lihat situs",
+    teamH2: "Siapa di balik studio ini",
+    founderName: "Dzulfikar Ats Tsauri",
+    founderRole: "Founder & CEO",
+    founderAlt: "Dzulfikar Ats Tsauri, Founder & CEO Joyo Digitama Solusi",
+    founderBio:
+      "Insinyur otomasi industri yang beralih membangun software. Joyo Digitama dipimpin langsung oleh founder: orang yang Anda ajak bicara di panggilan pertama adalah orang yang merancang sistem Anda.",
+    personalSite: "Situs pribadi",
+    ctaH2: "Ada pekerjaan yang sebaiknya berjalan di software?",
+    ctaP: "Ceritakan bagaimana pekerjaan itu berjalan hari ini. Kami akan menyampaikan apa adanya apa yang bisa diubah oleh software, dan berapa biayanya.",
+    ctaPrimary: "Hubungi kami",
+    ctaWa: "Chat via WhatsApp",
+    waText: "Halo Joyo Digitama, saya ingin mendiskusikan proyek.",
+  },
+}[lang];
+
+const socials = [
+    { href: "https://dzulfikar.com", label: copy.personalSite, svg: "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"2\" y1=\"12\" x2=\"22\" y2=\"12\"/><path d=\"M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z\"/></svg>" },
+    { href: "https://www.linkedin.com/in/dzulfikar-ats-tsauri/", label: "LinkedIn", svg: "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z\"/></svg>" },
+    { href: "https://www.threads.com/@dzulfikar.at", label: "Threads", svg: "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.59 12c.025 3.086.718 5.496 2.057 7.164 1.432 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.96-.065-1.17.408-2.243 1.33-3.023.88-.744 2.084-1.168 3.58-1.263 1.073-.065 2.074.02 2.99.255-.06-1.27-.504-2.225-1.322-2.846-.878-.664-2.08-.987-3.576-.962-1.56.027-2.87.543-3.828 1.51l-1.46-1.476C7.076 4.99 8.86 4.31 10.98 4.28c2.03-.027 3.69.506 4.938 1.584 1.093.944 1.718 2.278 1.863 3.967.55.18 1.065.396 1.542.65 1.425.758 2.396 1.8 2.89 3.104.69 1.826.389 4.092-1.064 5.82C18.967 22.382 16.607 23.97 12.186 24zm-.187-10.068c-1.134.053-2.032.358-2.677.902-.618.52-.904 1.16-.872 1.905.032.72.363 1.322.957 1.726.548.372 1.267.546 2.064.5 1.105-.055 1.942-.396 2.508-1.023.456-.513.758-1.216.903-2.098-.692-.215-1.478-.312-2.316-.268z\"/></svg>" },
+    { href: "https://x.com/dzulfikarts", label: "X (Twitter)", svg: "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z\"/></svg>" },
+    { href: "https://www.youtube.com/@dzulfikarats", label: "YouTube", svg: "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z\"/></svg>" },
+    { href: "https://github.com/dzulfikar08", label: "GitHub", svg: "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12\"/></svg>" },
+];
+
+const arrow =
+  '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>';
+---
+
+<Base lang={lang} title={copy.title} description={copy.description} path="about">
+  <section class="page-hero">
+    <div class="container">
+      <h1>{copy.h1}</h1>
+      <p>{copy.heroP}</p>
+      <div class="stats-row">
+        {copy.facts.map((f) => (
+          <div class="stat">
+            <div class="stat-value">{f.value}</div>
+            <div class="stat-label">{f.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>{copy.mvH2}</h2>
+      </div>
+      <div class="mv-grid">
+        <div class="mv-card mission reveal">
+          <h3>{copy.missionTitle}</h3>
+          <p>{copy.mission}</p>
+        </div>
+        <div class="mv-card vision reveal">
+          <h3>{copy.visionTitle}</h3>
+          <p>{copy.vision}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>{copy.valuesH2}</h2>
+      </div>
+      <div class="cards-grid cols-2">
+        {copy.values.map((v) => (
+          <div class="card reveal">
+            <div class={`card-icon ${v.accent}`}><svg viewBox="0 0 24 24" aria-hidden="true" set:html={v.icon} /></div>
+            <h3>{v.title}</h3>
+            <p>{v.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>{copy.logoH2}</h2>
+        <p>{copy.logoP}</p>
+      </div>
+      <div class="logo-meaning-grid reveal">
+        <div class="logo-display">
+          <img src="/images/logo-joyodigitama.svg" alt={copy.logoAlt} />
+        </div>
+        <div class="logo-parts">
+          {copy.logoParts.map((part, i) => (
+            <div class="logo-card">
+              <div class="card-head">
+                <div class="card-num">{i + 1}</div>
+                <div>
+                  <h3>{part.title}</h3>
+                  <p set:html={part.body} />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="color-grid reveal">
+        {copy.colors.map((c) => (
+          <div class="color-card">
+            <div class="color-swatch">
+              <div class={`swatch ${c.swatch}`}></div>
+              <h3>{c.title}</h3>
+            </div>
+            <p>{c.body}</p>
+          </div>
+        ))}
+      </div>
+      <div class="interpretation-card reveal">
+        <h3>{copy.interpTitle}</h3>
+        <p>{copy.interp}</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>{copy.timelineH2}</h2>
+        <p>{copy.timelineP}</p>
+      </div>
+      <div class="timeline reveal">
+        {copy.timeline.map((t) => (
+          <div class="timeline-item">
+            <div class="timeline-year">{t.year}</div>
+            <div class="timeline-title">{t.title}</div>
+            <div class="timeline-desc">{t.desc}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>{copy.workH2}</h2>
+        <p>{copy.workP}</p>
+      </div>
+      <div class="cards-grid cols-2">
+        {copy.work.map((w) => (
+          <div class="card reveal">
+            <div class={`card-icon ${w.accent}`}><svg viewBox="0 0 24 24" aria-hidden="true" set:html={w.icon} /></div>
+            <h3>{w.name}</h3>
+            <p>{w.body}</p>
+            <div class="tags">
+              {w.tags.map((t) => <span class={`tag ${w.accent}`}>{t}</span>)}
+            </div>
+            <a href={w.url} target="_blank" rel="noopener" class={`work-link ${w.accent}`} aria-label={`${copy.viewLive}: ${w.name}`}>
+              {copy.viewLive} <Fragment set:html={arrow} />
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>{copy.teamH2}</h2>
+      </div>
+      <div class="leadership-card reveal">
+        <img src="/images/dzulfikar.webp" alt={copy.founderAlt} class="leadership-avatar" width="80" height="80" loading="lazy" />
+        <h3>{copy.founderName}</h3>
+        <div class="leadership-role">{copy.founderRole}</div>
+        <p class="bio">{copy.founderBio}</p>
+        <div class="leadership-socials">
+          {socials.map((s) => (
+            <a href={s.href} target="_blank" rel="noopener" title={s.label} aria-label={s.label} set:html={s.svg} />
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta-section reveal">
+        <h2>{copy.ctaH2}</h2>
+        <p>{copy.ctaP}</p>
+        <div class="cta-actions">
+          <a href={pageUrl("contact", lang)} class="btn btn-primary btn-lg">{copy.ctaPrimary} <Fragment set:html={arrow} /></a>
+          <a href={`https://wa.me/${SITE.phoneWa}?text=${encodeURIComponent(copy.waText)}`} class="btn btn-outline btn-lg" target="_blank" rel="noopener">{copy.ctaWa}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .logo-parts {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 48px;
+  }
+
+  .swatch.green { background: var(--phosphor); }
+  .swatch.dark { background: var(--bg); }
+
+  .work-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 20px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--phosphor);
+  }
+
+  .work-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+  @media (max-width: 680px) {
+    .color-grid { grid-template-columns: 1fr; }
+  }
+</style>

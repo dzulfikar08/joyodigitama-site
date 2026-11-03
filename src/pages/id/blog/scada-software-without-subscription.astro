@@ -5,7 +5,7 @@ import Base from "../../../layouts/Base.astro";
 <Base
   lang="id"
   title="SCADA Tanpa Biaya Langganan: Apa yang Perlu Diperhatikan — Joyo Digitama Solusi"
-  description="SCADA tanpa biaya langganan: pahami dari mana biaya lisensi per tag berasal, kapan SCADA ringan satu kali bayar lebih unggul, dan apa yang perlu dicek sebelum membeli."
+  description="SCADA tanpa biaya langganan: dari mana biaya lisensi per tag berasal, kapan SCADA ringan sekali bayar lebih unggul, dan apa yang dicek sebelum membeli."
   path="blog/scada-software-without-subscription"
 >
   <article class="article">
@@ -30,11 +30,11 @@ import Base from "../../../layouts/Base.astro";
 
       <h2>Kapan SCADA Ringan Lebih Unggul daripada Platform Berat?</h2>
       <p>SCADA kelas berat layak mendapatkan harganya dalam situasi tertentu: sepasang server redundan, historian tervalidasi untuk kebutuhan regulator, deployment plant-wide dengan puluhan ribu tag, dan integrasi mendalam dengan sistem ERP serta MES. Jika proyek Anda seperti itu, belilah yang berat.</p>
-      <p>Sebagian besar lokasi bukan proyek seperti itu. Satu lini pengemasan, satu stasiun pengolahan air, satu ruang generator: pekerjaan-pekerjaan ini hanya melibatkan segelintir perangkat Modbus TCP, satu dashboard di dinding, dan daftar alarm yang pendek. SCADA ringan menanganinya dengan baik. Voltrus SCADA, misalnya, adalah SCADA dan HMI self-hosted berbentuk satu file binary yang mendukung Modbus TCP, MQTT, OPC-UA, S7, DNP3, dan BACnet, dijual sebagai lisensi permanen mulai dari $49, harga yang ditujukan tepat di celah antara "kami butuh monitoring" dan "kami butuh tim platform."</p>
+      <p>Sebagian besar lokasi bukan proyek seperti itu. Satu lini pengemasan, satu stasiun pengolahan air, satu ruang generator: pekerjaan-pekerjaan ini hanya melibatkan segelintir perangkat Modbus TCP, satu dashboard di dinding, dan daftar alarm yang pendek. SCADA ringan menanganinya dengan baik. Voltrus SCADA, misalnya, adalah SCADA dan HMI self-hosted berbentuk satu file binary yang mendukung Modbus TCP, MQTT, OPC-UA, S7, DNP3, dan BACnet. Versi Core-nya gratis dan open source (AGPL-3.0) dengan semua protokol, sedangkan lisensi berbayar untuk fitur seperti white-label tersedia sekali bayar seumur hidup atau bulanan per lokasi. Rentang ini ditujukan tepat di celah antara "kami butuh monitoring" dan "kami butuh tim platform."</p>
       <p>Aturannya sederhana: sesuaikan alat dengan jumlah tag dan daftar protokol, bukan dengan struktur organisasi. Membayar harga platform berat untuk stasiun dua pompa tidak memberi apa pun selain perpanjangan langganan.</p>
 
       <h2>Keuntungan Satu File Binary</h2>
-      <p>Proses deployment adalah tempat produk SCADA bayar-sekali diam-diam menang atau kalah. Satu file binary mengubah cara rollout: salin satu file ke mesin atau VPS kecil, arahkan ke perangkat Anda, lalu jalankan. Tidak ada database server yang harus dipasang lebih dulu, tidak ada versi runtime yang harus dicocokkan, tidak ada akun cloud yang harus disiapkan. Voltrus memasarkan SCADA-nya sebagai software yang berjalan di VPS seharga $4; intinya, kebutuhan hardwarenya sederhana.</p>
+      <p>Proses deployment adalah tempat produk SCADA bayar-sekali diam-diam menang atau kalah. Satu file binary mengubah cara rollout: salin satu file ke mesin atau VPS kecil, arahkan ke perangkat Anda, lalu jalankan. Tidak ada database server yang harus dipasang lebih dulu, tidak ada versi runtime yang harus dicocokkan, tidak ada akun cloud yang harus disiapkan. Voltrus memasarkan SCADA-nya sebagai software yang berjalan di VPS seharga $4 dengan RAM sekitar 30 MB; intinya, kebutuhan hardwarenya sederhana.</p>
       <p>Model self-hosted juga penting. Data tetap berada di jaringan pabrik, di balik firewall yang sudah ada, tanpa bergantung pada cloud vendor yang harus selalu bisa dijangkau. Bagi integrator, ini berarti Anda menyerahkan artefak yang berdiri sendiri kepada klien untuk dijalankan di hardware mereka sendiri, dan Anda tidak dilibatkan setiap kali sertifikat kedaluwarsa.</p>
 
       <h2>Yang Perlu Dicek Sebelum Membeli</h2>
@@ -50,13 +50,13 @@ import Base from "../../../layouts/Base.astro";
 
       <h2>FAQ</h2>
       <h3>Apakah SCADA tanpa biaya langganan sama dengan SCADA gratis?</h3>
-      <p>Tidak. SCADA tanpa langganan menggunakan lisensi permanen satu kali: Anda membayar sekali dan memiliki deployment tersebut selamanya. SCADA gratis memang ada, tetapi sering mengorbankan dukungan atau kemantapan. Jalan tengah yang paling praktis adalah lisensi seumur hidup: Voltrus SCADA, misalnya, mulai dari $49 sekali bayar.</p>
+      <p>Belum tentu. SCADA tanpa langganan berarti Anda tidak ditagih setiap tahun agar sistem tetap berjalan: bisa berupa edisi open source gratis atau lisensi permanen sekali bayar. SCADA gratis sering mengorbankan dukungan atau kemantapan, jadi cek apa yang tidak tercakup di versi gratisnya. Voltrus SCADA menyediakan keduanya: Core gratis berlisensi AGPL-3.0 dengan semua protokol, dan lisensi seumur hidup berbayar untuk fitur seperti white-label. Harga terbaru ada di <a href="https://voltrus.id/voltrus-scada/">halaman Voltrus SCADA</a>.</p>
       <h3>Apakah SCADA ringan sanggup menangani lokasi produksi sungguhan?</h3>
       <p>Sanggup, selama profil lokasinya cocok: puluhan tag di PLC Modbus TCP dan sejenisnya, satu atau dua dashboard, dan daftar alarm yang pendek. Server redundan, historian plant-wide, dan integrasi ERP yang berat tetap wilayahnya platform kelas berat.</p>
       <h3>Apakah update termasuk dalam lisensi seumur hidup?</h3>
-      <p>Tergantung vendornya, jadi tanyakan sebelum membeli. Voltrus menyertakan update dalam lisensi seumur hidupnya tanpa biaya maintenance tahunan, didistribusikan lewat auto-update atau unduhan langsung. Vendor yang menagih update secara terpisah pada dasarnya menjual langganan dengan nama lain.</p>
+      <p>Tergantung vendornya, jadi tanyakan sebelum membeli dan minta jawabannya secara tertulis. Vendor yang menagih update secara terpisah pada dasarnya menjual langganan dengan nama lain.</p>
 
-      <p>Mencari SCADA tanpa biaya langganan? <a href="https://voltrus.id">Voltrus</a> adalah SCADA dan HMI self-hosted berbentuk satu file binary dengan lisensi seumur hidup: tanpa meteran per tag, tanpa perpanjangan langganan. Bandingkan dengan produk Joyo Digitama lainnya di <a href="/id/products/">halaman produk</a> kami.</p>
+      <p>Mencari SCADA tanpa biaya langganan? <a href="https://voltrus.id/voltrus-scada/">Voltrus SCADA</a> adalah SCADA dan HMI self-hosted berbentuk satu file binary dengan Core open source gratis dan opsi lisensi seumur hidup: tanpa meteran per tag. Bandingkan dengan produk Joyo Digitama lainnya di <a href="/id/products/">halaman produk</a> kami.</p>
     </div>
 
     <script is:inline type="application/ld+json">
@@ -69,7 +69,7 @@ import Base from "../../../layouts/Base.astro";
             "name": "Apakah SCADA tanpa biaya langganan sama dengan SCADA gratis?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Tidak. SCADA tanpa langganan menggunakan lisensi permanen satu kali: Anda membayar sekali dan memiliki deployment tersebut selamanya. SCADA gratis memang ada, tetapi sering mengorbankan dukungan atau kemantapan. Jalan tengah yang paling praktis adalah lisensi seumur hidup: Voltrus SCADA, misalnya, mulai dari $49 sekali bayar."
+              "text": "Belum tentu. SCADA tanpa langganan berarti Anda tidak ditagih setiap tahun agar sistem tetap berjalan: bisa berupa edisi open source gratis atau lisensi permanen sekali bayar. SCADA gratis sering mengorbankan dukungan atau kemantapan, jadi cek apa yang tidak tercakup di versi gratisnya. Voltrus SCADA menyediakan keduanya: Core gratis berlisensi AGPL-3.0 dengan semua protokol, dan lisensi seumur hidup berbayar untuk fitur seperti white-label. Harga terbaru ada di voltrus.id/voltrus-scada."
             }
           },
           {
@@ -85,7 +85,7 @@ import Base from "../../../layouts/Base.astro";
             "name": "Apakah update termasuk dalam lisensi seumur hidup?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Tergantung vendornya, jadi tanyakan sebelum membeli. Voltrus menyertakan update dalam lisensi seumur hidupnya tanpa biaya maintenance tahunan, didistribusikan lewat auto-update atau unduhan langsung. Vendor yang menagih update secara terpisah pada dasarnya menjual langganan dengan nama lain."
+              "text": "Tergantung vendornya, jadi tanyakan sebelum membeli dan minta jawabannya secara tertulis. Vendor yang menagih update secara terpisah pada dasarnya menjual langganan dengan nama lain."
             }
           }
         ]

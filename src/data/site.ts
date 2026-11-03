@@ -21,11 +21,11 @@ export const ui = {
       about: "About",
       contact: "Contact",
     },
-    getStarted: "Get Started",
+    getStarted: "Start a project",
     langToggle: "ID",
     langToggleAria: "Switch to Bahasa Indonesia",
     footer: {
-      tagline: "Industrial digitalization and IoT solutions based in Malang, Indonesia.",
+      tagline: "A software studio in Malang, Indonesia. We build our own products for factories, farms, pesantren, and small businesses, and custom systems for teams like yours.",
       services: "Services",
       products: "Products",
       legal: "Legal",
@@ -46,11 +46,11 @@ export const ui = {
       about: "Tentang",
       contact: "Kontak",
     },
-    getStarted: "Mulai",
+    getStarted: "Mulai proyek",
     langToggle: "EN",
     langToggleAria: "Switch to English",
     footer: {
-      tagline: "Solusi digitalisasi industri dan IoT yang berbasis di Malang, Indonesia.",
+      tagline: "Studio software di Malang. Kami membangun produk sendiri untuk pabrik, peternakan, pesantren, dan UMKM, serta sistem kustom untuk tim seperti Anda.",
       services: "Layanan",
       products: "Produk",
       legal: "Legal",
@@ -66,16 +66,18 @@ export const ui = {
 /** Footer service links (label keys map per language). */
 export const footerServices: Record<Lang, { label: string; href: string }[]> = {
   en: [
-    { label: "Custom Development", href: "/contact/?service=custom-software" },
-    { label: "Mobile Apps", href: "/contact/?service=mobile-app" },
-    { label: "Cloud Solutions", href: "/contact/?service=cloud-solutions" },
-    { label: "IoT Integration", href: "/contact/?service=iot-integration" },
+    { label: "Custom software", href: "/contact/?service=custom-software" },
+    { label: "Mobile apps", href: "/contact/?service=mobile-app" },
+    { label: "Industrial IoT", href: "/contact/?service=iot-integration" },
+    { label: "Cloud & DevOps", href: "/contact/?service=cloud-solutions" },
+    { label: "CMS & websites", href: "/contact/?service=cms" },
   ],
   id: [
-    { label: "Pengembangan Kustom", href: "/id/contact/?service=custom-software" },
-    { label: "Aplikasi Mobile", href: "/id/contact/?service=mobile-app" },
-    { label: "Solusi Cloud", href: "/id/contact/?service=cloud-solutions" },
-    { label: "Integrasi IoT", href: "/id/contact/?service=iot-integration" },
+    { label: "Software kustom", href: "/id/contact/?service=custom-software" },
+    { label: "Aplikasi mobile", href: "/id/contact/?service=mobile-app" },
+    { label: "IoT industri", href: "/id/contact/?service=iot-integration" },
+    { label: "Cloud & DevOps", href: "/id/contact/?service=cloud-solutions" },
+    { label: "CMS & website", href: "/id/contact/?service=cms" },
   ],
 };
 

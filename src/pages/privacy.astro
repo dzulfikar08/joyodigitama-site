@@ -1,17 +1,18 @@
 ---
+import { SITE } from "../data/site";
 import Base from "../layouts/Base.astro";
 ---
 
 <Base
   title="Privacy Policy — Joyo Digitama Solusi"
-  description="Privacy Policy for Joyo Digitama Solusi. Learn how we collect, use, and protect your personal information."
+  description="How PT Joyo Digitama Solusi collects, uses, and protects personal data from site visitors, clients, and users of our software products, and how to contact us."
   path="privacy"
 >
   <div class="legal-content reveal">
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: January 1, 2025</p>
+    <p class="updated">Last updated: November 3, 2026</p>
 
-    <p>At Joyo Digitama Solusi, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your data when you visit our website or use our services.</p>
+    <p>At PT Joyo Digitama Solusi, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your data when you visit our website or use our services.</p>
 
     <h2>1. Information We Collect</h2>
 
@@ -22,17 +23,14 @@ import Base from "../layouts/Base.astro";
       <li>Email address</li>
       <li>Phone number</li>
       <li>Company name and job title</li>
-      <li>Any additional information you voluntarily provide in communications with us</li>
+      <li>Any additional information you voluntarily provide when you email us, message us on WhatsApp, or send the contact form (which opens your own email app; nothing is stored on our website)</li>
     </ul>
 
     <h3>Technical Information</h3>
-    <p>When you visit our website, we automatically collect certain technical information:</p>
+    <p>Our website does not use analytics tools or tracking pixels. Our hosting provider, Cloudflare, keeps standard server logs for security and operations, which may include:</p>
     <ul>
-      <li>IP address and geolocation data</li>
-      <li>Browser type and version</li>
-      <li>Device information (type, operating system)</li>
-      <li>Usage patterns, including pages visited, time spent, and navigation paths</li>
-      <li>Referring website and search terms used</li>
+      <li>IP address</li>
+      <li>Browser user agent (browser type and version, operating system)</li>
     </ul>
 
     <h3>IoT and Operational Data</h3>
@@ -51,11 +49,10 @@ import Base from "../layouts/Base.astro";
       <li><strong>Communication:</strong> To respond to your inquiries, send project updates, and provide technical support</li>
       <li><strong>Security:</strong> To protect our systems, detect fraud, and prevent unauthorized access</li>
       <li><strong>Legal Compliance:</strong> To comply with applicable laws, regulations, and legal processes</li>
-      <li><strong>Analytics:</strong> To analyze usage patterns and improve our website and services</li>
     </ul>
 
     <h2>3. Data Protection</h2>
-    <p>We implement robust security measures to protect your data:</p>
+    <p>We use the following measures to protect your data:</p>
     <ul>
       <li><strong>Encryption:</strong> All data in transit is encrypted using TLS/SSL protocols. Sensitive data at rest is encrypted using industry-standard algorithms</li>
       <li><strong>Access Controls:</strong> Strict role-based access controls limit who can access your data within our organization</li>
@@ -77,8 +74,9 @@ import Base from "../layouts/Base.astro";
     <h2>5. Contact Us</h2>
     <p>If you have any questions about this Privacy Policy or our data practices, please contact us:</p>
     <ul>
-      <li>Email: <a href="mailto:dzulfikar.at@joyodigitama.com">dzulfikar.at@joyodigitama.com</a></li>
-      <li>Location: Malang, Indonesia</li>
+      <li>Email: <a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+      <li>WhatsApp: <a href={`https://wa.me/${SITE.phoneWa}`} target="_blank" rel="noopener">{SITE.phoneDisplay}</a></li>
+      <li>Address: Malang, East Java, Indonesia</li>
     </ul>
   </div>
 </Base>

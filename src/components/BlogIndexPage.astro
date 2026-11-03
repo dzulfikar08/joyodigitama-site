@@ -1,0 +1,109 @@
+---
+import Base from "../layouts/Base.astro";
+import { pageUrl, type Lang } from "../data/site";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+type Post = { slug: string; category: string; date: string; title: string; excerpt: string; readTime: string };
+
+// Titles, dates and read times mirror each post's <h1> and article meta in src/pages/blog/*.astro (and /id/blog/).
+const copy: Record<Lang, { title: string; description: string; h1: string; lead: string; read: string; posts: Post[] }> = {
+  en: {
+    title: "Blog — Joyo Digitama Solusi",
+    description:
+      "Practical notes from Joyo Digitama Solusi on Andon systems, SCADA, IoT for downtime, dairy farm software, pesantren attendance, and revenue attribution.",
+    h1: "Notes from the work",
+    lead: "What we learn building software for factories, dairy farms, pesantren, and small businesses. Practical guides, written by the people who build the products.",
+    read: "Read",
+    posts: [
+      { slug: "project-management-for-ai-agents", category: "Developer Tools", date: "September 16, 2026", readTime: "5 min read", title: "Project Management for AI Agent Crews", excerpt: "AI coding agents work like crew members, but generic trackers can't model claims, evidence, or agent KPIs. What managing an agent crew looks like day to day, and how to pick a tool." },
+      { slug: "pesantren-attendance-management-system", category: "Education", date: "September 14, 2026", readTime: "5 min read", title: "Attendance Systems for Pesantren: From Book to Biometric", excerpt: "Paper attendance books can't answer who is on campus right now. How face-based attendance, visitor registration, and wali notifications work for pesantren." },
+      { slug: "revenue-attribution-explained", category: "Analytics", date: "September 12, 2026", readTime: "6 min read", title: "Revenue Attribution Explained: Connect Traffic to Sales", excerpt: "Session metrics count attention; revenue attribution counts money. What attribution is, last-touch vs multi-touch, and what a revenue-first stack looks like." },
+      { slug: "prayer-times-mac-menu-bar", category: "Productivity", date: "September 10, 2026", readTime: "4 min read", title: "Prayer Times Apps for Mac: Why the Menu Bar Wins", excerpt: "Checking prayer times on your phone is a focus leak. A menu bar app keeps salah times in peripheral vision and blocks your calendar when it matters." },
+      { slug: "dairy-herd-management-software", category: "Agriculture", date: "September 8, 2026", readTime: "5 min read", title: "Dairy Herd Management Software: Features That Matter", excerpt: "From notebooks and spreadsheets to herd management software: the features that actually matter for feed composition, breeding calendars, and milk records." },
+      { slug: "scada-software-without-subscription", category: "SCADA", date: "September 4, 2026", readTime: "5 min read", title: "SCADA Without Subscription Fees: What to Look For", excerpt: "Per-tag and per-client licenses compound fast. When a lightweight, single-binary SCADA deployment beats a heavyweight platform, and what to check before buying." },
+      { slug: "cloud-based-andon-system", category: "Manufacturing", date: "September 2, 2026", readTime: "6 min read", title: "Cloud-Based Andon Systems: What They Are and When to Choose One", excerpt: "Tower lights can't see past the line of sight. What a cloud-based Andon system adds, when it beats conventional setups, and how to pilot one on a single line." },
+      { slug: "andon-system-implementation-guide", category: "Manufacturing", date: "June 15, 2026", readTime: "6 min read", title: "How to Implement an Andon System in Your Manufacturing Plant", excerpt: "What an Andon system is, why it matters on the shop floor, and a step-by-step plan to roll it out one line at a time." },
+      { slug: "reducing-manufacturing-downtime-iot", category: "IoT", date: "June 1, 2026", readTime: "5 min read", title: "Reducing Manufacturing Downtime with IoT: A Practical Approach", excerpt: "How IoT sensors and predictive maintenance reduce unplanned downtime: what to measure, where to start, and how to prove the return on a single asset." },
+      { slug: "digital-transformation-small-manufacturers", category: "Digitalization", date: "May 20, 2026", readTime: "4 min read", title: "Digital Transformation for Small Manufacturers: An Indonesian Perspective", excerpt: "How small and medium manufacturers in Indonesia can start going digital without breaking the bank, one process at a time." },
+      { slug: "optimizing-dairy-farm-operations", category: "Agriculture", date: "April 10, 2026", readTime: "5 min read", title: "Optimizing Dairy Farm Operations with Technology: Beyond Basic Record-Keeping", excerpt: "How dairy farmers can use digital tools to balance feed composition, keep breeding calendars on schedule, and raise milk output without guesswork." },
+    ],
+  },
+  id: {
+    title: "Blog — Joyo Digitama Solusi",
+    description:
+      "Catatan praktis dari Joyo Digitama Solusi tentang sistem Andon, SCADA, IoT untuk downtime, aplikasi peternakan sapi perah, dan absensi pesantren.",
+    h1: "Catatan dari lapangan",
+    lead: "Apa yang kami pelajari saat membangun software untuk pabrik, peternakan sapi perah, pesantren, dan UMKM. Panduan praktis, ditulis oleh tim yang membangun produknya.",
+    read: "Baca",
+    posts: [
+      { slug: "project-management-for-ai-agents", category: "Alat Pengembang", date: "16 September 2026", readTime: "5 menit baca", title: "Manajemen Proyek untuk Tim Agen AI", excerpt: "Agen AI untuk coding bekerja seperti anggota tim, tetapi pelacak proyek biasa tidak mencatat klaim, bukti kerja, maupun KPI agen. Seperti apa mengelola tim agen AI sehari-hari, dan cara memilih alatnya." },
+      { slug: "pesantren-attendance-management-system", category: "Pendidikan", date: "14 September 2026", readTime: "5 menit baca", title: "Aplikasi Absensi Pesantren: Panduan Memilih", excerpt: "Buku absensi dan buku tamu kertas tidak bisa menjawab siapa yang sedang ada di pesantren saat ini. Cara kerja absensi wajah, registrasi tamu, dan notifikasi ke wali santri." },
+      { slug: "revenue-attribution-explained", category: "Analitik", date: "12 September 2026", readTime: "6 menit baca", title: "Atribusi Pendapatan Dijelaskan: Menghubungkan Traffic ke Penjualan", excerpt: "Metrik sesi menghitung perhatian, atribusi pendapatan menghitung uang. Apa itu atribusi, beda last-touch dan multi-touch, dan seperti apa stack yang berfokus pada pendapatan untuk bisnis kecil." },
+      { slug: "prayer-times-mac-menu-bar", category: "Produktivitas", date: "10 September 2026", readTime: "4 menit baca", title: "Aplikasi Jadwal Salat Mac: Kenapa Menu Bar Lebih Unggul", excerpt: "Mengecek jadwal salat lewat ponsel memecah fokus. Aplikasi menu bar membuat waktu salat selalu terlihat dan memblokir kalender Anda saat waktunya tiba." },
+      { slug: "dairy-herd-management-software", category: "Pertanian", date: "8 September 2026", readTime: "5 menit baca", title: "Aplikasi Manajemen Peternakan Sapi Perah: Fitur yang Benar-Benar Penting", excerpt: "Dari buku catatan dan spreadsheet ke aplikasi manajemen peternakan: fitur yang benar-benar penting untuk komposisi pakan, kalender breeding, dan catatan susu per sapi." },
+      { slug: "scada-software-without-subscription", category: "SCADA", date: "4 September 2026", readTime: "5 menit baca", title: "SCADA Tanpa Biaya Langganan: Apa yang Perlu Diperhatikan", excerpt: "Lisensi per tag dan per klien cepat menumpuk. Kapan SCADA ringan dalam satu binary lebih unggul dari platform besar, dan apa yang perlu dicek sebelum membeli." },
+      { slug: "cloud-based-andon-system", category: "Manufaktur", date: "2 September 2026", readTime: "6 menit baca", title: "Sistem Andon Berbasis Cloud: Apa Itu dan Kapan Sebaiknya Digunakan", excerpt: "Lampu tower hanya terlihat sejauh mata memandang. Apa tambahan dari sistem Andon berbasis cloud, kapan lebih unggul dari sistem konvensional, dan cara memulainya dari satu lini." },
+      { slug: "andon-system-implementation-guide", category: "Manufaktur", date: "15 Juni 2026", readTime: "6 menit baca", title: "Cara Mengimplementasikan Sistem Andon di Pabrik Anda", excerpt: "Apa itu sistem Andon, mengapa penting di lantai produksi, dan langkah demi langkah menerapkannya lini demi lini." },
+      { slug: "reducing-manufacturing-downtime-iot", category: "IoT", date: "1 Juni 2026", readTime: "5 menit baca", title: "Mengurangi Downtime Manufaktur dengan IoT: Pendekatan Praktis", excerpt: "Cara sensor IoT dan predictive maintenance mengurangi downtime tak terencana: apa yang diukur, dari mana memulai, dan cara membuktikan hasilnya pada satu mesin." },
+      { slug: "digital-transformation-small-manufacturers", category: "Digitalisasi", date: "20 Mei 2026", readTime: "4 menit baca", title: "Transformasi Digital untuk Manufaktur Skala Kecil: Perspektif Indonesia", excerpt: "Cara pelaku manufaktur kecil dan menengah di Indonesia mulai beralih ke digital tanpa menguras anggaran, satu proses demi satu proses." },
+      { slug: "optimizing-dairy-farm-operations", category: "Pertanian", date: "10 April 2026", readTime: "5 menit baca", title: "Mengoptimalkan Operasional Peternakan Sapi Perah dengan Teknologi: Lebih dari Sekadar Pencatatan", excerpt: "Cara peternak sapi perah memakai alat digital untuk menyusun komposisi pakan, menjaga kalender breeding, dan meningkatkan produksi susu tanpa menebak." },
+    ],
+  },
+};
+
+const c = copy[lang];
+---
+
+<Base lang={lang} title={c.title} description={c.description} path="blog">
+  <section class="page-hero">
+    <div class="container">
+      <h1>{c.h1}</h1>
+      <p>{c.lead}</p>
+    </div>
+  </section>
+
+  <section class="blog-list">
+    <div class="container">
+      <div class="blog-grid">
+        {c.posts.map((post, i) => (
+          <a href={pageUrl(`blog/${post.slug}`, lang)} class:list={["blog-card", "reveal", { featured: i === 0 }]}>
+            <div class="blog-card-meta">
+              <span class="blog-category">{post.category}</span>
+              <span class="blog-date">{post.date}</span>
+            </div>
+            <h2>{post.title}</h2>
+            <p>{post.excerpt}</p>
+            <div class="blog-card-footer">
+              <span class="blog-read-time">{post.readTime}</span>
+              <span class="blog-read-link">{c.read} &rarr;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .blog-list {
+    padding-top: 0;
+  }
+
+  /* Newest post spans the full row so 11 posts fill the 2-column grid without an orphan. */
+  .blog-card.featured {
+    grid-column: 1 / -1;
+  }
+
+  .blog-card.featured h2 {
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+  }
+
+  .blog-card.featured p {
+    max-width: 68ch;
+  }
+</style>

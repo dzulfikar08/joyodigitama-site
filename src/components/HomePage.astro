@@ -1,0 +1,387 @@
+---
+import Base from "../layouts/Base.astro";
+import { products, type Accent } from "../data/products";
+import { SITE, pageUrl, type Lang } from "../data/site";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const accentHex: Record<Accent, string> = {
+  green: "#00ff88",
+  blue: "#3ddcff",
+  purple: "#b98bff",
+  rose: "#ff5c85",
+  orange: "#ff8a4c",
+  amber: "#ffc233",
+};
+
+type Service = { icon: string; accent: Accent; title: string; body: string; tags: string[]; service: string };
+
+const icons = {
+  code: '<polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" />',
+  phone: '<rect x="5" y="2" width="14" height="20" rx="2" ry="2" /><line x1="12" y1="18" x2="12.01" y2="18" />',
+  cloud: '<path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />',
+  db: '<ellipse cx="12" cy="5" rx="9" ry="3" /><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" /><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />',
+  iot: '<rect x="4" y="4" width="16" height="16" rx="2" /><rect x="9" y="9" width="6" height="6" /><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3" />',
+  link: '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" /><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />',
+};
+
+const copy = {
+  en: {
+    title: "Joyo Digitama Solusi — Software Studio for Industry & Business in Indonesia",
+    description:
+      "Software studio in Malang, Indonesia. We build and run our own products for factories, farms, pesantren, and small businesses, and take on custom software, mobile, cloud, and industrial IoT projects.",
+    h1: "Software for factories, farms, and the teams that run them.",
+    lede:
+      "We are a software studio in Malang. We build and run our own products, from andon and SCADA to dairy herds and calorie tracking, and we build custom systems for companies that have outgrown spreadsheets.",
+    ctaPrimary: "Start a project",
+    ctaSecondary: "See our products",
+    stripLabel: "Our products",
+    servicesH2: "Custom work, built like a product",
+    servicesP:
+      "The same team that ships our products builds yours: scoped in plain language, delivered in working increments, documented so your team can run it.",
+    services: [
+      { icon: icons.code, accent: "green", title: "Custom software", body: "Web apps, internal tools, and APIs shaped around how your team actually works.", tags: ["React", "TypeScript", "Python", "Hono"], service: "custom-software" },
+      { icon: icons.phone, accent: "blue", title: "Mobile apps", body: "Android and iOS apps for field teams, customers, and operators on the shop floor.", tags: ["Kotlin", "React Native", "Flutter"], service: "mobile-app" },
+      { icon: icons.iot, accent: "amber", title: "Industrial IoT", body: "Connect PLCs, sensors, and machines to dashboards and alerts your supervisors will read.", tags: ["Modbus", "MQTT", "LoRaWAN"], service: "iot-integration" },
+      { icon: icons.cloud, accent: "purple", title: "Cloud & DevOps", body: "Move off a single server, automate deploys, and keep hosting costs predictable.", tags: ["Cloudflare", "AWS", "Azure"], service: "cloud-solutions" },
+      { icon: icons.db, accent: "orange", title: "Data & databases", body: "Schema design, migrations, and tuning for systems that have outgrown their spreadsheet.", tags: ["PostgreSQL", "MySQL", "SQLite"], service: "database-solutions" },
+      { icon: icons.link, accent: "rose", title: "System integration", body: "Make the ERP, the payment gateway, and the legacy app talk to each other.", tags: ["REST", "Webhooks", "ERP"], service: "system-integration" },
+    ] as Service[],
+    allServices: "All services",
+    productsH2: "Products we build and run",
+    productsP: "Each one started as a problem we saw up close. All of them are in production, and we maintain every one.",
+    allProducts: "Browse products by industry",
+    soon: "coming soon",
+    processH2: "From first call to running in production",
+    steps: [
+      { title: "Understand", body: "We visit or call, map how the work happens today, and agree on what success looks like." },
+      { title: "Scope", body: "A written plan with milestones, a fixed price or rate, and nothing hidden in the fine print." },
+      { title: "Build", body: "You see working software early and often, not a big reveal at the end." },
+      { title: "Run", body: "We deploy, train your team, and stay on for support and improvements." },
+    ],
+    founderName: "Dzulfikar Ats Tsauri",
+    founderRole: "Founder & CEO",
+    founderBio:
+      "An industrial automation engineer turned software builder. Joyo Digitama is founder-led: the person you talk to on the first call is the one designing your system.",
+    founderLink: "More about us",
+    ctaH2: "Still running operations on spreadsheets and WhatsApp groups?",
+    ctaP: "Tell us how the work gets done today. We'll tell you honestly what software would change, and what it would cost.",
+    ctaWa: "Chat on WhatsApp",
+    waText: "Hello Joyo Digitama, I'd like to discuss a project.",
+  },
+  id: {
+    title: "Joyo Digitama Solusi — Studio Software untuk Industri & Bisnis di Indonesia",
+    description:
+      "Studio software di Malang. Kami membangun dan menjalankan produk sendiri untuk pabrik, peternakan, pesantren, dan UMKM, serta mengerjakan proyek software kustom, aplikasi mobile, cloud, dan IoT industri.",
+    h1: "Software untuk pabrik, peternakan, dan tim yang menjalankannya.",
+    lede:
+      "Kami studio software di Malang. Kami membangun dan menjalankan produk sendiri, dari andon dan SCADA sampai ternak perah dan hitung kalori, serta membangun sistem kustom untuk perusahaan yang sudah tidak cukup dengan spreadsheet.",
+    ctaPrimary: "Mulai proyek",
+    ctaSecondary: "Lihat produk kami",
+    stripLabel: "Produk kami",
+    servicesH2: "Proyek kustom, dibangun seperti produk",
+    servicesP:
+      "Tim yang membangun produk kami juga membangun sistem Anda: ruang lingkup ditulis dengan bahasa yang jelas, dikirim bertahap dalam bentuk software yang sudah jalan, dan terdokumentasi agar tim Anda bisa mengelolanya.",
+    services: [
+      { icon: icons.code, accent: "green", title: "Software kustom", body: "Aplikasi web, tools internal, dan API yang mengikuti cara kerja tim Anda yang sebenarnya.", tags: ["React", "TypeScript", "Python", "Hono"], service: "custom-software" },
+      { icon: icons.phone, accent: "blue", title: "Aplikasi mobile", body: "Aplikasi Android dan iOS untuk tim lapangan, pelanggan, dan operator di lantai produksi.", tags: ["Kotlin", "React Native", "Flutter"], service: "mobile-app" },
+      { icon: icons.iot, accent: "amber", title: "IoT industri", body: "Hubungkan PLC, sensor, dan mesin ke dashboard dan notifikasi yang benar-benar dibaca supervisor.", tags: ["Modbus", "MQTT", "LoRaWAN"], service: "iot-integration" },
+      { icon: icons.cloud, accent: "purple", title: "Cloud & DevOps", body: "Pindah dari satu server, otomatiskan deploy, dan jaga biaya hosting tetap terprediksi.", tags: ["Cloudflare", "AWS", "Azure"], service: "cloud-solutions" },
+      { icon: icons.db, accent: "orange", title: "Data & database", body: "Desain skema, migrasi, dan optimasi untuk sistem yang sudah tidak muat di spreadsheet.", tags: ["PostgreSQL", "MySQL", "SQLite"], service: "database-solutions" },
+      { icon: icons.link, accent: "rose", title: "Integrasi sistem", body: "Hubungkan ERP, payment gateway, dan aplikasi lama supaya saling bicara.", tags: ["REST", "Webhook", "ERP"], service: "system-integration" },
+    ] as Service[],
+    allServices: "Semua layanan",
+    productsH2: "Produk yang kami bangun dan jalankan",
+    productsP: "Masing-masing berawal dari masalah yang kami lihat langsung. Semuanya sudah berjalan di produksi, dan kami rawat sendiri.",
+    allProducts: "Lihat produk per industri",
+    soon: "segera hadir",
+    processH2: "Dari obrolan pertama sampai berjalan di produksi",
+    steps: [
+      { title: "Pahami", body: "Kami berkunjung atau menelepon, memetakan alur kerja saat ini, dan menyepakati ukuran keberhasilan." },
+      { title: "Rancang", body: "Rencana tertulis dengan milestone, harga tetap atau tarif yang jelas, tanpa biaya tersembunyi." },
+      { title: "Bangun", body: "Anda melihat software yang sudah jalan sejak awal dan rutin, bukan kejutan di akhir." },
+      { title: "Jalankan", body: "Kami deploy, melatih tim Anda, dan tetap mendampingi untuk support dan pengembangan." },
+    ],
+    founderName: "Dzulfikar Ats Tsauri",
+    founderRole: "Founder & CEO",
+    founderBio:
+      "Insinyur otomasi industri yang beralih membangun software. Joyo Digitama dipimpin langsung oleh founder: orang yang Anda ajak bicara di panggilan pertama adalah orang yang merancang sistem Anda.",
+    founderLink: "Tentang kami",
+    ctaH2: "Operasional masih berjalan di spreadsheet dan grup WhatsApp?",
+    ctaP: "Ceritakan bagaimana pekerjaan berjalan hari ini. Kami akan jujur menyampaikan apa yang bisa diubah oleh software, dan berapa biayanya.",
+    ctaWa: "Chat via WhatsApp",
+    waText: "Halo Joyo Digitama, saya ingin mendiskusikan proyek.",
+  },
+}[lang];
+
+const contact = pageUrl("contact", lang);
+const arrow =
+  '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>';
+---
+
+<Base lang={lang} title={copy.title} description={copy.description} path="">
+  <section class="hero">
+    <div class="container">
+      <h1 class="rise">{copy.h1}</h1>
+      <p class="subtitle rise rise-1">{copy.lede}</p>
+      <div class="hero-actions rise rise-2">
+        <a href={contact} class="btn btn-primary btn-lg">{copy.ctaPrimary} <Fragment set:html={arrow} /></a>
+        <a href={pageUrl("products", lang)} class="btn btn-outline btn-lg">{copy.ctaSecondary}</a>
+      </div>
+      <ul class="product-strip rise rise-3" aria-label={copy.stripLabel}>
+        {products.map((p) => (
+          <li>
+            <a href={p.url ?? pageUrl("products", lang)} {...(p.url ? { target: "_blank", rel: "noopener" } : {})}>
+              {p.logo ? (
+                <img src={p.logo} alt="" width="28" height="28" loading="eager" />
+              ) : (
+                <span class="strip-mono" style={`background:${accentHex[p.accent]}`} aria-hidden="true">{p.name[0]}</span>
+              )}
+              <span>{p.name}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head-row reveal">
+        <div class="section-header">
+          <h2>{copy.servicesH2}</h2>
+          <p>{copy.servicesP}</p>
+        </div>
+        <a href={pageUrl("services", lang)} class="btn btn-outline">{copy.allServices} <Fragment set:html={arrow} /></a>
+      </div>
+      <div class="cards-grid">
+        {copy.services.map((s) => (
+          <a href={`${contact}?service=${s.service}`} class="card service-card reveal">
+            <div class={`card-icon ${s.accent}`}><svg viewBox="0 0 24 24" aria-hidden="true" set:html={s.icon} /></div>
+            <h3>{s.title}</h3>
+            <p>{s.body}</p>
+            <div class="tags">
+              {s.tags.map((t) => <span class="tag">{t}</span>)}
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head-row reveal">
+        <div class="section-header">
+          <h2>{copy.productsH2}</h2>
+          <p>{copy.productsP}</p>
+        </div>
+        <a href={pageUrl("products", lang)} class="btn btn-outline">{copy.allProducts} <Fragment set:html={arrow} /></a>
+      </div>
+      <ul class="product-list">
+        {products.map((p) => (
+          <li class="reveal">
+            <a href={p.url ?? pageUrl("products", lang)} {...(p.url ? { target: "_blank", rel: "noopener" } : {})}>
+              {p.logo ? (
+                <img src={p.logo} alt="" width="44" height="44" loading="lazy" />
+              ) : (
+                <span class="strip-mono list-mono" style={`background:${accentHex[p.accent]}`} aria-hidden="true">{p.name[0]}</span>
+              )}
+              <div>
+                <h3>{p.name} <span class="list-host">{p.url ? new URL(p.url).host : copy.soon}</span></h3>
+                <p>{p.desc[lang]}</p>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>{copy.processH2}</h2>
+      </div>
+      <ol class="process-steps">
+        {copy.steps.map((s, i) => (
+          <li class="step reveal">
+            <div class="step-number">{String(i + 1).padStart(2, "0")}</div>
+            <h3>{s.title}</h3>
+            <p>{s.body}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="founder reveal">
+        <img src="/images/dzulfikar.webp" alt={copy.founderName} width="120" height="120" loading="lazy" />
+        <div>
+          <h2>{copy.founderName}</h2>
+          <div class="leadership-role">{copy.founderRole}</div>
+          <p>{copy.founderBio}</p>
+          <a href={pageUrl("about", lang)} class="founder-link">{copy.founderLink} <Fragment set:html={arrow} /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta-section reveal">
+        <h2>{copy.ctaH2}</h2>
+        <p>{copy.ctaP}</p>
+        <div class="cta-actions">
+          <a href={contact} class="btn btn-primary btn-lg">{copy.ctaPrimary} <Fragment set:html={arrow} /></a>
+          <a href={`https://wa.me/${SITE.phoneWa}?text=${encodeURIComponent(copy.waText)}`} class="btn btn-outline btn-lg" target="_blank" rel="noopener">{copy.ctaWa}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero h1 { max-width: 980px; }
+
+  .product-strip {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 28px;
+    margin-top: 72px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+  }
+
+  .product-strip a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--text-dim);
+    transition: color 0.2s;
+  }
+
+  .product-strip a:hover { color: var(--text); }
+
+  .product-strip img,
+  .strip-mono {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+
+  .strip-mono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: #03110a;
+  }
+
+  .section-head-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 56px;
+  }
+
+  .section-head-row .section-header { margin-bottom: 0; }
+
+  .service-card { display: block; }
+  .service-card:hover { transform: translateY(-3px); }
+
+  .founder {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 48px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--bg-raised);
+  }
+
+  .founder img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--border-hover);
+  }
+
+  .founder h2 {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+
+  .founder p {
+    color: var(--text-dim);
+    font-size: 1.125rem;
+    line-height: 1.65;
+    max-width: 680px;
+  }
+
+  .founder-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 16px;
+    font-weight: 600;
+    color: var(--phosphor);
+  }
+
+  .product-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 48px;
+    border-top: 1px solid var(--border);
+  }
+
+  .product-list li { border-bottom: 1px solid var(--border); }
+
+  .product-list a {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 20px;
+    padding: 24px 0;
+  }
+
+  .product-list img,
+  .list-mono { width: 44px; height: 44px; border-radius: 8px; object-fit: cover; font-size: 1.25rem; }
+
+  .product-list h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    transition: color 0.2s;
+  }
+
+  .product-list a:hover h3 { color: var(--phosphor); }
+
+  .list-host { margin-left: 8px; font-size: 0.8125rem; font-weight: 400; font-stretch: 100%; color: var(--text-muted); }
+
+  .product-list p { color: var(--text-dim); font-size: 0.9375rem; line-height: 1.55; }
+
+
+  @media (max-width: 760px) {
+    .section-head-row { flex-direction: column; align-items: flex-start; }
+    .product-list { grid-template-columns: 1fr; }
+    .founder { grid-template-columns: 1fr; padding: 28px; gap: 20px; }
+    .founder img { width: 88px; height: 88px; }
+  }
+</style>

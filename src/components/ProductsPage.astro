@@ -1,0 +1,126 @@
+---
+import Base from "../layouts/Base.astro";
+import ProductCard from "./ProductCard.astro";
+import { products, categoryOrder, categoryDesc, type CategoryId } from "../data/products";
+import { SITE, pageUrl, type Lang } from "../data/site";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const liveCount = products.filter((p) => p.status === "live").length;
+const wipCount = products.length - liveCount;
+
+const copy = {
+  en: {
+    title: "Products — Joyo Digitama Solusi",
+    description:
+      "Software we build and run: AndonFAST andon, Voltrus SCADA, Cowculator dairy herds, JoyoRogo and JoyoFit for health, E-Pondok for pesantren, and more.",
+    h1: "Our products",
+    heroP: `${liveCount} products live today${wipCount ? `, ${wipCount} more in progress` : ""}. Each started as a problem we saw up close, and we still run every one of them. Grouped below by who they serve.`,
+    headlines: {
+      industrial: "For lines, plants, and farms",
+      community: "For Muslim professionals and pesantren",
+      health: "For eating and training better",
+      business: "For teams and small businesses",
+      developer: "For developers selling in Indonesia",
+    } as Record<CategoryId, string>,
+    ctaH2: "Need something none of these do?",
+    ctaP: "The same team builds custom software for clients, to the same standard. Tell us what the work looks like today.",
+    ctaPrimary: "Start a project",
+    ctaWa: "Chat on WhatsApp",
+    waText: "Hi Joyo Digitama, I'd like to discuss a project.",
+  },
+  id: {
+    title: "Produk — Joyo Digitama Solusi",
+    description:
+      "Software yang kami bangun dan jalankan: andon AndonFAST, SCADA Voltrus, Cowculator untuk ternak perah, JoyoRogo dan JoyoFit, E-Pondok, dan lainnya.",
+    h1: "Produk kami",
+    heroP: `${liveCount} produk sudah live${wipCount ? `, ${wipCount} lagi sedang dikerjakan` : ""}. Masing-masing lahir dari masalah yang kami lihat langsung, dan semuanya masih kami jalankan sendiri. Dikelompokkan menurut siapa penggunanya.`,
+    headlines: {
+      industrial: "Untuk lini produksi, pabrik, dan peternakan",
+      community: "Untuk profesional Muslim dan pesantren",
+      health: "Untuk makan dan berlatih lebih baik",
+      business: "Untuk tim dan UMKM",
+      developer: "Untuk developer yang berjualan di Indonesia",
+    } as Record<CategoryId, string>,
+    ctaH2: "Butuh sesuatu yang belum ada di sini?",
+    ctaP: "Tim yang sama juga membangun software kustom untuk klien, dengan standar yang sama. Ceritakan bagaimana pekerjaan Anda berjalan hari ini.",
+    ctaPrimary: "Mulai proyek",
+    ctaWa: "Chat via WhatsApp",
+    waText: "Halo Joyo Digitama, saya ingin mendiskusikan proyek.",
+  },
+}[lang];
+
+const grouped = categoryOrder
+  .map((id) => ({ id, items: products.filter((p) => p.category === id) }))
+  .filter((g) => g.items.length > 0);
+
+const arrow =
+  '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>';
+---
+
+<Base lang={lang} title={copy.title} description={copy.description} path="products">
+  <section class="page-hero">
+    <div class="container">
+      <h1>{copy.h1}</h1>
+      <p>{copy.heroP}</p>
+    </div>
+  </section>
+
+  {grouped.map(({ id, items }) => (
+    <section class="category" id={id}>
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>{copy.headlines[id]}</h2>
+          <p>{categoryDesc[id][lang]}</p>
+        </div>
+        <div class={`category-grid n${Math.min(Math.max(items.length, 2), 4)}`}>
+          {items.map((product) => <ProductCard product={product} lang={lang} />)}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section>
+    <div class="container">
+      <div class="cta-section reveal">
+        <h2>{copy.ctaH2}</h2>
+        <p>{copy.ctaP}</p>
+        <div class="cta-actions">
+          <a href={pageUrl("contact", lang)} class="btn btn-primary btn-lg">{copy.ctaPrimary} <Fragment set:html={arrow} /></a>
+          <a href={`https://wa.me/${SITE.phoneWa}?text=${encodeURIComponent(copy.waText)}`} class="btn btn-outline btn-lg" target="_blank" rel="noopener">{copy.ctaWa}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .category { padding-top: 0; }
+
+  /* Column count follows the group size (2–4) so no category ends in a half-empty row. */
+  .category-grid {
+    display: grid;
+    gap: 16px;
+  }
+
+  .category-grid.n2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .category-grid.n3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .category-grid.n4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+  @media (max-width: 1080px) {
+    .category-grid.n4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  @media (max-width: 960px) {
+    .category-grid.n3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  @media (max-width: 680px) {
+    .category-grid.n2,
+    .category-grid.n3,
+    .category-grid.n4 { grid-template-columns: 1fr; }
+  }
+</style>

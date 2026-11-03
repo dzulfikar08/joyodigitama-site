@@ -1,18 +1,19 @@
 ---
+import { SITE } from "../../data/site";
 import Base from "../../layouts/Base.astro";
 ---
 
 <Base
   lang="id"
   title="Kebijakan Privasi — Joyo Digitama Solusi"
-  description="Kebijakan Privasi Joyo Digitama Solusi. Pelajari bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda."
+  description="Cara PT Joyo Digitama Solusi mengumpulkan, menggunakan, dan melindungi data pribadi pengunjung situs, klien, dan pengguna produk software kami."
   path="privacy"
 >
   <div class="legal-content reveal">
     <h1>Kebijakan Privasi</h1>
-    <p class="updated">Terakhir diperbarui: 1 Januari 2025</p>
+    <p class="updated">Terakhir diperbarui: 3 November 2026</p>
 
-    <p>Di Joyo Digitama Solusi, kami berkomitmen untuk melindungi privasi Anda dan menjamin keamanan informasi pribadi Anda. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, mengungkapkan, dan melindungi data Anda saat Anda mengunjungi situs web kami atau menggunakan layanan kami.</p>
+    <p>Di PT Joyo Digitama Solusi, kami berkomitmen untuk melindungi privasi Anda dan menjamin keamanan informasi pribadi Anda. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, mengungkapkan, dan melindungi data Anda saat Anda mengunjungi situs web kami atau menggunakan layanan kami.</p>
 
     <h2>1. Informasi yang Kami Kumpulkan</h2>
 
@@ -23,17 +24,14 @@ import Base from "../../layouts/Base.astro";
       <li>Alamat email</li>
       <li>Nomor telepon</li>
       <li>Nama perusahaan dan jabatan</li>
-      <li>Informasi tambahan lainnya yang Anda berikan secara sukarela dalam komunikasi dengan kami</li>
+      <li>Informasi tambahan yang Anda berikan secara sukarela saat mengirim email, pesan WhatsApp, atau formulir kontak (formulir hanya membuka aplikasi email Anda; tidak ada data yang disimpan di situs kami)</li>
     </ul>
 
     <h3>Informasi Teknis</h3>
-    <p>Saat Anda mengunjungi situs web kami, kami secara otomatis mengumpulkan informasi teknis tertentu:</p>
+    <p>Situs kami tidak memakai alat analitik atau pixel pelacak. Penyedia hosting kami, Cloudflare, menyimpan log server standar untuk keamanan dan operasional, yang dapat mencakup:</p>
     <ul>
-      <li>Alamat IP dan data geolokasi</li>
-      <li>Jenis dan versi browser</li>
-      <li>Informasi perangkat (jenis, sistem operasi)</li>
-      <li>Pola penggunaan, termasuk halaman yang dikunjungi, waktu yang dihabiskan, dan jalur navigasi</li>
-      <li>Situs web perujuk dan kata kunci pencarian yang digunakan</li>
+      <li>Alamat IP</li>
+      <li>User agent browser (jenis dan versi browser, sistem operasi)</li>
     </ul>
 
     <h3>Data IoT dan Operasional</h3>
@@ -52,11 +50,10 @@ import Base from "../../layouts/Base.astro";
       <li><strong>Komunikasi:</strong> Untuk menanggapi pertanyaan Anda, mengirim pembaruan proyek, dan memberikan dukungan teknis</li>
       <li><strong>Keamanan:</strong> Untuk melindungi sistem kami, mendeteksi penipuan, dan mencegah akses tidak sah</li>
       <li><strong>Kepatuhan Hukum:</strong> Untuk mematuhi hukum, peraturan, dan proses hukum yang berlaku</li>
-      <li><strong>Analitik:</strong> Untuk menganalisis pola penggunaan dan meningkatkan situs web serta layanan kami</li>
     </ul>
 
     <h2>3. Perlindungan Data</h2>
-    <p>Kami menerapkan langkah-langkah keamanan yang ketat untuk melindungi data Anda:</p>
+    <p>Kami menerapkan langkah-langkah keamanan berikut untuk melindungi data Anda:</p>
     <ul>
       <li><strong>Enkripsi:</strong> Semua data saat transit dienkripsi menggunakan protokol TLS/SSL. Data sensitif saat tersimpan dienkripsi menggunakan algoritme standar industri</li>
       <li><strong>Kontrol Akses:</strong> Kontrol akses berbasis peran yang ketat membatasi siapa saja yang dapat mengakses data Anda di dalam organisasi kami</li>
@@ -78,8 +75,9 @@ import Base from "../../layouts/Base.astro";
     <h2>5. Hubungi Kami</h2>
     <p>Jika Anda memiliki pertanyaan tentang Kebijakan Privasi ini atau praktik penanganan data kami, silakan hubungi kami:</p>
     <ul>
-      <li>Email: <a href="mailto:dzulfikar.at@joyodigitama.com">dzulfikar.at@joyodigitama.com</a></li>
-      <li>Lokasi: Malang, Indonesia</li>
+      <li>Email: <a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+      <li>WhatsApp: <a href={`https://wa.me/${SITE.phoneWa}`} target="_blank" rel="noopener">{SITE.phoneDisplay}</a></li>
+      <li>Alamat: Malang, Jawa Timur, Indonesia</li>
     </ul>
   </div>
 </Base>

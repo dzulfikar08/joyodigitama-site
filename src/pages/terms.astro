@@ -1,23 +1,24 @@
 ---
+import { SITE } from "../data/site";
 import Base from "../layouts/Base.astro";
 ---
 
 <Base
   title="Terms of Service — Joyo Digitama Solusi"
-  description="Terms of Service for Joyo Digitama Solusi. Read our terms and conditions governing the use of our services."
+  description="Terms of Service for PT Joyo Digitama Solusi: accounts, acceptable use, payment, intellectual property, liability, and governing law for our services."
   path="terms"
 >
   <div class="legal-content reveal">
     <h1>Terms of Service</h1>
     <p class="updated">Last updated: January 1, 2025</p>
 
-    <p>Please read these Terms of Service carefully before using the services provided by Joyo Digitama Solusi. By accessing or using our services, you agree to be bound by these terms.</p>
+    <p>Please read these Terms of Service carefully before using the services provided by PT Joyo Digitama Solusi. By accessing or using our services, you agree to be bound by these terms.</p>
 
     <h2>1. Acceptance of Terms</h2>
     <p>By accessing our website, using our software products, or engaging our consulting services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service, along with our <a href="/privacy/">Privacy Policy</a> and <a href="/cookies/">Cookie Policy</a>. If you do not agree to these terms, you must not use our services.</p>
 
     <h2>2. Services</h2>
-    <p>Joyo Digitama Solusi provides the following services:</p>
+    <p>PT Joyo Digitama Solusi provides the following services:</p>
     <ul>
       <li><strong>Custom Software Development:</strong> Tailored software solutions including web applications, desktop software, APIs, and system integrations</li>
       <li><strong>SaaS Products:</strong> Subscription-based software products including AndonFAST, Cowculator, Voltrus, Waqtu, and other platforms</li>
@@ -67,7 +68,7 @@ import Base from "../layouts/Base.astro";
     </ul>
 
     <h2>7. Intellectual Property</h2>
-    <p>All content, software, designs, and materials associated with our services are the intellectual property of Joyo Digitama Solusi or its licensors. This includes:</p>
+    <p>All content, software, designs, and materials associated with our services are the intellectual property of PT Joyo Digitama Solusi or its licensors. This includes:</p>
     <ul>
       <li>Source code, designs, and documentation for our products</li>
       <li>Website content, logos, and branding materials</li>
@@ -87,7 +88,7 @@ import Base from "../layouts/Base.astro";
     <h2>9. Limitation of Liability</h2>
     <p>To the maximum extent permitted by law:</p>
     <ul>
-      <li>Joyo Digitama Solusi shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our services</li>
+      <li>PT Joyo Digitama Solusi shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our services</li>
       <li>Our total liability for any claim shall not exceed the amount you paid for the specific service giving rise to the claim in the 12 months preceding the event</li>
       <li>We are not liable for any loss of data, revenue, or business opportunities resulting from service interruptions</li>
     </ul>
@@ -98,8 +99,9 @@ import Base from "../layouts/Base.astro";
     <h2>11. Contact Us</h2>
     <p>If you have any questions about these Terms of Service, please contact us:</p>
     <ul>
-      <li>Email: <a href="mailto:dzulfikar.at@joyodigitama.com">dzulfikar.at@joyodigitama.com</a></li>
-      <li>Location: Malang, Indonesia</li>
+      <li>Email: <a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+      <li>WhatsApp: <a href={`https://wa.me/${SITE.phoneWa}`} target="_blank" rel="noopener">{SITE.phoneDisplay}</a></li>
+      <li>Address: Malang, East Java, Indonesia</li>
     </ul>
   </div>
 </Base>

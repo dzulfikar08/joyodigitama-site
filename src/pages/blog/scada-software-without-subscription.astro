@@ -29,11 +29,11 @@ import Base from "../../layouts/Base.astro";
 
       <h2>When a Lightweight SCADA Beats a Heavyweight Platform</h2>
       <p>Heavyweight SCADA earns its price in specific situations: redundant server pairs, validated historians feeding regulators, plant-wide deployments in the tens of thousands of tags, and deep integration with ERP and MES systems. If that is your project, buy the heavyweight.</p>
-      <p>Most sites are not that project. A packaging line, a water treatment station, a generator room: these are jobs with a handful of Modbus TCP devices, one dashboard on a wall, and a short alarm list. A lightweight SCADA handles them fine. Voltrus SCADA, for example, is a single-binary, self-hosted SCADA and HMI covering Modbus TCP, MQTT, OPC-UA, S7, DNP3, and BACnet, sold as a perpetual license from $49, a price aimed squarely at the gap between "we need monitoring" and "we need a platform team."</p>
+      <p>Most sites are not that project. A packaging line, a water treatment station, a generator room: these are jobs with a handful of Modbus TCP devices, one dashboard on a wall, and a short alarm list. A lightweight SCADA handles them fine. Voltrus SCADA, for example, is a single-binary, self-hosted SCADA and HMI covering Modbus TCP, MQTT, OPC-UA, S7, DNP3, and BACnet. Its Core is free and open source (AGPL-3.0) with every protocol included, and paid licences for features like white-label come as a one-time lifetime licence or a monthly per-site plan. That range is aimed squarely at the gap between "we need monitoring" and "we need a platform team."</p>
       <p>The rule is simple: size the tool to the tag count and the protocol list, not to the org chart. Paying heavyweight prices for a two-pump station buys you nothing except renewals.</p>
 
       <h2>The Case for a Single Binary</h2>
-      <p>Deployment is where one-time SCADA products quietly win or lose. A single binary changes the rollout: copy one file to the machine or a small VPS, point it at your devices, and run. There is no database server to install first, no runtime environment whose versions must match, no cloud account to provision. Voltrus markets its SCADA as running on a $4 VPS, the point being that the hardware requirement is modest.</p>
+      <p>Deployment is where one-time SCADA products quietly win or lose. A single binary changes the rollout: copy one file to the machine or a small VPS, point it at your devices, and run. There is no database server to install first, no runtime environment whose versions must match, no cloud account to provision. Voltrus markets its SCADA as running on a $4 VPS in about 30 MB of RAM, the point being that the hardware requirement is modest.</p>
       <p>Self-hosting matters too. The data stays on the plant network, behind the existing firewall, with no dependency on a vendor's cloud being reachable. For integrators, that means you hand the client a self-contained artifact they can run on their own hardware, and you are not in the loop every time a certificate expires.</p>
 
       <h2>What to Check Before You Buy</h2>
@@ -49,13 +49,13 @@ import Base from "../../layouts/Base.astro";
 
       <h2>FAQ</h2>
       <h3>Is SCADA software without subscription fees the same as free SCADA?</h3>
-      <p>No. No-subscription SCADA uses a one-time, perpetual license: you pay once and own the deployment for good. Fully free SCADA exists but often trades away support or polish. The practical middle ground is a lifetime license: Voltrus SCADA, for instance, starts at $49 one-time.</p>
+      <p>Not necessarily. No-subscription SCADA means you are not billed every year to keep running: either a free open-source edition or a one-time, perpetual licence. Fully free SCADA often trades away support or polish, so check what the free tier leaves out. Voltrus SCADA covers both routes: a free AGPL-3.0 Core with all protocols, and paid lifetime licences for features like white-label. Current prices are on the <a href="https://voltrus.id/voltrus-scada/">Voltrus SCADA page</a>.</p>
       <h3>Can a lightweight SCADA handle a real production site?</h3>
       <p>Yes, when the site matches its profile: dozens of tags across Modbus TCP or similar PLCs, one or two dashboards, and a short alarm list. Redundant servers, plant-wide historians, and heavy ERP integration remain the territory of heavyweight platforms.</p>
       <h3>Are updates included with a lifetime SCADA license?</h3>
-      <p>It depends on the vendor, so ask before buying. Voltrus includes updates in its lifetime licenses with no annual maintenance fee, delivered through auto-update or direct download. Any vendor that charges separately for updates is selling a subscription in disguise.</p>
+      <p>It depends on the vendor, so ask before buying, and get the answer in writing. Any vendor that charges separately for updates is selling a subscription in disguise.</p>
 
-      <p>Looking for SCADA software without subscription fees? <a href="https://voltrus.id">Voltrus</a> is a single-binary, self-hosted SCADA and HMI with a lifetime license: no per-tag meters, no renewals. Browse all Joyo Digitama products on our <a href="/products/">products page</a> to compare the rest of the catalog.</p>
+      <p>Looking for SCADA software without subscription fees? <a href="https://voltrus.id/voltrus-scada/">Voltrus SCADA</a> is a single-binary, self-hosted SCADA and HMI with a free open-source Core and an optional lifetime licence: no per-tag meters. Browse all Joyo Digitama products on our <a href="/products/">products page</a> to compare the rest of the catalog.</p>
     </div>
 
     <script is:inline type="application/ld+json">
@@ -68,7 +68,7 @@ import Base from "../../layouts/Base.astro";
             "name": "Is SCADA software without subscription fees the same as free SCADA?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. No-subscription SCADA uses a one-time, perpetual license: you pay once and own the deployment for good. Fully free SCADA exists but often trades away support or polish. The practical middle ground is a lifetime license: Voltrus SCADA, for instance, starts at $49 one-time."
+              "text": "Not necessarily. No-subscription SCADA means you are not billed every year to keep running: either a free open-source edition or a one-time, perpetual licence. Fully free SCADA often trades away support or polish, so check what the free tier leaves out. Voltrus SCADA covers both routes: a free AGPL-3.0 Core with all protocols, and paid lifetime licences for features like white-label. Current prices are on voltrus.id/voltrus-scada."
             }
           },
           {
@@ -84,7 +84,7 @@ import Base from "../../layouts/Base.astro";
             "name": "Are updates included with a lifetime SCADA license?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "It depends on the vendor, so ask before buying. Voltrus includes updates in its lifetime licenses with no annual maintenance fee, delivered through auto-update or direct download. Any vendor that charges separately for updates is selling a subscription in disguise."
+              "text": "It depends on the vendor, so ask before buying, and get the answer in writing. Any vendor that charges separately for updates is selling a subscription in disguise."
             }
           }
         ]

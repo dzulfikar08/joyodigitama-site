@@ -3,9 +3,7 @@ import "../styles/global.css";
 import { SITE, ui, footerServices, pageUrl, type Lang } from "../data/site";
 import { products } from "../data/products";
 
-import "@fontsource-variable/fraunces";
-import "@fontsource-variable/libre-franklin";
-import "@fontsource-variable/jetbrains-mono";
+import "@fontsource-variable/archivo/wdth.css";
 
 interface Props {
   /** Full page title, e.g. "Services — Joyo Digitama Solusi". */
@@ -43,9 +41,10 @@ const orgLd = {
   "@id": "https://joyodigitama.com/#organization",
   name: SITE.name,
   url: SITE.domain,
-  logo: `${SITE.domain}/images/logo-joyodigitama.svg`,
+  logo: `${SITE.domain}/images/logo-joyodigitama-512.png`,
+  image: `${SITE.domain}/images/og-joyodigitama.png`,
   description:
-    "Industrial digitalization and IoT solutions company based in Malang, Indonesia. Custom software development, industrial IoT, and SaaS products for manufacturing, logistics, and smart buildings.",
+    "Software studio in Malang, Indonesia. We build and run our own products for manufacturing, farming, Islamic education, and small business, and take on custom software, mobile, cloud, and industrial IoT projects.",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Malang",
@@ -56,7 +55,7 @@ const orgLd = {
   },
   geo: { "@type": "GeoCoordinates", latitude: "-7.9666", longitude: "112.6326" },
   email: SITE.email,
-  telephone: SITE.phoneWa,
+  telephone: `+${SITE.phoneWa}`,
   foundingDate: SITE.founded,
 };
 
@@ -83,36 +82,35 @@ const orgLd = {
     <meta property="og:url" content={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={`${SITE.domain}/images/logo-joyodigitama-logo.png`} />
-    <meta property="og:image:width" content="512" />
-    <meta property="og:image:height" content="512" />
+    <meta property="og:image" content={`${SITE.domain}/images/og-joyodigitama.png`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={SITE.name} />
     <meta property="og:site_name" content={SITE.name} />
     <meta property="og:locale" content={lang === "en" ? "en_US" : "id_ID"} />
     <meta property="og:locale:alternate" content={lang === "en" ? "id_ID" : "en_US"} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={`${SITE.domain}/images/logo-joyodigitama-logo.png`} />
+    <meta name="twitter:image" content={`${SITE.domain}/images/og-joyodigitama.png`} />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/svg+xml" href="/images/logo-joyodigitama.svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <meta name="theme-color" content="#00ff88" />
+    <meta name="theme-color" content="#050c09" />
     <script type="application/ld+json" set:html={JSON.stringify(orgLd)} />
   </head>
   <body>
-    <div class="scanlines"></div>
-
     <nav class="nav">
       <div class="nav-inner">
         <a href={pageUrl("", lang)} class="nav-logo">
-          <img src="/images/logo-joyodigitama.svg" alt={SITE.name} width="32" height="32" />
+          <img src="/images/logo-joyodigitama.svg" alt="" width="30" height="30" />
           <span>Joyo Digitama</span>
         </a>
         <ul class="nav-links">
-          {navItems.map((item) => (
+          {navItems.filter((item) => item.key !== "home").map((item) => (
             <li>
               <a href={item.href} class={activeSeg === item.match ? "active" : undefined}>
                 {t.nav[item.key]}
@@ -122,14 +120,15 @@ const orgLd = {
         </ul>
         <div class="nav-actions">
           <a href={switchHref} class="btn btn-outline lang-toggle" aria-label={t.langToggleAria}>{t.langToggle}</a>
-          <a href={`https://wa.me/${SITE.phoneWa}`} class="btn btn-primary" target="_blank" rel="noopener">
+          <a href={pageUrl("contact", lang)} class="btn btn-primary">
             {t.getStarted}
           </a>
         </div>
         <button
           class="mobile-toggle"
-          onclick="document.querySelector('.mobile-menu').classList.toggle('active')"
+          onclick="this.setAttribute('aria-expanded', document.querySelector('.mobile-menu').classList.toggle('active'))"
           aria-label="Menu"
+          aria-expanded="false"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             ><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" /></svg
@@ -142,7 +141,7 @@ const orgLd = {
         <a href={item.href} class={activeSeg === item.match ? "active" : undefined}>{t.nav[item.key]}</a>
       ))}
       <a href={switchHref} class="btn btn-outline lang-toggle">{t.langToggle}</a>
-      <a href={`https://wa.me/${SITE.phoneWa}`} class="btn btn-primary" target="_blank" rel="noopener">{t.getStarted}</a>
+      <a href={pageUrl("contact", lang)} class="btn btn-primary">{t.getStarted}</a>
     </div>
 
     <main>
@@ -153,14 +152,15 @@ const orgLd = {
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
-            <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-              <img src="/images/logo-joyodigitama.svg" alt={SITE.name} width="28" height="28" style="border-radius:4px;" />
-              <strong style="font-family:var(--font-display);">{SITE.name}</strong>
-            </div>
+            <a href={pageUrl("", lang)} class="footer-logo">
+              <img src="/images/logo-joyodigitama.svg" alt="" width="28" height="28" />
+              <span>{SITE.name}</span>
+            </a>
             <p>{t.footer.tagline}</p>
-            <p style="margin-top:12px;">
-              <a href={`mailto:${SITE.email}`} style="color:var(--phosphor);">{SITE.email}</a>
-            </p>
+            <div class="footer-contact">
+              <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+              <a href={`https://wa.me/${SITE.phoneWa}`} target="_blank" rel="noopener">WhatsApp {SITE.phoneDisplay}</a>
+            </div>
           </div>
           <div class="footer-col">
             <h4>{t.footer.services}</h4>
@@ -172,7 +172,7 @@ const orgLd = {
           </div>
           <div class="footer-col">
             <h4>{t.footer.products}</h4>
-            <ul>
+            <ul class="footer-products">
               {products
                 .filter((p) => p.url)
                 .map((p) => (
@@ -193,8 +193,8 @@ const orgLd = {
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2025-2026 {SITE.name}. {t.footer.rights}</p>
-          <p>{lang === "id" ? "Malang, Indonesia" : "Malang, Indonesia"}</p>
+          <p>&copy; 2025–{new Date().getFullYear()} {SITE.name}. {t.footer.rights}</p>
+          <p>Malang, Jawa Timur, Indonesia</p>
         </div>
       </div>
     </footer>

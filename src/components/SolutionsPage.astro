@@ -1,0 +1,408 @@
+---
+import Base from "../layouts/Base.astro";
+import { products, type Accent, type Product } from "../data/products";
+import { SITE, pageUrl, type Lang } from "../data/site";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const bySlug = (slug: string): Product => {
+  const p = products.find((x) => x.slug === slug);
+  if (!p) throw new Error(`SolutionsPage: unknown product slug "${slug}"`);
+  return p;
+};
+
+type Industry = {
+  icon: string;
+  accent: Accent;
+  name: string;
+  problem: string;
+  custom: string;
+  products: string[];
+  service: string;
+};
+
+const icons = {
+  factory: '<path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z" />',
+  sprout: '<path d="M7 20h10" /><path d="M12 20V10" /><path d="M12 10c0-3.5-2.5-6-7-6 0 4.5 2.5 6 7 6z" /><path d="M12 13c0-3 2.5-5.5 7-5.5 0 4-2.5 5.5-7 5.5z" />',
+  moon: '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />',
+  store: '<path d="M3 9l1.5-5h15L21 9" /><path d="M3 9h18v2a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0z" /><path d="M5 13v8h14v-8" /><path d="M10 21v-5h4v5" />',
+};
+
+const copy = {
+  en: {
+    title: "Solutions by Industry — Joyo Digitama Solusi",
+    description:
+      "Software for factories, dairy farms, pesantren, and small businesses. In each industry we run our own products and build custom work around them.",
+    h1: "Solutions by industry",
+    lede:
+      "We don't sell one platform to everyone. In each industry below we already run our own product, and we build custom work around it when your operation needs more.",
+    problemLabel: "The problem",
+    productsLabel: "Our products",
+    customLabel: "Custom work",
+    customLink: "Discuss a custom build",
+    visit: "Visit site",
+    industries: [
+      {
+        icon: icons.factory,
+        accent: "amber",
+        name: "Manufacturing & industrial",
+        problem:
+          "A line stops and nobody knows why until the shift report. Machine data sits inside PLCs that only the integrator can read.",
+        custom:
+          "Production and downtime dashboards, PLC and sensor connections, and maintenance request tracking for your production and maintenance teams.",
+        products: ["andonfast", "voltrus"],
+        service: "iot-integration",
+      },
+      {
+        icon: icons.sprout,
+        accent: "blue",
+        name: "Dairy & agriculture",
+        problem:
+          "Feed mixes live in a notebook and heat dates live in one person's memory. Miss a heat and the next chance is three weeks away.",
+        custom:
+          "Extensions around Cowculator or standalone tools: milk records, reports for the cooperative, and mobile apps for field staff.",
+        products: ["cowculator"],
+        service: "custom-software",
+      },
+      {
+        icon: icons.moon,
+        accent: "green",
+        name: "Pesantren & Islamic community",
+        problem:
+          "Attendance is on paper, visitors sign a book at the gate, and the kajian schedule is a forwarded WhatsApp image nobody can find a week later.",
+        custom: "Systems for foundations and schools: santri records, tuition payments, and updates for parents.",
+        products: ["e-pondok", "pakustadz", "waqtu"],
+        service: "custom-software",
+      },
+      {
+        icon: icons.store,
+        accent: "purple",
+        name: "SMEs & digital businesses",
+        problem:
+          "You can see traffic but not which channel brings revenue. Projects run on chat threads. And selling software in Indonesia means sorting out QRIS, virtual accounts, and invoices before the first sale.",
+        custom: "The web app, integration, or internal tool your team is missing, built on the same stack as these products.",
+        products: ["revklik", "atur", "briefok", "nyaur", "cloudagni"],
+        service: "custom-software",
+      },
+    ] as Industry[],
+    processH2: "From first visit to running in production",
+    steps: [
+      { title: "Understand", body: "We visit or call to see how the work happens today, on the floor, at the farm, or in the office." },
+      { title: "Scope", body: "A written plan: which product fits, what needs custom work, milestones, and price." },
+      { title: "Build", body: "We set up the product, build the missing pieces, and show you working software at every step." },
+      { title: "Run", body: "We deploy, train your team, and stay on for support and improvements." },
+    ],
+    ctaH2: "Don't see your industry here?",
+    ctaP: "These are the industries where our products already run. Custom work isn't limited to them. Tell us how your operation works and we'll say plainly whether we can help.",
+    ctaPrimary: "Start a project",
+    ctaWa: "Chat on WhatsApp",
+    waText: "Hello Joyo Digitama, I'd like to discuss a solution for my business.",
+  },
+  id: {
+    title: "Solusi per Industri — Joyo Digitama Solusi",
+    description:
+      "Software untuk pabrik, peternakan sapi perah, pesantren, dan UMKM. Di tiap industri, kami menjalankan produk sendiri dan membangun solusi kustom di sekitarnya.",
+    h1: "Solusi per industri",
+    lede:
+      "Kami tidak menjual satu platform untuk semua orang. Di setiap industri di bawah ini, kami sudah menjalankan produk sendiri, dan membangun pekerjaan kustom di sekitarnya saat operasional Anda butuh lebih.",
+    problemLabel: "Masalahnya",
+    productsLabel: "Produk kami",
+    customLabel: "Pekerjaan kustom",
+    customLink: "Diskusikan kebutuhan kustom",
+    visit: "Kunjungi situs",
+    industries: [
+      {
+        icon: icons.factory,
+        accent: "amber",
+        name: "Manufaktur & industri",
+        problem:
+          "Lini berhenti dan tidak ada yang tahu sebabnya sampai laporan shift keluar. Data mesin tersimpan di PLC yang hanya bisa dibaca oleh integrator.",
+        custom:
+          "Dashboard produksi dan downtime, koneksi PLC dan sensor, serta pelacakan permintaan perawatan untuk tim produksi dan maintenance Anda.",
+        products: ["andonfast", "voltrus"],
+        service: "iot-integration",
+      },
+      {
+        icon: icons.sprout,
+        accent: "blue",
+        name: "Peternakan sapi perah & pertanian",
+        problem:
+          "Komposisi pakan dicatat di buku, tanggal birahi hanya diingat satu orang. Terlewat sekali, kesempatan berikutnya baru tiga minggu lagi.",
+        custom:
+          "Pengembangan di sekitar Cowculator atau sistem terpisah: catatan produksi susu, laporan untuk koperasi, dan aplikasi mobile untuk petugas lapangan.",
+        products: ["cowculator"],
+        service: "custom-software",
+      },
+      {
+        icon: icons.moon,
+        accent: "green",
+        name: "Pesantren & komunitas Islam",
+        problem:
+          "Absensi masih di kertas, tamu mengisi buku di gerbang, dan jadwal kajian berupa gambar yang diteruskan di grup WhatsApp, lalu sulit dicari seminggu kemudian.",
+        custom: "Sistem untuk yayasan dan sekolah: data santri, pembayaran SPP, dan informasi untuk wali santri.",
+        products: ["e-pondok", "pakustadz", "waqtu"],
+        service: "custom-software",
+      },
+      {
+        icon: icons.store,
+        accent: "purple",
+        name: "UMKM & bisnis digital",
+        problem:
+          "Anda melihat traffic, tapi tidak tahu channel mana yang menghasilkan pendapatan. Proyek berjalan di thread chat. Untuk jualan software di Indonesia, QRIS, virtual account, dan invoice harus beres sebelum penjualan pertama.",
+        custom: "Aplikasi web, integrasi, atau tools internal yang belum dimiliki tim Anda, dibangun dengan stack yang sama dengan produk-produk ini.",
+        products: ["revklik", "atur", "briefok", "nyaur", "cloudagni"],
+        service: "custom-software",
+      },
+    ] as Industry[],
+    processH2: "Dari kunjungan pertama sampai berjalan di produksi",
+    steps: [
+      { title: "Pahami", body: "Kami berkunjung atau menelepon untuk melihat bagaimana pekerjaan berjalan hari ini, di pabrik, kandang, atau kantor." },
+      { title: "Rancang", body: "Rencana tertulis: produk mana yang cocok, bagian mana yang perlu dibuat kustom, milestone, dan harga." },
+      { title: "Bangun", body: "Kami menyiapkan produk, membangun bagian yang kurang, dan menunjukkan software yang sudah jalan di setiap tahap." },
+      { title: "Jalankan", body: "Kami deploy, melatih tim Anda, dan tetap mendampingi untuk support dan pengembangan." },
+    ],
+    ctaH2: "Industri Anda tidak ada di sini?",
+    ctaP: "Ini industri tempat produk kami sudah berjalan, tapi pekerjaan kustom tidak terbatas di sini. Ceritakan bagaimana operasional Anda berjalan, dan kami akan terus terang apakah kami bisa membantu.",
+    ctaPrimary: "Mulai proyek",
+    ctaWa: "Chat via WhatsApp",
+    waText: "Halo Joyo Digitama, saya ingin mendiskusikan solusi untuk bisnis saya.",
+  },
+}[lang];
+
+const contact = pageUrl("contact", lang);
+const arrow =
+  '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>';
+const external =
+  '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" /></svg>';
+---
+
+<Base lang={lang} title={copy.title} description={copy.description} path="solutions">
+  <section class="page-hero">
+    <div class="container">
+      <h1>{copy.h1}</h1>
+      <p>{copy.lede}</p>
+    </div>
+  </section>
+
+  <section class="industries-section">
+    <div class="container industries">
+      {copy.industries.map((ind) => (
+        <article class="industry reveal">
+          <div class="industry-main">
+            <div class="industry-head">
+              <div class={`card-icon ${ind.accent}`}><svg viewBox="0 0 24 24" aria-hidden="true" set:html={ind.icon} /></div>
+            </div>
+            <h2>{ind.name}</h2>
+            <div class="industry-label">{copy.problemLabel}</div>
+            <p>{ind.problem}</p>
+            <div class="industry-label">{copy.customLabel}</div>
+            <p>{ind.custom}</p>
+            <a href={`${contact}?service=${ind.service}`} class="industry-link">
+              {copy.customLink} <Fragment set:html={arrow} />
+            </a>
+          </div>
+          <div class="industry-products">
+            <div class="industry-label">{copy.productsLabel}</div>
+            <ul>
+              {ind.products.map(bySlug).map((p) => (
+                <li>
+                  <a href={p.url ?? undefined} target="_blank" rel="noopener" class="product-row">
+                    {p.logo ? (
+                      <img src={p.logo} alt="" width="40" height="40" loading="lazy" />
+                    ) : (
+                      <span class={`product-mono mono-${p.accent}`} aria-hidden="true">{p.name[0]}</span>
+                    )}
+                    <span class="product-text">
+                      <span class="product-name">{p.name}</span>
+                      <span class="product-desc">{p.desc[lang]}</span>
+                    </span>
+                    <span class="product-visit">
+                      <span class="sr-only">{copy.visit}</span>
+                      <Fragment set:html={external} />
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>{copy.processH2}</h2>
+      </div>
+      <ol class="process-steps">
+        {copy.steps.map((s, i) => (
+          <li class="step reveal">
+            <div class="step-number">{String(i + 1).padStart(2, "0")}</div>
+            <h3>{s.title}</h3>
+            <p>{s.body}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta-section reveal">
+        <h2>{copy.ctaH2}</h2>
+        <p>{copy.ctaP}</p>
+        <div class="cta-actions">
+          <a href={contact} class="btn btn-primary btn-lg">{copy.ctaPrimary} <Fragment set:html={arrow} /></a>
+          <a href={`https://wa.me/${SITE.phoneWa}?text=${encodeURIComponent(copy.waText)}`} class="btn btn-outline btn-lg" target="_blank" rel="noopener">{copy.ctaWa}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .industries-section { padding-top: 0; }
+
+  .industries {
+    display: grid;
+    gap: 16px;
+  }
+
+  .industry {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 48px;
+    padding: 40px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--bg-raised);
+  }
+
+  .industry-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .industry-head .card-icon { margin-bottom: 0; }
+
+  .industry h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    margin: 24px 0 8px;
+  }
+
+  .industry-label {
+    margin-top: 24px;
+    margin-bottom: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .industry-main p {
+    color: var(--text-dim);
+    font-size: 1rem;
+    line-height: 1.65;
+    max-width: 520px;
+  }
+
+  .industry-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 24px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--phosphor);
+  }
+
+  .industry-link:hover { gap: 10px; }
+
+  .industry-products .industry-label { margin-top: 0; }
+
+  .industry-products ul {
+    list-style: none;
+    display: grid;
+    gap: 8px;
+  }
+
+  .product-row {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr) auto;
+    gap: 16px;
+    align-items: start;
+    padding: 16px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.015);
+    transition: border-color 0.3s, background 0.3s;
+  }
+
+  .product-row:hover { border-color: var(--border-hover); background: var(--bg-surface); }
+
+  .product-row img,
+  .product-mono {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .product-mono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: #03110a;
+  }
+
+  .mono-green { background: #00ff88; }
+  .mono-blue { background: #3ddcff; }
+  .mono-purple { background: #b98bff; }
+  .mono-rose { background: #ff5c85; }
+  .mono-orange { background: #ff8a4c; }
+  .mono-amber { background: #ffc233; }
+
+  .product-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .product-name {
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .product-desc {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--text-dim);
+  }
+
+  .product-visit {
+    color: var(--text-muted);
+    padding-top: 2px;
+    transition: color 0.3s;
+  }
+
+  .product-row:hover .product-visit { color: var(--phosphor); }
+
+  @media (max-width: 960px) {
+    .industry { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  @media (max-width: 680px) {
+    .industry { padding: 28px 20px; }
+  }
+</style>
