@@ -6,6 +6,7 @@ export const SITE = {
   email: "dzulfikar.at@joyodigitama.com",
   phoneDisplay: "+62 896-8083-9591",
   phoneWa: "6289680839591",
+  discord: "https://discord.gg/vtud8UYekp",
   founded: "2025",
 } as const;
 
@@ -33,6 +34,8 @@ export const ui = {
       terms: "Terms of Service",
       cookies: "Cookie Policy",
       contact: "Contact Us",
+      discord: "Discord community",
+      discordAria: "JoyoDigitama Discord community (opens in a new tab)",
       rights: "All rights reserved.",
     },
   },
@@ -58,6 +61,8 @@ export const ui = {
       terms: "Syarat Layanan",
       cookies: "Kebijakan Cookie",
       contact: "Hubungi Kami",
+      discord: "Komunitas Discord",
+      discordAria: "Komunitas Discord JoyoDigitama (buka di tab baru)",
       rights: "Hak cipta dilindungi.",
     },
   },
