@@ -31,6 +31,9 @@ const copy = {
     ctaPrimary: "Start a project",
     ctaWa: "Chat on WhatsApp",
     waText: "Hi Joyo Digitama, I'd like to discuss a project.",
+    healthCommunity: "Bug reports and feedback for JoyoRogo and JoyoFit go to our",
+    healthCommunityLink: "Discord community",
+    healthCommunityAria: "JoyoDigitama Discord community (opens in a new tab)",
   },
   id: {
     title: "Produk — Joyo Digitama Solusi",
@@ -50,6 +53,9 @@ const copy = {
     ctaPrimary: "Mulai proyek",
     ctaWa: "Chat via WhatsApp",
     waText: "Halo Joyo Digitama, saya ingin mendiskusikan proyek.",
+    healthCommunity: "Laporan bug dan masukan untuk JoyoRogo dan JoyoFit bisa disampaikan di",
+    healthCommunityLink: "komunitas Discord kami",
+    healthCommunityAria: "Komunitas Discord kami (JoyoDigitama, buka di tab baru)",
   },
 }[lang];
 
@@ -74,7 +80,12 @@ const arrow =
       <div class="container">
         <div class="section-header reveal">
           <h2>{copy.headlines[id]}</h2>
-          <p>{categoryDesc[id][lang]}</p>
+          <p>
+            {categoryDesc[id][lang]}
+            {id === "health" && (
+              <>{" "}{copy.healthCommunity}{" "}<a href={SITE.discord} target="_blank" rel="noopener" aria-label={copy.healthCommunityAria}>{copy.healthCommunityLink}</a>.</>
+            )}
+          </p>
         </div>
         <div class={`category-grid n${Math.min(Math.max(items.length, 2), 4)}`}>
           {items.map((product) => <ProductCard product={product} lang={lang} />)}
@@ -99,6 +110,9 @@ const arrow =
 
 <style>
   .category { padding-top: 0; }
+
+  .section-header p a { color: var(--phosphor); }
+  .section-header p a:hover { text-decoration: underline; }
 
   /* Column count follows the group size (2–4) so no category ends in a half-empty row. */
   .category-grid {

@@ -21,6 +21,10 @@ const copy = {
     locationValue: "Malang, East Java, Indonesia",
     response: "Response time",
     responseValue: "Usually within two business days",
+    community: "Community",
+    communityValue: "Using JoyoRogo, JoyoFit or JoyoArto? Bug reports, feedback and release news are on our",
+    communityLink: "Discord server",
+    communityAria: "JoyoDigitama Discord server (opens in a new tab)",
     formH2: "Send a message",
     formNote: "This opens your email app with the message filled in. Nothing is stored on this site.",
     name: "Name",
@@ -60,6 +64,10 @@ const copy = {
     locationValue: "Malang, Jawa Timur, Indonesia",
     response: "Waktu respons",
     responseValue: "Biasanya dalam dua hari kerja",
+    community: "Komunitas",
+    communityValue: "Pakai JoyoRogo, JoyoFit atau JoyoArto? Laporan bug, masukan, dan kabar rilis ada di",
+    communityLink: "server Discord kami",
+    communityAria: "Server Discord kami (JoyoDigitama, buka di tab baru)",
     formH2: "Kirim pesan",
     formNote: "Tombol kirim membuka aplikasi email Anda dengan pesan yang sudah terisi. Tidak ada data yang disimpan di situs ini.",
     name: "Nama",
@@ -133,6 +141,13 @@ const path = "contact";
             </div>
             <h2>{copy.response}</h2>
             <p>{copy.responseValue}</p>
+          </div>
+          <div class="card info-card reveal">
+            <div class="card-icon blue">
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+            </div>
+            <h2>{copy.community}</h2>
+            <p>{copy.communityValue} <a href={SITE.discord} target="_blank" rel="noopener" aria-label={copy.communityAria}>{copy.communityLink}</a>.</p>
           </div>
         </div>
 
@@ -245,7 +260,7 @@ const path = "contact";
   .info-card p a {
     color: var(--phosphor);
     text-decoration: none;
-    word-break: break-all;
+    overflow-wrap: anywhere;
   }
 
   .info-card p a:hover {
